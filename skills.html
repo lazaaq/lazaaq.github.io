@@ -15,26 +15,275 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top" style="background-color: #FAF8D4;">
+    <body id="page-top" style="background-color: #fff;">
         <!-- Navigation-->
         <a class="menu-toggle rounded" href="#"><i class="bi bi-list"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Menu</a></li>
+                <li class="sidebar-brand"><a href="#">Menu</a></li>
                 <li class="sidebar-nav-item"><a href="index.html#">Home</a></li>
-                <li class="sidebar-nav-item"><a href="index.html#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="index.html#services">Services</a></li>
                 <li class="sidebar-nav-item"><a href="skills.html#">Skills</a></li>
                 <li class="sidebar-nav-item"><a href="projects.html#">Projects</a></li>
-                <li class="sidebar-nav-item"><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
 
         <header class="d-flex align-items-center h-100">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">SKILLS</h1>
+                <div class="mb-1 judul-hero">SKILLS</div>
+                <div class="nama">~ Lana Saiful Aqil ~</div>
             </div>
         </header>
+        <style>
+            header {
+                background-image: url('assets/img/bg/2.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            header .judul-hero {
+                font-size: 3rem;
+                font-weight: 700;
+            }
+            header .nama {
+                font-size: 1.2rem;
+                font-weight: 500;
+                letter-spacing: 2px;
+            }
+        </style>
+
+        <style>
+            @media only screen and (max-width: 768px) {
+                section.body {
+                    padding-left: 0!important;
+                    padding-right: 0!important;
+                }
+            }
+            @media only screen and (max-width: 576px) {
+                section.body .card {
+                    width: 100%!important;
+                }
+                section.body .container {
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                }
+                section.body .deskripsi .text-center {
+                    font-size: 1.5rem!important;
+                }
+            }
+        </style>
+
+        <section class="body" style="height: fit-content; padding: 5rem 10rem;">
+            <div class="container">
+                <h2 class="text-center mb-5">Web Developer</h2>
+                <div class="row justify-content-sm-center justify-content-evenly">
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/html.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">HTML</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/css.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">CSS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/bootstrap.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">BOOTSTRAP</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/javascript.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">JAVASCRIPT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/php.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">PHP</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/laravel.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">LARAVEL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/mysql.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">MYSQL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/nodejs.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">NODEJS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/vscode.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">VSCODE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/heroku.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">HEROKU</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5" style="margin-top: 8rem;">Mobile Developer</h2>
+                <div class="row justify-content-center">
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/flutter.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">Flutter</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/android-studio.jpg" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">ANDROID STUDIO</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5" style="margin-top: 8rem;">UI UX Designer</h2>
+                <div class="row justify-content-center">
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/figma.jpg" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">FIGMA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5" style="margin-top: 8rem;">TOOLS</h2>
+                <div class="row justify-content-center">
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/git.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">GIT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-6 col-sm-4 col-lg-3 mb-3">
+                        <div class="card w-100 h-100">
+                            <div class="card-body">
+                                <div class="image text-center">
+                                    <img class="rounded" src="assets/img/skills/github.png" alt="" width="85%">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="text-center" style="font-weight: 700; font-size: 2vw;">GITHUB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section bg-primary text-white" id="contact">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Check my Social Media!</h2>
+                <a class="btn btn-xl btn-info me-4 text-light mb-3" href="#!">Linkedin</a>
+                <a class="btn btn-xl btn-danger me-4 mb-3" href="#!">Instagram</a>
+                <a class="btn btn-xl btn-dark me-4 mb-3" href="#!">Github</a>
+                <a class="btn btn-xl btn-light" href="#!">Dribbble</a>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <div class="container px-4 px-lg-5">
+                <p class="text-muted small mb-0">Copyright &copy; Lana Saiful Aqil 2022</p>
+            </div>
+        </footer>
 
         <a class="scroll-to-top rounded" href="#page-top"><i class="bi bi-arrow-up"></i></a>
         <!-- Bootstrap core JS-->
