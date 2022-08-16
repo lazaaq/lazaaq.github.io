@@ -1,0 +1,86 @@
+body{
+    background-color: #FFF5EC;
+    color: #2E266F;
+}
+
+h3{
+    margin-top: 50px;
+    text-align: center;
+
+    font-family: "Poppins", "serief";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+}
+
+p.subtitle{
+    margin-top: 30px;
+    text-align: center;
+
+    max-width: 1440px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+
+.card-conatiner{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* border: solid; */
+    /* background-color: #35CD8C; */
+}
+
+.food-item{
+    margin-right: 15px;
+    margin-left: 15px;
+
+    width: 385px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 0px;
+}
+
+.food-item img{
+    width: 100%;
+
+    border-radius: 25px 25px 0px 0px;
+
+}
+
+.food-item h4{
+    font-family: "Poppins", "serief";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.food-item h5{
+    font-family: "Poppins", "serief";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    text-align: end;
+    color: #35CD8C;
+
+}
+
+.food-item p{
+    font-family: "Poppins", "serief";
+    margin: 0;
+    text-align: start;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+
+}
+

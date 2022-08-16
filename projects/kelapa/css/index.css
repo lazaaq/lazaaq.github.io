@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ramaraja&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+} 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 1rem;
+}  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+nav {
+    opacity: 85%;
+}
+
+nav a{
+    font-family: 'Ramaraja', serif;
+}
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/utama.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.hero .head .judul {
+    font-size: 3rem;
+    font-weight: 600;
+}
+.hero .horizontal-line {
+    background-color: #77D970;
+    height: 10px;
+    width: 150px;
+    margin: 0 auto;
+}
+.hero .body .subjudul {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+@media only screen and (max-width: 575px) {
+    .hero .head .judul {
+        font-size: 2rem;
+    }
+    .hero .body .subjudul {
+        font-size: 1rem;
+    }
+}
+
+.who {
+    margin-top: 6rem;
+    font-family: 'Poppins', sans-serif;
+}
+.who .box {
+    background-color: white;
+    border: 1px solid black;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.who .box .head .judul {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+.who .horizontal-line {
+    height: 10px;
+    width: 100px;
+    background-color: #77D970;
+    margin: 0 auto;
+}
+.who .body {
+    margin: 0 10rem;
+}
+.who .body .deskripsi {
+    font-weight: 500;
+    text-align: center;
+}
+@media only screen and (max-width: 992px) {
+    .who .body {
+        margin: 0 0rem;
+    }
+}
+
+.product {
+    margin-top: 6rem;
+}
+.product .head .judul {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+.product .horizontal-line {
+    height: 10px;
+    width: 70px;
+    background-color: #77D970;
+    margin: 0 auto;
+}
+.product .col {
+    display: flex;
+    justify-content: center;
+}
+.product button {
+    background-color: transparent;
+    border: 0;
+    
+}
+.product .text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.certified {
+    padding: 5rem 0;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/certified.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+.certified .head .judul {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+.certified .horizontal-line {
+    height: 10px;
+    width: 70px;
+    background-color: #77D970;
+    margin: 0 auto;
+}
+.certified .body {
+    margin: auto 0;
+}
+@media only screen and (max-width: 768px) {
+    .certified .gambar img {
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+}
+
+.contact {
+    padding: 5rem 0;
+    font-family: 'Poppins' ,sans-serif;
+}
+.contact .box {
+    border: 1px solid black;
+    padding: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contact .box .head .judul {
+    font-size: 2rem;
+}
+.contact .box .body .subjudul {
+    color: #77D970;
+}
+@media only screen and (max-width: 768px) {
+    .emailus {
+        margin-top: 3rem;
+    }
+}

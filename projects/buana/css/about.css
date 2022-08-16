@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Quando&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #191919!important;
+    min-height: 100vh;
+}
+nav {
+    background-color: #E9C33F;
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+nav .menu {
+    margin-left: 15vw;
+    font-family: 'Roboto', sans-serif;
+}
+nav .menu ul {
+    display: flex!important;
+    list-style-type: none;
+}
+nav .menu ul li {
+    padding: 0 2rem;
+}
+nav .menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+nav .menu ul li a.active::after {
+    width: 1rem;
+    height: 0.5rem;
+    background-color: black;
+    border-radius: 0.3rem;
+}
+@media only screen and (max-width: 992px) {
+    nav .menu ul li {
+        padding: 0 2rem;
+        width: fit-content;
+    }
+}
+
+.about {
+    color: white;
+}
+.about .aboutus {
+    padding-top: 7rem;
+    padding-left: 7rem;
+    padding-bottom: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about .aboutus .wrap {
+    width: 100%;
+    height: 100%;
+}
+.about .aboutus .judul-about {
+    font-family: 'Quando', sans;
+    font-size: 2rem;
+}
+.about .aboutus .deskripsi-about {
+    padding-right: 2rem;
+}
+.about .col {
+    padding: 0!important;
+}
+.about .visi-misi .judul-visi-misi {
+    font-family: 'Quando', serif;
+    font-size: 2rem;
+    padding-top: 3rem;
+}
+.about .visi-misi .horizontal-line {
+    width: 3rem;
+    height: 6px;
+    background-color: white;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+.about .visi-misi .deskripsi {
+    width: 490px;
+    margin: 0 auto;
+}
+.about .visi-misi .judul-visi-misi.material {
+    margin-top: 8rem;
+}
+@media only screen and (max-width: 1400px) {
+    .about .judul-visi-misi.material {
+        margin-top: 4rem!important;
+    }
+}
+@media only screen and (max-width: 1191px) {
+    .about img {
+        display: none!important;
+    }
+    .about .kiri {
+        width: 100%!important;
+    }
+    .about .kiri .aboutus {
+        padding-left: 0!important;
+        padding-bottom: 2rem!important;
+        text-align: center;
+    }
+    .about .kiri .aboutus .deskripsi-about{
+        padding-left: 5rem!important;
+        padding-right: 5rem!important;
+    }
+    .about .kanan {
+        width: 100%!important;
+    }
+    .about .kanan .judul-visi-misi {
+        margin-top: 0!important;
+    }
+    .about .kanan .deskripsi-material {
+        margin-bottom: 6rem;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .about .aboutus {
+        padding: 7rem 2rem 7rem 2rem; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .about .kiri .aboutus {
+        padding-left: 2rem!important;
+        text-align: center;
+    }
+    .about .kiri .aboutus .deskripsi-about{
+        padding-left: 0rem!important;
+        padding-right: 0rem!important;
+    }
+    .about .visi-misi .deskripsi {
+        width: fit-content;
+        padding: 0 2rem;
+    }
+    .about .deskripsi-material {
+        margin-bottom: 5rem!important;
+    }
+}
+
+.footer {
+    background-color: #DDB63C;
+    padding: 4rem 0;
+    color: white;
+}
+.footer .judul-footer {
+    font-family: 'Quantico', sans-serif;
+    font-size: 1.7rem;
+}
+.footer .subjudul-footer {
+    font-family: 'Quando', serif;
+    font-size: 1rem;
+}
+.footer .kanan .col {
+    font-family: 'Quando', serif;
+    font-size: 1rem;
+}
+@media only screen and (max-width: 992px) {
+    .footer .kiri {
+        width: 300px;
+    }
+    .footer .kanan .col {
+        padding: 0!important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .footer .kiri {
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .footer .kiri {
+        width: 100%;
+        text-align: center;
+    }
+    .footer .kanan {
+        width: 100%;
+        text-align: center;
+        margin-top: 4rem;
+    }
+    .footer {
+        padding-bottom: 2rem!important;
+    }
+}
+
+.mybtn {
+    text-decoration: none;
+    color: white;
+    padding: 0.3rem 1.7rem;
+    border-radius: 6px;
+}

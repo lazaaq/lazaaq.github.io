@@ -1,0 +1,207 @@
+nav {
+    background-color: #FFFFFF;
+    position: fixed;
+}
+nav .nav-item {
+    font-weight: 500;
+    color: white;
+}
+nav form input {
+    border-radius: 0.75rem!important;
+    background-color: #C4C4C4!important;
+}
+
+.whatsapp {
+    position: fixed;
+    top: 600px;
+    left: 1285px;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('../img/banner-about-us.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero .judul {
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+.hero .horizontal-line {
+    background-color: #FFA900;
+    height: 5px;
+    width: 500px;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 575px){
+    .hero .judul {
+        font-size: 13vw;
+    }
+    .hero .horizontal-line {
+        width: 70%;
+    }
+}
+
+.about {
+    min-height: 70vh;
+    padding: 4rem 0 4rem;
+    font-size: 3rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+.about .judul {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.about .judul-product {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.about .horizontal-line-judul {
+    background-color: #FFA900;
+    height: 5px;
+    width: 200px;
+    margin: 10px auto 0 auto;
+}
+.about .box {
+    padding: 1rem 2rem;
+    box-shadow: 1px 1px 3px 3px grey;
+    width: 70%;
+    margin: 0 auto;
+}
+.about .box .text {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.visi-misi {
+    background-color: #404040;
+    padding: 0;
+    display: flex;
+}
+.visi-misi .kiri {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visi-misi .kiri .wrap-text {
+    margin-left: 15rem;
+    color: white;
+    margin-right: 3rem;
+    line-height: 2rem;
+}
+.visi-misi .wrap-text .vertical-line {
+    height: 180px;
+    width: 20px;
+    position: absolute;
+    background-color: #FF4F5A;
+    top: 1400px;
+    left: 170px;
+}
+.visi-misi .visi-judul {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.visi-misi .misi-judul {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.visi-misi .kanan .vertical-line {
+    background-color: #FF4F5A;
+    position: absolute;
+    right: 0;
+    top: 1310px;
+    height: 340px;
+    width: 60px;
+}
+@media only screen and (max-width: 1200px) {
+    .visi-misi .kanan {
+        display: none;
+    }
+    .visi-misi .wrap-text .vertical-line {
+        top: 1300px;
+    }
+    .visi-misi .kiri {
+        width: 100%!important;
+    }
+    .visi-misi {
+        padding: 2rem 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .visi-misi .wrap-text .vertical-line {
+        display: none;
+    }
+    .visi-misi .kiri {
+        padding: 0 4rem;
+    }
+    .visi-misi .kiri .wrap-text {
+        margin: 0;
+    }
+}
+
+.count {
+    background-color: white;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+.count .row .head {
+    font-size: 4rem;
+    font-weight: 400;
+}
+.count .row .deskripsi {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.kontak {
+    background-color: #404040;
+    color: white;
+    padding: 2rem 0;
+}
+.kontak .judul {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.kontak .kanan {
+    width: 60%;
+}
+@media only screen and (max-width: 1200px) {
+    .kontak .kiri {
+        padding-right: 1rem!important;
+    }
+    .kontak .kanan {
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .kontak .container {
+        display: block!important;
+    }
+    .kontak .kanan {
+        width: 100%;
+    }
+}
+.copyright {
+    background-color: #FF7600;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer {
+    height: 100vh;
+}

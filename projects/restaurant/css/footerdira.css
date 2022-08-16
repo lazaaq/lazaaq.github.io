@@ -1,0 +1,39 @@
+footer{
+    margin-top: 1000px  !important;
+    display: block;
+    background-color: #303030;
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    margin-left: auto imp !important;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+footer h5{
+    font-family: "Poppins", "serief";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 108px;
+    /* identical to box height */
+
+    text-align: center;
+}
+
+footer img{
+    max-width: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    margin-top: 34px;
+    margin-bottom: 100px;
+
+}
+
+footer img:hover{
+    color: blue;
+}
