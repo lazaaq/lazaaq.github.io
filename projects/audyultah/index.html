@@ -5,20 +5,98 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audy Maharani Sagita</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sunshiney&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="text-center">
-    <h1>NANTI TANGGAL 11 BUKA LAGI YAAA</h1>
-    <p class="text-center">Kan kamu belum ulang tahun</p>
+    <!-- 1 -->
+    <div class="h heading1" id="heading1">SELAMAT ULANG TAHUN AUDYYYYY</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next1" onclick="next(1)">Coba Pencet</button>
+    </div>
+    <!-- 2 -->
+    <div class="h heading2" id="heading2" style="display:none">Sekarang dah 19 tahun yaa, tahun depan kepalanya ada 2. <br> berarti tahun depan nanti 2 kali lipat cerdasnya</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next2" onclick="next(2)" style="display:none">Lanjut</button>
+    </div>
+    <!-- 3 -->
+    <div class="h heading3" id="heading3" style="display:none">Semoga tambah-tambah pokoknya <br> Tambah Semangat Kuliahnya (jangan cuti lagi) <br>Tambah bermanfaat buat sekitarnya <br>Tambah pinter main piano <br>Semoga bisa ikut IISMA <br>Apa lagi ya</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next3" onclick="next(3)" style="display:none">Next</button>
+    </div>
+    <!-- 4 -->
+    <div class="h heading4" id="heading4" style="display:none">Yang paling penting semoga kita bisa ketemuuu wkwkwkwk <br> (Kapan ya aku ke bandung)</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next4" onclick="next(4)" style="display:none">Selanjutnya</button>
+    </div>
+    <!-- 5 -->
+    <div class="h heading5" id="heading5" style="display:none">Temen temen yg di ugm jangan dilupain yaa. <br> Trs jg jaga kesehatan, langitnya lagi labil.</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next5" onclick="next(5)" style="display:none">Masih Belum</button>
+    </div>
+    <!-- 6 -->
+    <div class="h heading6" id="heading6" style="display:none">Btw semoga km suka sama kadonya, klo gasuka y gpp si. <br> Sbenernya aku kasih itu tumblr bukan biar dirimu <br> banyak minum kopi, minum air putih aja, kopi gasehat.</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next6" onclick="next(6)" style="display:none">Terakhir deh</button>
+    </div>
+    <!-- 7 -->
+    <div class="h heading7" id="heading7" style="display:none">Hari ini tuh 9/11 ga sih, yang WTC ditabrak pesawat itu. <br> aku baru ngeh.</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next7" onclick="next(7)" style="display:none">Beneran terakhir</button>
+    </div>
+    <!-- 8 -->
+    <div class="h heading8" id="heading8" style="display:none">Kok kosong</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next8" onclick="next(8)" style="display:none">Satu lagi pls</button>
+    </div>
+    <!-- 9 -->
+    <div class="h heading9" id="heading9" style="display:none">Dah dah, aku bingung mau nulis apalagi. <br> Pokoknya hari ini dirimu harus happy, gimanapun caranya.</div>
+    <div class="d-flex">
+      <button class="n mx-auto" id="next9" onclick="next(9)" style="display:none">Kok masih belum</button>
+    </div>
+    <!-- 10 -->
+    <div class="h heading10" id="heading10" style="display:none">BYEEEEEEEE, HAVE A NICE BIRTHDAYYY <br> Btw aku bikin playlist buat dirimu tau wkwkwkwk. Ini :</div>
+    <a class="n" id="next10" style="display:none" href="https://open.spotify.com/playlist/5dWShCLgym5G67jdVs3ots?si=5e43deb606c44fba">Klik</a>
+    
   </div>
   <style>
     body {
-      background-color: white;
+      color: white;
+      background-image: url('assets/bg-darken2.png');
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: 'Sunshiney', cursive;
+    }
+    .h {
+      font-size: 4vw;
+    }
+    .n {
+      padding: 1vh 1vw;
+      background-color: white;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
+  <script>
+    function next(iteration) {
+      document.getElementById('heading' + iteration).style.display = 'none'
+      document.getElementById('heading' + (iteration+1)).style.display = 'block'
+
+      document.getElementById('next' + iteration).style.display = 'none'
+      document.getElementById('next' + (iteration+1)).style.display = 'inline-block'
+    }
+    // function tombol2() {
+    //   document.getElementById('heading2').style.display = 'none'
+    //   document.getElementById('heading3').style.display = 'block'
+
+    //   document.getElementById('tombol2').style.display = 'none'
+    //   document.getElementById('tombol3').style.display = 'block'
+    // }
+  </script>
 </body>
 </html>
