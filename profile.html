@@ -16,6 +16,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <!-- My CSS -->
     <link rel="stylesheet" href="css/bg.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body id="page-top" style="background-color: white;">
     <!-- Navigation-->
@@ -36,6 +37,7 @@
         <div class="mb-1 judul-hero">PROFILE</div>
         <div class="nama">~ Lana Saiful Aqil ~</div>
         <div class="mt-3"><a href="assets/file/cv.pdf" class="btn btn-primary">Curriculum Vitae</a></div>
+        <div><a id="mylinkedin" target="_blank" href="https://linkedin.com/in/lana-saiful-aqil" class="badge bg-primary">My Linkedin</a></div>
       </div>
     </header>
     <style>
@@ -53,6 +55,10 @@
         font-size: 1.2rem;
         font-weight: 500;
         letter-spacing: 2px;
+      }
+      #mylinkedin:hover {
+        background-color: white!important;
+        border: 1px rgb(29, 128, 159) solid;
       }
     </style>
 
@@ -400,72 +406,35 @@
 
     <div class="container mt-5">
       <h2>License Certificate</h2>
-      <div class="row">
-        <div class="col col-3 mb-3">
-          <div class="card p-0 h-100">
-            <a href="#" style="width: fit-content;" class="text-decoration-none">
-              <div>
-                <img src="assets/img/profile/cert/hackerrank-problem-solving-basic.png" alt="" style="width: 100%;">
-              </div>
-              <div class="p-2 text-center">
-                <b>HackerRank Problem Solving (Basic)</b> <br>
-                <span class="badge bg-info">Apr 2021</span>            
-              </div>
-            </a>
+      <div class="row" x-data="certificates">
+        <template x-for="cert in certs">
+          <div class="col col-12 col-sm-6 col-md-3 mb-3">
+            <div class="card p-0 h-100">
+              <a :href="cert.link" style="width: fit-content;" class="text-decoration-none" target="_blank">
+                <div>
+                  <img :src="cert.image" alt="" style="width: 100%;">
+                </div>
+                <div class="p-2 text-center">
+                  <b x-text="cert.name"></b> <br>
+                  <span class="badge bg-info" x-text="cert.date">Apr 2021</span>            
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="col col-3 mb-3">
-          <div class="card p-0 h-100">
-            <a href="#" style="width: fit-content;" class="text-decoration-none">
-              <div>
-                <img src="assets/img/profile/cert/hackerrank-problem-solving-intermediate.png" alt="" style="width: 100%;">
+          <div class="modal fade" id="cert.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel" x-text="cert.name"></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img :src="cert.image" alt="" width="100%">
+                </div>
               </div>
-              <div class="p-2 text-center">
-                <b>HackerRank Problem Solving (Intermediate)</b> <br>
-                <span class="badge bg-info">Apr 2021</span>            
-              </div>
-            </a>
+            </div>
           </div>
-        </div>
-        <div class="col col-3 mb-3">
-          <div class="card p-0 h-100">
-            <a href="#" style="width: fit-content;" class="text-decoration-none">
-              <div>
-                <img src="assets/img/profile/cert/hackerrank-python-basic.png" alt="" style="width: 100%;">
-              </div>
-              <div class="p-2 text-center">
-                <b>	HackerRank Python (Basic)</b> <br>
-                <span class="badge bg-info">Apr 2021</span>            
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col col-3 mb-3">
-          <div class="card p-0 h-100">
-            <a href="#" style="width: fit-content;" class="text-decoration-none">
-              <div>
-                <img src="assets/img/profile/cert/no-thumbnail.png" alt="" style="width: 100%;">
-              </div>
-              <div class="p-2 text-center">
-                <b>	LinkedIn Badge - Python</b> <br>
-                <span class="badge bg-info">Apr 2022</span>            
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col col-3 mb-3">
-          <div class="card p-0 h-100">
-            <a href="#" style="width: fit-content;" class="text-decoration-none">
-              <div>
-                <img src="assets/img/profile/cert/no-thumbnail.png" alt="" style="width: 100%;">
-              </div>
-              <div class="p-2 text-center">
-                <b>	LinkedIn Badge - PHP</b> <br>
-                <span class="badge bg-info">Apr 2022</span>            
-              </div>
-            </a>
-          </div>
-        </div>
+        </template>
       </div>
     </div>
     <style>
@@ -507,3 +476,245 @@
     <script src="js/scripts.js"></script>
   </body>
 </html>
+
+
+<script>
+  document.addEventListener('alpine:init', () => {
+      Alpine.data('certificates', () => ({
+          certs: [
+            {
+              name: "Supervised Machine Learning : Regression and Classification",
+              image: "assets/img/profile/cert/machine_learning/machine_learning_supervised_learning.jpeg",
+              link: "https://www.coursera.org/account/accomplishments/verify/7EVNLVGE2APK?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+              date: "11 Apr 2023",
+            },
+            {
+              name: "Supervised Machine Learning : Advanced Learning Algorithms",
+              image: "assets/img/profile/cert/machine_learning/machine_learning_supervised_learning_advanced.jpeg",
+              link: "https://coursera.org/share/96bfcc9fcef5a87406e008ef6711b651",
+              date: "26 Apr 2023",
+            },
+            {
+              name: "Unsupervised Machine Learning : Recommenders, Reinforcement Learning",
+              image: "assets/img/profile/cert/machine_learning/machine_learning_unsupervised_learning.jpeg",
+              link: "https://coursera.org/verify/2DQ8MV6LHGRB",
+              date: "26 Apr 2023",
+            },
+            {
+              name: "Mathematics for Machine Learning : Linear Algebra",
+              image: "assets/img/profile/cert/machine_learning/mathematics_machine_learning_linear_algebra.jpeg",
+              link: "https://coursera.org/verify/UKQ8LLWCWY3P",
+              date: "23 Mar 2023",
+            },
+            {
+              name: "Mathematics for Machine Learning : Multivariate Calculus",
+              image: "assets/img/profile/cert/machine_learning/mathematics_machine_learning_multivariate_calculus.jpeg",
+              link: "https://coursera.org/verify/LRU2PZ5RHAPE",
+              date: "28 Mar 2023",
+            },
+            {
+              name: "Mathematics for Machine Learning : PCA (Principal Component Analysis)",
+              image: "assets/img/profile/cert/machine_learning/mathematics_machine_learning_pca.jpeg",
+              link: "https://coursera.org/verify/ETQP9EEPA2MF",
+              date: "28 Mar 2023",
+            },
+            {
+              name: "Crash Course on Python",
+              image: "assets/img/profile/cert/programming/crash_course_python.jpeg",
+              link: "https://coursera.org/verify/RYQTB8M9JWBH",
+              date: "1 Mar 2023",
+            },
+            {
+              name: "Using Python to Interact with the Operating System",
+              image: "assets/img/profile/cert/programming/python_interact_with_os.jpeg",
+              link: "https://coursera.org/verify/ADEW7YAK4R4R",
+              date: "4 Mar 2023",
+            },
+            {
+              name: "Introduction to Git and Github",
+              image: "assets/img/profile/cert/programming/git_github.jpeg",
+              link: "https://coursera.org/verify/8834YQCTKBHW",
+              date: "3 Mar 2021",
+            },
+            {
+              name: "Troubleshooting and Debugging Techniques",
+              image: "assets/img/profile/cert/programming/troubleshooting.jpeg",
+              link: "https://coursera.org/verify/WJEZNBAV7ZF5",
+              date: "4 Mar 2023",
+            },
+            {
+              name: "Foundations: Data, Data, Everywhere",
+              image: "assets/img/profile/cert/machine_learning/1_data_data_everywhere.jpeg",
+              link: "https://coursera.org/verify/MNJBZCC4TMDB",
+              date: "8 Mar 2023",
+            },
+            {
+              name: "Ask Questions to Make Data-Driven Decisions",
+              image: "assets/img/profile/cert/machine_learning/2_ask_question_data.jpeg",
+              link: "https://coursera.org/verify/NJQFNAAZKXS9",
+              date: "9 Mar 2023",
+            },
+            {
+              name: "Prepare Data for Exploration",
+              image: "assets/img/profile/cert/machine_learning/3_prepare_data.jpeg",
+              link: "https://coursera.org/verify/724H6ZVM8U8G",
+              date: "12 Mar 2023",
+            },
+            {
+              name: "Process Data from Dirty to Clean",
+              image: "assets/img/profile/cert/machine_learning/4_process_data.jpeg",
+              link: "https://coursera.org/verify/HEVB26YAF9HN",
+              date: "13 Mar 2023",
+            },
+            {
+              name: "Analyze Data to Answer Questions",
+              image: "assets/img/profile/cert/machine_learning/5_analyze_data.jpeg",
+              link: "https://coursera.org/verify/Q3JADVFE49ZR",
+              date: "15 Mar 2023",
+            },
+            {
+              name: "Share Data Through the Art of Visualization",
+              image: "assets/img/profile/cert/machine_learning/6_share_data.jpeg",
+              link: "https://coursera.org/verify/GZYCREZX8Z9U",
+              date: "16 Mar 2023",
+            },
+            {
+              name: "Python Programming",
+              image: "assets/img/profile/cert/programming/python_programming.png",
+              link: "assets/img/profile/cert/programming/python_programming.pdf",
+              date: "5 Mar 2023",
+            },
+            {
+              name: "Basic Data Visualization",
+              image: "assets/img/profile/cert/machine_learning/data_visualization.png",
+              link: "assets/img/profile/cert/machine_learning/data_visualization.pdf",
+              date: "5 Mar 2023",
+            },
+            {
+              name: "Best Project Frontend Web Development in Jointscamp 2021",
+              image: "assets/img/profile/cert/programming/jointscamp-best-team.png",
+              link: "assets/img/profile/cert/programming/jointscamp-best-team.pdf",
+              date: "27 Mar 2021",
+            },
+            {
+              name: "Participant in Jointscamp 2021",
+              image: "assets/img/profile/cert/programming/jointscamp.png",
+              link: "assets/img/profile/cert/programming/jointscamp.pdf",
+              date: "27 Mar 2021",
+            },
+            {
+              name: "HackerRank Problem Solving (Basic)",
+              image: "assets/img/profile/cert/programming/hackerrank-problem-solving-basic.png",
+              link: "#",
+              date: "19 Apr 2021",
+            },
+            {
+              name: "HackerRank Problem Solving (Intermediate)",
+              image: "assets/img/profile/cert/programming/hackerrank-problem-solving-intermediate.png",
+              link: "#",
+              date: "20 Apr 2021",
+            },
+            {
+              name: "HackerRank Python (Basic)",
+              image: "assets/img/profile/cert/programming/hackerrank-python-basic.png",
+              link: "#",
+              date: "20 Apr 2021",
+            },
+            {
+              name: "HackerRank Javascript (Basic)",
+              image: "assets/img/profile/cert/programming/hackerrank-javascript-basic.png",
+              link: "https://www.hackerrank.com/certificates/9364be65a07f",
+              date: "27 Jan 2023",
+            },
+            {
+              name: "HackerRank Javascript (Intermediate)",
+              image: "assets/img/profile/cert/programming/hackerrank-problem-solving-intermediate.png",
+              link: "https://www.hackerrank.com/certificates/8960562b7f0d",
+              date: "27 Jan 2023",
+            },
+            {
+              name: "HackerRank SQL (Basic)",
+              image: "assets/img/profile/cert/programming/hackerrank-sql-basic.png",
+              link: "https://www.hackerrank.com/certificates/927b7965720d",
+              date: "27 Jan 2023",
+            },
+            {
+              name: "LinkedIn Badge - Python",
+              image: "assets/img/profile/cert/no-thumbnail.png",
+              link: "#",
+              date: "Apr 2022",
+            },
+            {
+              name: "LinkedIn Badge - PHP",
+              image: "assets/img/profile/cert/no-thumbnail.png",
+              link: "#",
+              date: "Apr 2022",
+            },
+            {
+              name: "Duolingo English Proficiency Certificate",
+              image: "assets/img/profile/cert/language/duolingo_certificate.png",
+              link: "assets/img/profile/cert/language/duolingo_certificate.pdf",
+              date: "3 Mar 2023",
+            },
+            {
+              name: "CodePolitan Basic Programming",
+              image: "assets/img/profile/cert/programming/basic_programming.png",
+              link: "https://www.codepolitan.com/c/AXSWPRC/",
+              date: "1 Mar 2021",
+            },
+            {
+              name: "CodePolitan Bootstrap Framework",
+              image: "assets/img/profile/cert/programming/bootstrap.png",
+              link: "https://www.codepolitan.com/c/SMDPBJF/",
+              date: "1 Mar 2021",
+            },
+            {
+              name: "CodePolitan HTML CSS",
+              image: "assets/img/profile/cert/programming/html_css.png",
+              link: "https://www.codepolitan.com/c/N9JCM1G/",
+              date: "27 Feb 2021",
+            },
+            {
+              name: "CodePolitan Javascript",
+              image: "assets/img/profile/cert/programming/javascript.png",
+              link: "https://www.codepolitan.com/c/3F9CMIK/",
+              date: "27 Feb 2021",
+            },
+            {
+              name: "CodePolitan JQuery",
+              image: "assets/img/profile/cert/programming/jquery.png",
+              link: "https://www.codepolitan.com/c/KFREI35/",
+              date: "27 Feb 2021",
+            },
+            {
+              name: "DQLab Preparation Data using R",
+              image: "assets/img/profile/cert/machine_learning/prep_data_using_r.png",
+              link: "assets/img/profile/cert/machine_learning/prep_data_using_r.pdf",
+              date: "25 Dec 2020",
+            },
+            {
+              name: "Capture The Flag Cyber Security HMIT ITS",
+              image: "assets/img/profile/cert/competition/aractf.png",
+              link: "assets/img/profile/cert/competition/aractf.pdf",
+              date: "21 Mar 2021",
+            },
+            {
+              name: "Competitive Programming Arkavidia",
+              image: "assets/img/profile/cert/competition/arkavidia_cp.png",
+              link: "assets/img/profile/cert/competition/arkavidia_cp.pdf",
+              date: "28 Feb 2021",
+            },
+            {
+              name: "Olimpiade Komputer Medali Emas POSI",
+              image: "assets/img/profile/cert/competition/posi_gold.png",
+              link: "assets/img/profile/cert/competition/posi_gold.pdf",
+              date: "Apr 2021",
+            },
+          ],
+
+          toggle() {
+              this.open = ! this.open
+          }
+      }))
+  })
+</script>
