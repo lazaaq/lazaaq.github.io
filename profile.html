@@ -72,6 +72,9 @@
             Currently Studying Software Engineering in Universitas Gadjah Mada (2020 - now). I have skill in Software Engineering such as : <br>
             1. Frontend Web Developer <a href="skills.html#frontend" class="badge bg-primary">Check Here</a><br>
             2. Backend Web Developer <a href="skills.html#backend" class="badge bg-primary">Check Here</a><br>
+            2. Database <a href="skills.html#database" class="badge bg-primary">Check Here</a><br>
+            3. Mobile Developer <a href="skills.html#mobile" class="badge bg-primary">Check Here</a><br>
+            4. Junior Data Scientist <a href="skills.html#ml" class="badge bg-primary">Check Here</a><br>
             <br>
             <div class="d-block d-sm-flex d-lg-block">
               <div>
@@ -408,7 +411,7 @@
       <h2>License Certificate</h2>
       <div class="row" x-data="certificates">
         <template x-for="cert in certs">
-          <div class="col col-12 col-sm-6 col-md-3 mb-3">
+          <div class="col col-12 col-md-6 col-xl-4 mb-3">
             <div class="card p-0 h-100">
               <a :href="cert.link" style="width: fit-content;" class="text-decoration-none" target="_blank">
                 <div>
@@ -419,19 +422,6 @@
                   <span class="badge bg-info" x-text="cert.date">Apr 2021</span>            
                 </div>
               </a>
-            </div>
-          </div>
-          <div class="modal fade" id="cert.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel" x-text="cert.name"></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img :src="cert.image" alt="" width="100%">
-                </div>
-              </div>
             </div>
           </div>
         </template>
