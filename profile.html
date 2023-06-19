@@ -152,9 +152,19 @@
 
     <div class="container mt-5">
       <h2>Education</h2>
-      <div class="row">
-        <div class="col-12 col-sm-6">
-          <div class="card px-4 py-3 text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-lg-4 mb-3">
+          <div class="card px-4 py-3 text-center h-100 ">
+            <h4><a href="https://grow.google/intl/id_id/bangkit/" target="_blank">Bangkit Academy</a></h4>
+            <div><b>Machine Learning Path</b></div>
+            <div><button class="badge bg-primary border-0" type="button" data-bs-toggle="modal" data-bs-target="#bangkit">Details</button></div>
+            <div class="badge bg-green mx-auto mt-2" style="width: fit-content;">
+              Feb 2023 - 31 July 2023
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-3">
+          <div class="card px-4 py-3 text-center h-100 ">
             <h4><a href="https://ugm.ac.id" target="_blank">Universitas Gadjah Mada</a></h4>
             <div>Faculty of <b>Sekolah Vokasi</b></div>
             <div>Majoring <b>Teknologi Rekayasa Perangkat Lunak (TRPL)</b></div>
@@ -163,12 +173,38 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-6">
-          <div class="card px-4 py-3 text-center">
+        <div class="col-12 col-sm-6 col-lg-4 mb-3">
+          <div class="card px-4 py-3 text-center h-100 ">
             <h4><a href="https://icp.sch.id/" target="_blank">MAN Insan Cendekia Pekalongan</a></h4>
             <div><b>SAINTEK</b></div>
             <div class="badge bg-green mx-auto mt-2" style="width: fit-content;">
               Aug 2017 - June 2020
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Modal -->
+        <div class="modal fade" id="bangkit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Bangkit Academy</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Bangkit dirancang untuk mempersiapkan siswa dengan keterampilan yang dibutuhkan dan sertifikasi teknologi, kurikulum Bangkit menawarkan 3 jalur pembelajaran interdisipliner - pembelajaran mesin, pengembangan seluler, dan komputasi awan. Di akhir program ini, Anda akan dibekali dengan keahlian teknologi, soft skill, dan kecakapan bahasa Inggris yang Anda perlukan untuk berpindah dari akademisi ke tempat kerja dan sukses di perusahaan terkemuka. <br>
+                <br>
+                Saya termasuk kedalam machine learning path, dan belajar mengenai : <br>
+                1. Python programming <br>
+                2. Mathematics for Machine Learning <br>
+                3. Supervised Learning <br>
+                4. Unsupervised Learning <br>
+                5. Artificial Intelligence <br>
+                6. Neuro Linguistic ProgrammingBangkit dirancang untuk mempersiapkan siswa dengan keterampilan yang dibutuhkan dan sertifikasi teknologi, kurikulum Bangkit menawarkan 3 jalur pembelajaran interdisipliner - pembelajaran mesin, pengembangan seluler, dan komputasi awan. Di akhir program ini, Anda akan dibekali dengan keahlian teknologi, soft skill, dan kecakapan bahasa Inggris yang Anda perlukan untuk berpindah dari akademisi ke tempat kerja dan sukses di perusahaan terkemuka. Saya termasuk kedalam machine learning path, dan belajar mengenai : 1. Python programming 2. Mathematics for Machine Learning 3. Supervised Learning 4. Unsupervised Learning 5. Artificial Intelligence 6. Neuro Linguistic Programming <br> <br>
+                Skills: Artificial Intelligence (AI) · Machine Learning · Data Science · Python (Programming Language) <br>
+                My Bangkit Certificate : <a href="/profile.html#certificates" class="badge bg-danger">Check Here</a>
+              </div>
             </div>
           </div>
         </div>
@@ -407,7 +443,7 @@
       </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="certificates">
       <h2>License Certificate</h2>
       <div class="row" x-data="certificates">
         <template x-for="cert in certs">
