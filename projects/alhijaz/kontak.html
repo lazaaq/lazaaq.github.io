@@ -110,51 +110,85 @@
 
         <!-- CONTENT -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-
-        <div class="mt-5" style="margin-bottom: 5rem">
-            <div class="container">
-                <div class="mb-3">
-                    <a href="informasi.html" class="text-decoration-none text-dark">
-                        <i class="bi bi-arrow-left me-2"></i>
-                        Halaman Informasi
-                    </a>
+        <div class="text-light d-flex align-items-center justify-content-center" style="height: 90vh; background: url('asset/background/hero-75.png'); background-repeat: no-repeat; background-size: cover; display: flex; flex-direction: column;" id="hero">
+            <div class="container text-center" style="margin-top: auto">
+                <div class="lead d-flex align-items-center justify-content-center" style="font-weight: 800; font-size: 3vw;">
+                    <div style="height: 10vh; width: 10px; background-color: orange;" id="line"></div>
+                    <div class="mx-3" id="title">Kontak Kami</div>
+                    <div style="height: 10vh; width: 10px; background-color: orange;" id="line"></div>
                 </div>
-                <div class="lead text-center mt-3 mb-4" style="font-weight: 700; font-size: 28px;">
-                    Judul Artikel
-                </div>
-                <div class="row" id="wrap">
-                    <div class="col col-12 text-center mb-3" id="wrapthumb">
-                        <img src="asset/placeholder.jpg" style="max-width: 60%; height: auto;" class="rounded">
-                    </div>
-                    <div class="col col-12" style="text-align: justify; text-indent: 50px" id="body">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, molestias! Quia, assumenda laboriosam debitis natus dicta ipsa? Esse perferendis sunt quas nobis facilis qui, aliquam, commodi quia ducimus quidem dolores exercitationem autem amet a quam? Consequuntur illo quo voluptas laboriosam minima corporis quasi provident ducimus eius rerum nulla assumenda error voluptate sit quis, magni quae, adipisci, dignissimos aliquid ratione ipsum maxime doloremque vero ad! Eligendi magnam officiis, ipsum dolores nisi vel obcaecati sapiente ab esse eos placeat quisquam omnis suscipit, tenetur, dolor laboriosam perferendis officia doloremque nobis voluptates blanditiis nam. Incidunt, iusto obcaecati architecto odio quibusdam eos animi quia mollitia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat officia ullam dolor. In tempora accusamus velit omnis a libero alias quae beatae quos temporibus delectus provident, repellat veritatis perferendis, porro ipsa voluptate. Consequatur illum maxime odit nam impedit nostrum fugit dolorem? Ut a error distinctio odio possimus excepturi laborum exercitationem blanditiis, accusamus facere sed voluptatem ullam hic nam consequuntur ex iure aut labore obcaecati quo quos quam? Doloribus provident, distinctio hic iste tempore impedit illo mollitia deserunt temporibus, animi magni exercitationem, rerum velit ipsum perferendis quod odio nobis! Dolore, doloribus esse. Consequatur sit fugit, iste blanditiis nisi reprehenderit aliquid quidem!
-                    </div>
-                    <div class="col col-12 mt-2" style="text-align: justify; text-indent: 50px" id="body">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, molestias! Quia, assumenda laboriosam debitis natus dicta ipsa? Esse perferendis sunt quas nobis facilis qui, aliquam, commodi quia ducimus quidem dolores exercitationem autem amet a quam? Consequuntur illo quo voluptas laboriosam minima corporis quasi provident ducimus eius rerum nulla assumenda error voluptate sit quis, magni quae, adipisci, dignissimos aliquid ratione ipsum maxime doloremque vero ad! Eligendi magnam officiis, ipsum dolores nisi vel obcaecati sapiente ab esse eos placeat quisquam omnis suscipit, tenetur, dolor laboriosam perferendis officia doloremque.
-                    </div>
+                <div class="mt-3" id="desc">
+                    Halaman ini berisi kontak untuk menghubungi kami, Alhijaz Indowisata Tegal.
                 </div>
             </div>
+            <div class="mb-3 text-center" style="margin-top: auto;">
+                <a href="#contact" class="text-decoration-none text-light">
+                    <div>Lihat Kontak</div>
+                    <i class="bi bi-arrow-bar-down text-light"></i>
+                </a>
+            </div>
         </div>
-
+        <div class="container" id="contact" style="padding-top: 5rem; padding-bottom: 3rem">
+            <h3 style="font-weight: 700; color: orange;">Semua Kontak</h3>
+            <table class="table table-striped">
+                <tr>
+                    <th>Nama Kontak</th>
+                    <th>Kontak</th>
+                    <th>Link Kontak</th>
+                </tr>
+                <tr>
+                    <td>Nomor Whatsapp</td>
+                    <td>6287738129949</td>
+                    <td><a href="https://wa.me/6287738129949" class="badge bg-info">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td>alhijaztegalofficial</td>
+                    <td><a href="https://instagram.com/alhijaztegalofficial" class="badge bg-info">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>alhijaztegal@gmail.com</td>
+                    <td><a href="mailto:alhijaztegal@gmail.com" class="badge bg-info">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td>Alhijaz Tgl</td>
+                    <td><a href="https://www.facebook.com/people/Alhijaz-Tgl/100089188717923/" class="badge bg-info">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Lokasi Google Map</td>
+                    <td>Lebaksiu</td>
+                    <td><a href="https://goo.gl/maps/HHszsGsQunpw4DLZA" class="badge bg-info">Link</a></td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
         <style>
             body {
                 background: none!important;
             }
-            @media screen and (max-width: 768px) {
-                #wrap {
-                    display: block!important;
+            @media screen and (max-width: 1200px) {
+                #hero #line {
+                    height: 7vh!important;
                 }
-                #wrap #wrapthumb {
-                    width: 100%!important;
+                #hero #title {
+                    font-size: 7vh!important;
                 }
-                #wrap #body {
-                    width: 100%!important;
-                    margin-top: 1rem;
+            }
+            @media screen and (max-width: 576px) {
+                #hero #title {
+                    font-size: 5vh;
+                }
+                #hero #desc {
+                    font-size: 2.5vh;
+                }
+                #hero #lihatsearch {
+                    font-size: 2vh;
                 }
             }
         </style>
-
-<!-- END CONTENT -->
+        <!-- END CONTENT -->
 
         <!-- FOOTER -->
         <footer class="bg-dark text-light">
@@ -207,6 +241,7 @@
                 </div>
             </div>
         </footer>
+        <!-- FOOTER -->
         
         <style>
             @media screen and (max-width: 576px) {
@@ -215,7 +250,6 @@
                 }
             }
         </style>
-        <!-- END FOOTER -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="asset/js/scripts.js"></script>
