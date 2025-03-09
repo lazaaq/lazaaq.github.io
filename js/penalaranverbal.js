@@ -1,96 +1,90 @@
 let soals = [];
-let skor = 0;
-let currentIndex = 0;
-const pilihan = ["A", "B", "C", "D", "E"];
+let currentQuestion = 0;
+let score = 0;
+let selectedOption = null;
 
+// Fungsi untuk mengacak array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Fungsi untuk memuat soal dari file JSON
 async function loadSoal() {
-    const response = await fetch('../json/soal_sinonim.json');
-    soals = await response.json();
-
-    // Randomisasi urutan soal
-    soals = soals.sort(() => Math.random() - 0.5);
+    try {
+        const response = await fetch('../json/soal_sinonim.json');  // Load dari file soal.json
+        soals = await response.json();
+        shuffle(soals);  // Acak urutan soal
+        loadQuestion();   // Tampilkan soal pertama
+    } catch (error) {
+        console.error("Gagal memuat soal:", error);
+    }
 }
 
-function startQuiz() {
-    skor = 0;
-    currentIndex = 0;
-    document.getElementById('result').innerHTML = '';
-    tampilkanSoal();
+// Fungsi untuk menampilkan soal
+function loadQuestion() {
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const soal = soals[currentQuestion];
+
+    questionEl.textContent = soal.soal;
+    optionsEl.innerHTML = '';
+
+    soal.jawaban.forEach((jawaban, index) => {
+        const option = document.createElement('div');
+        option.textContent = `${String.fromCharCode(65 + index)}. ${jawaban}`;
+        option.className = 'option';
+        option.onclick = () => selectOption(option, index + 1);
+        optionsEl.appendChild(option);
+    });
 }
 
-function tampilkanSoal() {
-    const quizContainer = document.getElementById('quiz-container');
-    quizContainer.innerHTML = '';
+// Fungsi untuk memilih jawaban
+function selectOption(option, index) {
+    const allOptions = document.querySelectorAll('.option');
+    allOptions.forEach(opt => opt.classList.remove('selected'));
+    option.classList.add('selected');
+    selectedOption = index;
+}
 
-    if (currentIndex < soals.length) {
-        const soal = soals[currentIndex];
-        const questionElement = document.createElement('div');
-        questionElement.className = 'question';
-        questionElement.innerHTML = `<strong>SOAL:</strong> ${soal.soal}`;
+// Fungsi untuk soal selanjutnya
+function nextQuestion() {
+    if (selectedOption === null) return;
 
-        const optionsElement = document.createElement('div');
-        optionsElement.className = 'options';
+    const correctAnswer = soals[currentQuestion].kunci;
+    if (selectedOption === correctAnswer) {
+        score++;
+    }
 
-        soal.jawaban.forEach((jawaban, index) => {
-            const optionElement = document.createElement('div');
-            optionElement.className = 'option';
-            optionElement.innerHTML = `
-                <label>
-                    <input type="radio" name="jawaban" value="${index}">
-                    ${pilihan[index]}. ${jawaban}
-                </label>`;
-            optionsElement.appendChild(optionElement);
-        });
+    currentQuestion++;
+    selectedOption = null;
 
-        quizContainer.appendChild(questionElement);
-        quizContainer.appendChild(optionsElement);
-
-        const submitButton = document.createElement('button');
-        submitButton.textContent = 'Jawab';
-        submitButton.onclick = periksaJawaban;
-        quizContainer.appendChild(submitButton);
+    if (currentQuestion < soals.length) {
+        loadQuestion();
     } else {
-        tampilkanHasil();
+        showResult();
     }
 }
 
-function periksaJawaban() {
-    const selectedOption = document.querySelector('input[name="jawaban"]:checked');
-    if (!selectedOption) {
-        alert('Silakan pilih jawaban!');
-        return;
-    }
-
-    const jawabanUser = parseInt(selectedOption.value);
-    const soal = soals[currentIndex];
-    const kunciJawaban = soal.kunci - 1;
-
-    if (jawabanUser === kunciJawaban) {
-        skor += 1;
-        tampilkanFeedback(true, kunciJawaban);
-    } else {
-        tampilkanFeedback(false, kunciJawaban);
-    }
+// Fungsi untuk menampilkan hasil
+function showResult() {
+    document.getElementById('quiz-container').classList.add('hidden');
+    document.getElementById('result').classList.remove('hidden');
+    document.getElementById('score').textContent = `Skor Anda: ${score} dari ${soals.length}`;
 }
 
-function tampilkanFeedback(isCorrect, kunciJawaban) {
-    const feedback = document.createElement('div');
-    feedback.className = 'result';
-    if (isCorrect) {
-        feedback.innerHTML = `<span class="correct">Jawaban benar! Skor Anda: ${skor}</span>`;
-    } else {
-        feedback.innerHTML = `<span class="wrong">Jawaban salah! Skor Anda: ${skor}. Jawaban yang benar: ${pilihan[kunciJawaban]}.</span>`;
-    }
-    document.getElementById('quiz-container').appendChild(feedback);
-
-    currentIndex++;
-    setTimeout(tampilkanSoal, 1500);
+// Fungsi untuk mengulang kuis
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    selectedOption = null;
+    shuffle(soals);
+    loadQuestion();
+    document.getElementById('quiz-container').classList.remove('hidden');
+    document.getElementById('result').classList.add('hidden');
 }
 
-function tampilkanHasil() {
-    const resultContainer = document.getElementById('result');
-    resultContainer.innerHTML = `<h3>Latihan Selesai!</h3><p>Skor Akhir Anda: ${skor} dari ${soals.length}</p>`;
-}
-
-// Load soal saat halaman pertama kali dibuka
+// Panggil fungsi untuk memuat soal saat halaman dimuat
 loadSoal();

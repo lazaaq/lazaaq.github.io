@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Latihan Soal Sinonim</title>
-<style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .question { margin-bottom: 20px; }
-    .options { margin-left: 20px; }
-    .option { margin-bottom: 5px; }
-    .result { margin-top: 20px; font-weight: bold; }
-    .correct { color: green; }
-    .wrong { color: red; }
-</style>
+<link rel="stylesheet" href="css/penalaranverbal.css">
 </head>
 
 <body>
-
-<h2>Latihan Soal Sinonim</h2>
-<div id="quiz-container"></div>
-<button onclick="startQuiz()">Mulai Latihan</button>
-<div id="result"></div>
+<div class="container">
+    <h1>Latihan Soal Sinonim</h1>
+    <div id="quiz-container">
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-btn" onclick="nextQuestion()">Lanjut</button>
+    </div>
+    <div id="result" class="hidden">
+        <h2>Hasil</h2>
+        <p id="score"></p>
+        <button onclick="restartQuiz()">Coba Lagi</button>
+    </div>
+</div>
 
 <script src="js/penalaranverbal.js"></script>
 </body>
