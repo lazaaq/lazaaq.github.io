@@ -1,0 +1,12 @@
+[
+    {
+        "soal": "Mistifikasi",
+        "jawaban": ["Pengeboran", "Perlubangan", "Pengampunan", "Pengecohan", "Perlambangan"],
+        "kunci": 4
+    },
+    {
+        "soal": "Legalitas",
+        "jawaban": ["Keabsahan", "Masalah Hukum", "Tanda Setuju", "Tidak Sah", "Persetujuan"],
+        "kunci": 1
+    }
+]
