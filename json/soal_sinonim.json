@@ -8,5 +8,60 @@
         "soal": "Legalitas",
         "jawaban": ["Keabsahan", "Masalah Hukum", "Tanda Setuju", "Tidak Sah", "Persetujuan"],
         "kunci": 1
+    },
+    {
+        "soal": "TANTRUM =",
+        "jawaban": [
+            "KERINDUAN",
+            "KESENANGAN",
+            "KEMARAHAN",
+            "KESABARAN",
+            "DENDAM"
+        ],
+        "kunci": 3
+    },
+    {
+        "soal": "KOMBATAN =",
+        "jawaban": [
+            "SENJATA",
+            "PETEMPUR",
+            "PETINJU",
+            "PEMARAH",
+            "LUCUTAN"
+        ],
+        "kunci": 2
+    },
+    {
+        "soal": "YIN =",
+        "jawaban": [
+            "TEMPERAMENTAL",
+            "EMOSI",
+            "AKTIF",
+            "NEGATIF",
+            "POSITIF"
+        ],
+        "kunci": 4
+    },
+    {
+        "soal": "YUVENIL =",
+        "jawaban": [
+            "REMAJA",
+            "DEWASA",
+            "TUA",
+            "MUDA",
+            "ANAK-ANAK"
+        ],
+        "kunci": 4
+    },
+    {
+        "soal": "OKULIS =",
+        "jawaban": [
+            "DOKTER MATA",
+            "BUTA HATI",
+            "BUTA MATA",
+            "KACAMATA",
+            "DOKTER GIGI"
+        ],
+        "kunci": 1
     }
 ]
