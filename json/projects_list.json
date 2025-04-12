@@ -1,0 +1,398 @@
+<tr>
+              <td>KOFEE (Machine Learning)</td>
+              <td class="d-none d-sm-table-cell h-100">31 Oct 2024</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-green4">Django</span><span class="badge bg-bloodred ms-1">ML</span><span class="badge bg-info ms-1">CNN</span></td>
+              <td>8/10</td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#kofee">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="projects/kofee/" target="_blank">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Alhijaz (Platform Haji)</td>
+              <td class="d-none d-sm-table-cell h-100">10 Jan 2022</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td>5/10</td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#alhijaz">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="projects/alhijaz/" target="_blank">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Teramina (Shrimp Feed Calculator)</td>
+              <td class="d-none d-sm-table-cell h-100">12 Apr 2023</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-green3">VueJS</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#teramina">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="">
+                  <button type="button" class="badge border-0 bg-success" data-bs-toggle="modal" data-bs-target="#teramina-site">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>1</td> -->
+              <td>Hospital Health and Safety System</td>
+              <td class="d-none d-sm-table-cell h-100">04 Nov 2021</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#k3rs">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-dark d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>2</td> -->
+              <td>Company Profile - High School</td>
+              <td class="d-none d-sm-table-cell h-100">Dec 2021</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#smaitlh">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-dark d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>3</td> -->
+              <td>New School Student Acceptance System</td>
+              <td class="d-none d-sm-table-cell h-100">Dec 2021</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#ppdbsmaitlh">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-dark d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>4</td> -->
+              <td>Social Media Articles - Postify</td>
+              <td class="d-none d-sm-table-cell h-100">10 Dec 2020</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#postify">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-dark d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>5</td> -->
+              <td>Semester Learning Program and Activity Plan - University</td>
+              <td class="d-none d-sm-table-cell h-100">24 June 2022</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#rpkps">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-dark d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>6</td> -->
+              <td>Cashier Management System</td>
+              <td class="d-none d-sm-table-cell h-100">12 Agustus 2022</td>
+              <td>Web Application</td>
+              <td>
+                <span class="badge bg-danger">Laravel</span>
+                <span class="badge bg-green3">Vue JS</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#onegapos">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <button type="button" class="badge border-0 bg-success" data-bs-toggle="modal" data-bs-target="#onegapossite">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>7</td> -->
+              <td>School Alumni Database</td>
+              <td class="d-none d-sm-table-cell h-100">Dec 2020</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-primary">PHP</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#iaicp">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>8</td> -->
+              <td>Twitter API application</td>
+              <td class="d-none d-sm-table-cell h-100">28 Maret 2022</td>
+              <td>Web Application</td>
+              <td><span class="badge bg-danger">Laravel</span></td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#twtapi">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="#">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>9</td> -->
+              <td>Web E-Commerce - Dekornata</td>
+              <td class="d-none d-sm-table-cell h-100">Juni 2022</td>
+              <td>Web Application</td>
+              <td>
+                <span class="badge bg-green">Node JS</span>
+                <span class="badge bg-green3 me-1">Vue JS</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#dekornata">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://www.dekornata.com" target="_blank">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>10</td> -->
+              <td>Landing Page Spare Part - Sigma Hartek</td>
+              <td class="d-none d-sm-table-cell h-100">14 Jan 2022</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+                <span class="badge bg-warning">Javascript</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#sigmahartek">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/sigma/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>11</td> -->
+              <td>Landing Page Forklift - Karuniamas</td>
+              <td class="d-none d-sm-table-cell h-100">6 Dec 2021</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+                <span class="badge bg-warning">Javascript</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#karuniamas">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/forklift/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>16</td> -->
+              <td>Landing Page Homestay - Buana Living</td>
+              <td class="d-none d-sm-table-cell h-100">8 Feb 2022</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+                <span class="badge bg-warning">Javascript</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#buanaliving">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/buana/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>12</td> -->
+              <td>Landing Page - Kelapa Indonesia</td>
+              <td class="d-none d-sm-table-cell h-100">15 Dec 2021</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+                <span class="badge bg-warning">Javascript</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#kelapaindonesia">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/kelapa/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>13</td> -->
+              <td>Landing Page Restaurant - Expice</td>
+              <td class="d-none d-sm-table-cell h-100">21 Okt 2021</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#expice">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/restaurant/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>14</td> -->
+              <td>Landing Page Online Store - Livelihood</td>
+              <td class="d-none d-sm-table-cell h-100">27 Nov 2021</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#livelihood">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/livelihood/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td>15</td> -->
+              <td>Landing Page Online Store - Erigo</td>
+              <td class="d-none d-sm-table-cell h-100">29 Juli 2021</td>
+              <td>Website</td>
+              <td>
+                <span class="badge bg-orange">HTML</span>
+                <span class="badge bg-lightblue2">CSS</span>
+                <span class="badge bg-purple">Bootstrap</span>
+              </td>
+              <td class="text-center">
+                <button type="button" class="badge border-0 bg-info" data-bs-toggle="modal" data-bs-target="#erigo">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <div class="mt-1">
+                  <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" href="https://lazaaq.github.io/projects/livelihood/index.html">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
