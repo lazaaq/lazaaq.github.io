@@ -8,11 +8,13 @@
       "CNN": "bg-info",
       "VueJS": "bg-green3",
       "PHP": "bg-lightblue3",
-      "Node JS": "bg-lightblue3",
+      "NodeJS": "bg-lightblue3",
       "HTML": "bg-orange",
       "CSS": "bg-lightblue2",
       "Bootstrap": "bg-purple",
-      "Javascript": "bg-warning"
+      "Javascript": "bg-warning",
+      "Flutter": "bg-lightblue2",
+      "Python": "bg-lightblue2"
     },
     "projects": [
       {
@@ -110,7 +112,7 @@
         "name": "ONEGAPOS (Cashier Management System)",
         "last_update": "12 Aug 2022",
         "type": "Web Application",
-        "stack": ["Laravel", "Vue JS"],
+        "stack": ["Laravel", "VueJS"],
         "difficulty": 5,
         "description": "Onegapos is a web-based cashier management system designed to streamline the sales and inventory management processes for businesses. The application provides features such as point-of-sale transactions, inventory tracking, sales reporting, and customer management. With its user-friendly interface and robust functionality, Onegapos empowers businesses to enhance their operational efficiency and improve customer service.",
         "url": "#"
@@ -140,7 +142,7 @@
         "name": "DEKORNATA (Web E-Commerce)",
         "last_update": "Juni 2022",
         "type": "Web Application",
-        "stack": ["Node JS", "Vue JS"],
+        "stack": ["NodeJS", "VueJS"],
         "difficulty": 5,
         "description": "Dekornata is a web-based e-commerce platform designed to facilitate online shopping for customers. The application provides features such as product catalog, shopping cart, order management, and payment processing. With its responsive design and user-friendly interface, Dekornata enhances the online shopping experience while empowering businesses to reach a wider audience.",
         "url": "https://www.dekornata.com"

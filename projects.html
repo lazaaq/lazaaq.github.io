@@ -116,7 +116,7 @@
                   <td>Web Application</td>
                   <td>
                     <template x-for="(tech, j) in project.stack" :key="j">
-                      <span class="badge me-1 bg-danger" :class="stackcolor[tech] ?? 'bg-secondary'" x-text="tech"></span>
+                      <span class="badge me-1" :class="stackcolor[tech.trim()] ? stackcolor[tech.trim()] : 'bg-secondary'" x-text="tech"></span>
                     </template>
                   </td>
                   <td><span x-text="project.difficulty"></span>/10</td>
@@ -147,7 +147,7 @@
                       <div class="d-flex mb-3">
                         <span class="me-1"><b>Stack : </b></span>
                         <template x-for="(tech, j) in project.stack" :key="j">
-                          <span class="badge me-1 bg-danger" :class="stackcolor[tech] ?? 'bg-secondary'" x-text="tech"></span>
+                          <span class="badge me-1" :class="stackcolor[tech.trim()] ? stackcolor[tech.trim()] : 'bg-secondary'" x-text="tech"></span>
                         </template>
                       </div>
                     </div>
@@ -195,6 +195,7 @@
       function loadProjects() {
         return {
           projects: [],
+          stackcolor: {},
           sortColumn: '',
           sortDirection: 'asc',
 
@@ -204,6 +205,7 @@
               const res = await fetch('./json/projects_list.json');
               const json = await res.json();
               this.projects = json.projects;
+              this.stackcolor = json.stackcolor;
               console.log(this.projects);
             } catch (e) {
               console.error('Failed to load JSON:', e);
