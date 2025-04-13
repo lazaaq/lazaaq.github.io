@@ -113,7 +113,7 @@
                 <tr>
                   <td><span x-text="project.name"></span></td>
                   <td class="d-none d-sm-table-cell h-100"><span x-text="project.last_update"></span></td>
-                  <td>Web Application</td>
+                  <td><span x-text="project.type"></span></td>
                   <td>
                     <template x-for="(tech, j) in project.stack" :key="j">
                       <span class="badge me-1" :class="stackcolor[tech.trim()] ? stackcolor[tech.trim()] : 'bg-secondary'" x-text="tech"></span>
