@@ -108,7 +108,7 @@
       {
         "id": "onegapos",
         "name": "ONEGAPOS (Cashier Management System)",
-        "last_update": "12 Agustus 2022",
+        "last_update": "12 Aug 2022",
         "type": "Web Application",
         "stack": ["Laravel", "Vue JS"],
         "difficulty": 5,
@@ -188,7 +188,7 @@
       {
         "id": "expice",
         "name": "EXPICE (Landing Page Restaurant)",
-        "last_update": "21 Okt 2021",
+        "last_update": "21 Oct 2021",
         "type": "Website",
         "stack": ["HTML", "CSS", "Bootstrap"],
         "difficulty": 5,
@@ -238,7 +238,7 @@
       {
         "id": "miniproject",
         "name": "MINI PROJECTS (CLI Application)",
-        "last_update": "31 Mei 2021",
+        "last_update": "31 May 2021",
         "type": "CLI Application",
         "stack": ["Python"],
         "difficulty": 5,
