@@ -73,625 +73,53 @@
     </style>
 
     <section class="body" style="height: fit-content; padding: 5rem 10rem;">
-      <div class="container">
-        <h2 class="text-center mb-5" id="backend">BACKEND WEB DEVELOPER</h2>
-        <div class="row justify-content-sm-center justify-content-evenly">
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/nodejs.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">NODE JS</div>
-                  <div class="text-center deskripsi-role">Backend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#nodejs">
-                      Experience
-                    </button>
+      <div class="container" x-data="loadProjects()" x-init="fetchProjects()">
+        <template x-for="(skills, i) in Object.values(skills_filter)" :key="i">
+          <div class="mb-5">
+            <h2 class="text-center mb-4" :id="skills.type" x-text="skills.title"></h2>
+            <div class="row justify-content-sm-center justify-content-evenly">
+              <template x-for="(skill, j) in skills.projects" :key="j">
+                <div class="col col-6 col-sm-4 col-lg-3 col-xxl-2 mb-3">
+                  <div class="card w-100 h-100">
+                    <div class="card-body d-flex">
+                      <div class="image text-center d-none d-sm-flex justify-content-center align-items-center">
+                        <img class="rounded w-100" :src="skill.src" alt="">
+                      </div>
+                      <div class="deskripsi ms-2 w-100 d-flex align-items-center">
+                        <div>
+                          <div class="deskripsi-text text-center text-sm-start">
+                            <span x-text="skill.name"></span>
+                          </div>
+                          <div class="mt-1 text-center text-sm-start">
+                            <button type="button" class="btn btn-outline-info btn-sm"
+                              data-bs-toggle="modal"
+                              :data-bs-target="'#' + skill.name.toLowerCase().replace(/\s+/g, '')">
+                              Experience
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </template>
             </div>
           </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/adonis-js.svg" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">ADONIS JS</div>
-                  <div class="text-center deskripsi-role">Backend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#adonisjs">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/fastify.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">FASTIFY JS</div>
-                  <div class="text-center deskripsi-role">Backend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#fastifyjs">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/express.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">EXPRESS JS</div>
-                  <div class="text-center deskripsi-role">Backend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#expressjs">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/php.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">PHP</div>
-                  <div class="text-center deskripsi-role">Backend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#php">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/laravel.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">LARAVEL</div>
-                  <div class="text-center deskripsi-role">Backend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#laravel">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h2 class="text-center mb-5" id="frontend" style="margin-top: 8rem;">FRONTEND WEB DEVELOPER</h2>
-        <div class="row justify-content-center">
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/vuejs.svg" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">VUE JS</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#vuejs">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/alpine.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">ALPINE JS</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#alpinejs">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/tailwindcss.svg" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">TAILWIND CSS</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#tailwindcss">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/bootstrap.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">BOOTSTRAP</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#bootstrap">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/javascript.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">JAVASCRIPT</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/html.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">HTML</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/css.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">CSS</div>
-                  <div class="text-center deskripsi-role">Frontend</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h2 class="text-center mb-5" id="database" style="margin-top: 8rem;">Database Stacks</h2>
-        <div class="row justify-content-center">
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/mysql.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">MYSQL</div>
-                  <div class="text-center deskripsi-role">SQL Database</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#mysql">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded mx-auto" src="assets/img/skills/postgresql.png" alt="" style="width: 70%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">POSTGRESQL</div>
-                  <div class="text-center deskripsi-role">SQL Database</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#postgresql">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/redis.png" alt="" style="width: 100%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">REDIS</div>
-                  <div class="text-center deskripsi-role">NoSQL Database</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#redis">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/influxdb.png" alt="" style="width: 100%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">INFLUX DB</div>
-                  <div class="text-center deskripsi-role">NoSQL Database</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#influxdb">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/mongodb.png" alt="" style="width: 100%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">MONGO DB</div>
-                  <div class="text-center deskripsi-role">NoSQL Database</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#mongodb">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Dev -->
-        <h2 class="text-center mb-5" id="mobile" style="margin-top: 8rem;">MOBILE DEVELOPER</h2>
-        <div class="row justify-content-center">
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/flutter.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">FLUTTER</div>
-                  <div class="text-center deskripsi-role">Android + iOS</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#flutter">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/java.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">NATIVE JAVA</div>
-                  <div class="text-center deskripsi-role">Android</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#nativejava">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Machine Learning -->
-        <h2 class="text-center mb-5" id="ml" style="margin-top: 8rem;">MACHINE LEARNING</h2>
-        <div class="row justify-content-center">
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/tensorflow.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">TENSORFLOW</div>
-                  <div class="text-center deskripsi-role">Open source Machine Learning Platform</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#tensorflow">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/python.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">PYTHON</div>
-                  <div class="text-center deskripsi-role">Programming Language</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#python">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- TOOLS -->
-        <h2 class="text-center mb-5" id="tools" style="margin-top: 8rem;">TOOLS</h2>
-        <div class="row justify-content-center">
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/git.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">GIT</div>
-                  <div class="text-center deskripsi-role">Version Control System</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/github.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">GITHUB</div>
-                  <div class="text-center deskripsi-role">Cloud Version Control System</div>
-                  <div class="text-center mt-2">
-                    <a href="https://github.com/lazaaq" class="btn btn-outline-info btn-sm">
-                      Check my Github
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/gitlab.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">GITLAB</div>
-                  <div class="text-center deskripsi-role">Cloud Version Control System</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/vscode.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">VSCODE</div>
-                  <div class="text-center deskripsi-role">Text Editor</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/android-studio.jpg" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">ANDROID STUDIO</div>
-                  <div class="text-center deskripsi-role">IDE</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/heroku.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">HEROKU</div>
-                  <div class="text-center deskripsi-role">Hosting Platform</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/figma.jpg" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">FIGMA</div>
-                  <div class="text-center deskripsi-role">Design + Prototyping</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/wordpress.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">Wordpress</div>
-                  <div class="text-center deskripsi-role">Website Builder</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/cpanel.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">CPanel</div>
-                  <div class="text-center deskripsi-role">Control Panel Hosting</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/colab.webp" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">GOOGLE COLAB</div>
-                  <div class="text-center deskripsi-role">Interactive Programming Platform</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#colab">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col col-6 col-sm-4 col-lg-3 mb-3">
-            <div class="card w-100 h-100">
-              <div class="card-body">
-                <div class="image text-center">
-                  <img class="rounded" src="assets/img/skills/jupyter.png" alt="" width="85%">
-                </div>
-                <div class="deskripsi">
-                  <div class="text-center deskripsi-text">JUPYTER NOTEBOOK</div>
-                  <div class="text-center deskripsi-role">Interactive Programming Platform</div>
-                  <div class="text-center mt-2">
-                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#jupyter">
-                      Experience
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
+        </template>
       </div>
     </section>
     <style>
       .card-body .image {
-        width: 10vw;
-        height: 25vh;
-        margin-left: auto;
-        margin-right: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
       .card-body img {
-        width: 100%;
+        width: auto;
         height: auto;
       }
       .card-body .deskripsi .deskripsi-text {
         font-weight: 700;
-        font-size: 2vw;
-      }
-      @media only screen and (max-width: 1200px) {
-        .card-body .image {
-          width: 10vw;
-          height: 18vh;
-        }
-      }
-      @media only screen and (max-width: 992px) {
-        .card-body .image {
-          width: 13vw;
-          height: 20vh;
-        }
-      }
-      @media only screen and (max-width: 862px) {
-        .card-body {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-body .image {
-          width: 100%;
-          height: 80%;
-        }
-        .card-body .deskripsi {
-          margin-top: auto;
-        }
-      }
-      @media only screen and (max-width: 576px) {
-        .card-body .deskripsi .deskripsi-text {
-          font-size: 1vw!important;
-        }
-        .card-body .deskripsi .deskripsi-role {
-          font-size: 0.6vw!important;
-        }
       }
     </style>
     <!-- Modal -->
@@ -1119,5 +547,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <!-- ALPINE JS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      function loadProjects() {
+        return {
+          projects: [],
+          skills: {},
+          skills_filter: {
+            "language": {
+              title: "LANGUAGE PROGRAMMING SKILLS",
+              type: "language",
+              projects: [],
+            },
+            "backend": {
+              title: "BACKEND WEB DEVELOPER SKILLS",
+              type: "backend",
+              projects: [],
+            },
+            "frontend": {
+              title: "FRONTEND WEB DEVELOPER SKILLS",
+              type: "frontend",
+              projects: [],
+            },
+            "database": {
+              title: "DATABASE SKILLS",
+              type: "database",
+              projects: [],
+            },
+            "devops": {
+              title: "DEVOPS SKILLS",
+              type: "devops",
+              projects: [],
+            },
+            "mobile": {
+              title: "MOBILE DEVELOPER SKILLS",
+              type: "mobile",
+              projects: [],
+            },
+            "others": {
+              title: "OTHER SKILLS",
+              type: "others",
+              projects: [],
+            },
+          },
+           
+
+          async filterSkills() {
+            try {
+              const allSkills = Object.values(this.skills);
+              console.log(allSkills)
+              allSkills.forEach((skill) => {
+                const types = skill.type;
+                types.forEach((type) => {
+                  if (this.skills_filter[type]) {
+                    this.skills_filter[type].projects.push(skill);
+                  }
+                });
+              });
+              console.log(this.skills_filter);
+            } catch (e) {
+              console.error("Failed to load skills:", e);
+            }
+          },
+
+          async fetchProjects() {
+            try {
+              const projects_list = await fetch('./json/projects_list.json');
+              const skills_list = await fetch('./json/skills_list.json');
+              this.projects = await projects_list.json();
+              this.skills = json = await skills_list.json();
+              this.filterSkills();
+            } catch (e) {
+              console.error('Failed to load JSON:', e);
+            }
+          }
+        }
+      }
+    </script>
   </body>
 </html>

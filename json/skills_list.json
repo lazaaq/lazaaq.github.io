@@ -1,0 +1,219 @@
+{
+    "laravel": { 
+      "name": "Laravel",
+      "color": "bg-danger",
+      "experience": ["Using Laravel since 2021", "Create Laravel Fullstack Application from Scratch", "Create Laravel Backend API from Scratch", "Routing, Controller, Model, Migration, Seeder, Factory, Middleware, Blade Templating Engine, Localization, Mail, Task Scheduling, Authentication, Authorization", "Best Practice : DB Transaction, Eloquent ORM, File Storage, Helpers, Encryption, Mutators, Unit Testing", "DB : MySQL, PostgreSQL"],
+      "src": "assets/img/skills/laravel.png",
+      "type": ["backend"]
+    },
+    "php" : {
+      "name": "PHP",
+      "color": "bg-lightblue3",
+      "experience": ["Using PHP since 2020", "Create PHP project from scratch", "PHP Language : Variables, Conditions, Loops, Functions, Classes and Objects, Exceptions", "Web Develop : Working with MySQL, Authentication, Authorization, HTTP Request"],
+      "src": "assets/img/skills/php.png",
+      "type": ["backend", "language"]
+    },
+    "nodejs" : {
+      "name": "NodeJS",
+      "color": "bg-lightblue3",
+      "experience": ["Using Node JS since 2022", "Create Node JS Application from Scratch", "HTTP Request, Routing, Middleware, Controller, View Templating Engine, Model, API", "DB : MongoDB, MySQL"],
+      "src": "assets/img/skills/nodejs.png",
+      "type": ["backend"]
+    },
+    "fastifyjs" : {
+      "name": "FastifyJS",
+      "color": "bg-lightblue3",
+      "experience": ["Using Fastify JS since 2022", "Create Fastify JS Application from Scratch", "HTTP Request, Websocket, Controller, Service, Model, Middleware, Authentication, Authorization", "DB : MySQL, PostgreSQL, Redis, InfluxDB, MongoDB"],
+      "src": "assets/img/skills/fastify.png",
+      "type": ["backend"]
+    },
+    "expressjs" : {
+      "name": "ExpressJS",
+      "color": "bg-lightblue3",
+      "experience": ["Using Express JS since 2022", "Create Express JS Application from Scratch", "HTTP Request, Routing, Controller, Service, Model, Middleware, Authentication, Authorization", "DB : MongoDB, MySQL, PostgreSQL"],
+      "src": "assets/img/skills/express.png",
+      "type": ["backend"]
+    },
+    "django" : {
+      "name": "Django",
+      "color": "bg-green4",
+      "experience": ["Using Django since 2024", "Create Django Application from Scratch", "HTTP Request, Routing, Middleware, Controller, View Templating Engine, Model, API"],
+      "src": "assets/img/skills/django.png",
+      "type": ["backend"]
+    },
+    "vuejs" : {
+      "name": "VueJS",
+      "color": "bg-green3",
+      "experience": ["Using VueJS since 2022", "Create Application from Scratch Vue 3 CLI", "Components : Templating, Importing Module, Importing Component, Methods, Mounted Function, Created Function, Computed Variable, Data, Emit Function, Props", "Forms: Input Bindings, Search Item using Computed Variable", "Plugins : Working with JQuery, Working With API (Axios), Vuex (State, Mutations, Actions, Getters), Router"],
+      "src": "assets/img/skills/vuejs.png",
+      "type": ["frontend"]
+    },
+    "react" : {
+      "name": "React",
+      "color": "bg-primary",
+      "experience": ["Using React since 2023", "Create React Application from Scratch", "React Router, Redux, Axios, Hooks, Context API"],
+      "src": "assets/img/skills/react.png",
+      "type": ["frontend"]
+    },
+    "alpinejs": {
+      "name": "AlpineJS",
+      "color": "bg-primary",
+      "experience": ["Using AlpineJS since 2022", "Create AlpineJS Application from Scratch", "Create this website using AlpineJS", "AlpineJS : x-data, x-bind, x-show, x-if, x-for, x-model, x-on", "Create Application from Scratch Vue 3 CLI", "Data Binding", "Handle Forms", "Plugins : Working with JQuery, Working With API (Axios), Alpine Store, Alpine Data"],
+      "src": "assets/img/skills/alpine.png",
+      "type": ["frontend"]
+    },
+    "tailwindcss": {
+      "name": "Tailwind CSS",
+      "color": "bg-primary",
+      "experience": ["Using Tailwind CSS since 2023"],
+      "src": "assets/img/skills/tailwind.png",
+      "type": ["frontend"]
+    },
+    "bootstrap" : {
+      "name": "Bootstrap",
+      "color": "bg-purple",
+      "experience": ["Been using Bootstrap since 2020", "Layout : Breakpoints, Containers, Grid, Columns, Display, Alignment", "Content : Heading, Paragraph, List, Table, Image, Card", "Forms : Input Field, Button, Date, Time, Datetime, Radio, Checkbox, Select, File Input"],
+      "src": "assets/img/skills/bootstrap.png",
+      "type": ["frontend"]
+    },
+    "javascript" : {
+      "name": "Javascript",
+      "color": "bg-warning",
+      "experience": ["Been using Javascript since 2020", "Create Javascript Application from Scratch", "Javascript Language : Variables, Conditions, Loops, Functions, Classes and Objects, Exceptions", "Web Develop : Working with MySQL, Authentication, Authorization, HTTP Request", "using framwork like VueJS, React, AlpineJS, NextJS, ExpressJS, FastifyJS"],
+      "src": "assets/img/skills/javascript.png",
+      "type": ["frontend"]
+    },
+    "html" : {
+      "name": "HTML",
+      "color": "bg-orange",
+      "experience": ["Been using HTML since 2020", "Create HTML Application from Scratch", "HTML Language : Tags, Attributes, Forms, Input Field, Button, Date, Time, Datetime, Radio, Checkbox, Select, File Input"],
+      "src": "assets/img/skills/html.png",
+      "type": ["frontend"]
+    },
+    "css" : {
+      "name": "CSS",
+      "color": "bg-lightblue2",
+      "experience": ["Been using CSS since 2020", "Create CSS Application from Scratch", "CSS Language : Selectors, Properties, Values, Box Model, Flexbox, Grid Layout, Media Queries, Responsive Design", "CSS Framework : Bootstrap, Tailwind CSS"],
+      "src": "assets/img/skills/css.png",
+      "type": ["frontend"]
+    },
+    "mysql": {
+      "name": "MySQL",
+      "color": "bg-lightblue3",
+      "experience": ["Using MySQL since 2020", "Create MySQL Database, Table, View, Trigger, Function from Scratch", "MySQL Language : Select, Insert, Update, Delete, Join, Subquery, Aggregate Function, Group By, Order By", "DBMS : MySQL Workbench"],
+      "src": "assets/img/skills/mysql.png",
+      "type": ["database"]
+    },
+    "postgresql": {
+      "name": "PostgreSQL",
+      "color": "bg-lightblue3",
+      "experience": ["Using PostgreSQL since 2021", "Create PostgreSQL Database, Table, View, Trigger, Function from Scratch", "PostgreSQL Language : Select, Insert, Update, Delete, Join, Subquery, Aggregate Function, Group By, Order By", "DBMS : pgAdmin"],
+      "src": "assets/img/skills/postgresql.png",
+      "type": ["database"]
+    },
+    "redis": {
+      "name": "Redis",
+      "color": "bg-lightblue3",
+      "experience": ["Been using Redis under 1 year", "Redis Language : String, Hash, List, Set, Sorted Set, Pub/Sub, Transactions", "Websocket using Redis"],
+      "src": "assets/img/skills/redis.png",
+      "type": ["database"]
+    },
+    "influxdb": {
+      "name": "InfluxDB",
+      "color": "bg-lightblue3",
+      "experience": ["Been using InfluxDB under 1 year", "InfluxDB Language : Select, Insert, Update, Delete, Join, Subquery, Aggregate Function, Group By, Order By", "Websocket using InfluxDB"],
+      "src": "assets/img/skills/influxdb.png",
+      "type": ["database"]
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "color": "bg-lightblue3",
+      "experience": ["Been using MongoDB under 1 year", "MongoDB Language : Select, Insert, Update, Delete, Join, Subquery, Aggregate Function, Group By, Order By", "Websocket using MongoDB"],
+      "src": "assets/img/skills/mongodb.png",
+      "type": ["database"]
+    },
+    "tensorflow" : {
+      "name": "Tensorflow",
+      "color": "bg-orange",
+      "experience": ["Been using Tensorflow since 2023", "Create Tensorflow Application from Scratch", "Machine Learning", "Create model using Tensorflow", "Create model using Keras", "Create model using Scikit-Learn"],
+      "src": "assets/img/skills/tensorflow.png",
+      "type": ["others"]
+    },
+    "opencv" : {
+      "name": "OpenCV",
+      "color": "bg-orange",
+      "experience": ["Been using OpenCV since 2023", "Create OpenCV Application from Scratch", "Image Processing", "Image Classification", "Object Detection", "Face Recognition"],
+      "src": "assets/img/skills/opencv.png",
+      "type": ["others"]
+    },
+    "flutter" : {
+      "name": "Flutter",
+      "color": "bg-blue",
+      "experience": ["Been using Flutter for 1 year", "Create Flutter Application from Scratch", "Flutter Language : Dart, Widgets, State Management, HTTP Request, JSON Parsing, SQLite, Firebase"],
+      "src": "assets/img/skills/flutter.png",
+      "type": ["mobile"]
+    },
+    "java" : {
+      "name": "Java",
+      "color": "bg-lightblue",
+      "experience": ["Using Java since 2021", "Create Mobile Application from Scratch", "Create Desktop Application from Scratch", "Java Language : Variables, Conditions, Loops, Functions, Classes and Objects, Exceptions", "Web Develop : Working with MySQL, Authentication, Authorization, HTTP Request", "using framwork like Spring Boot"],
+      "src": "assets/img/skills/java.png",
+      "type": ["mobile", "language"]
+    },
+    "python" : {
+      "name": "Python",
+      "color": "bg-lightblue",
+      "experience": ["Been using Python since 2020", "Create Python Application from Scratch", "Python Language : Variables, Conditions, Loops, Functions, Classes and Objects, Exceptions", "Web Develop : Working with MySQL, Authentication, Authorization, HTTP Request", "using framwork like Django"],
+      "src": "assets/img/skills/python.png",
+      "type": ["language"]
+    },
+    "typescript" : {
+      "name": "Typescript",
+      "color": "bg-lightblue",
+      "experience": ["Been using Typescript for under 1 year", "Typescript Language : Variables, Conditions, Loops, Functions, Classes and Objects, Exceptions", "Web Develop : Working with ERP"],
+      "src": "assets/img/skills/typescript.svg",
+      "type": ["language"]
+    },
+    "git" : {
+      "name": "Git",
+      "color": "bg-lightblue",
+      "experience": ["Been using Git since 2021", "Git Language : Git Init, Git Add, Git Commit, Git Push, Git Pull, Git Branch, Git Merge", "Git Workflow : Feature Branch Workflow, Gitflow Workflow, Forking Workflow"],
+      "src": "assets/img/skills/git.png",
+      "type": ["devops"]
+    },
+    "github": {
+      "name": "GitHub",
+      "color": "bg-lightblue",
+      "experience": ["Been using GitHub since 2021", "GitHub Language : Git Init, Git Add, Git Commit, Git Push, Git Pull, Git Branch, Git Merge", "GitHub Workflow : Feature Branch Workflow, Gitflow Workflow, Forking Workflow"],
+      "src": "assets/img/skills/github.png",
+      "type": ["devops"]
+    },
+    "gitlab": {
+      "name": "GitLab",
+      "color": "bg-lightblue",
+      "experience": ["Been using GitLab since 2021", "GitLab Language : Git Init, Git Add, Git Commit, Git Push, Git Pull, Git Branch, Git Merge", "GitLab Workflow : Feature Branch Workflow, Gitflow Workflow, Forking Workflow"],
+      "src": "assets/img/skills/gitlab.png",
+      "type": ["devops"]
+    },
+    "docker": {
+      "name": "Docker",
+      "color": "bg-lightblue",
+      "experience": ["Been using Docker for under 1 year", "Docker Language : Dockerfile, Docker Compose, Docker CLI", "Docker Workflow : Build, Run, Push, Pull"],
+      "src": "assets/img/skills/docker.png",
+      "type": ["devops"]
+    },
+    "figma": {
+      "name": "Figma",
+      "color": "bg-lightblue",
+      "experience": ["Been using Figma for under 1 year", "Create Figma Design from Scratch", "Figma Language : Components, Prototyping, Design System, Plugins"],
+      "src": "assets/img/skills/figma.jpg",
+      "type": ["others"]
+    },
+    "wordpress": {
+      "name": "WordPress",
+      "color": "bg-lightblue",
+      "experience": ["Been using WordPress for under 1 year", "Create WordPress Website from Scratch", "WordPress Language : Theme, Plugin, Custom Post Type, Custom Taxonomy, Custom Field, ACF, Elementor"],
+      "src": "assets/img/skills/wordpress.png",
+      "type": ["others"]
+    }
+}

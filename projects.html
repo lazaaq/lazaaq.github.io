@@ -116,7 +116,7 @@
                   <td><span x-text="project.type"></span></td>
                   <td>
                     <template x-for="(tech, j) in project.stack" :key="j">
-                      <span class="badge me-1" :class="stackcolor[tech.trim()] ? stackcolor[tech.trim()] : 'bg-secondary'" x-text="tech"></span>
+                      <span class="badge me-1" :class="skills[tech].color ? skills[tech].color : 'bg-secondary'" x-text="skills[tech].name"></span>
                     </template>
                   </td>
                   <td><span x-text="project.difficulty"></span>/10</td>
@@ -147,7 +147,7 @@
                       <div class="d-flex mb-3">
                         <span class="me-1"><b>Stack : </b></span>
                         <template x-for="(tech, j) in project.stack" :key="j">
-                          <span class="badge me-1" :class="stackcolor[tech.trim()] ? stackcolor[tech.trim()] : 'bg-secondary'" x-text="tech"></span>
+                          <span class="badge me-1" :class="skills[tech].color ? skills[tech].color : 'bg-secondary'" x-text="skills[tech].name"></span>
                         </template>
                       </div>
                     </div>
@@ -195,21 +195,18 @@
       function loadProjects() {
         return {
           projects: [],
-          stackcolor: {},
+          skills: {},
           sortColumn: '',
           sortDirection: 'asc',
 
           async fetchProjects() {
-            console.log('tes')
             try {
-              const res = await fetch('./json/projects_list.json');
-              const json = await res.json();
-              this.projects = json.projects;
-              this.stackcolor = json.stackcolor;
-              console.log(this.projects);
+              const projects_list = await fetch('./json/projects_list.json');
+              const skills_list = await fetch('./json/skills_list.json');
+              this.projects = await projects_list.json()
+              this.skills = await skills_list.json();
             } catch (e) {
               console.error('Failed to load JSON:', e);
-              console.log('error')
             }
           },
 
