@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teramina</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App Preview Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .gallery {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .gallery h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .description {
+            text-align: center;
+            max-width: 100vw;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            margin: 0 auto 40px auto;
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .image-item {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .image-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .image-item:hover img {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="gallery">
+        <h1>Application Previews (TERAMINA)</h1>
+        <p class="description">
+            <b>TERAMINA (Shrimp Feed Calculator)</b>
+            Teramina is a web-based application designed to assist shrimp farmers in calculating the optimal feed composition for their shrimp farming operations. The application provides a user-friendly interface where farmers can input various parameters related to their shrimp farming conditions, such as water quality, shrimp species, and growth stage. Based on these inputs, Teramina generates precise recommendations for the ideal feed formulation, ensuring that farmers can maximize their shrimp yield while minimizing feed costs.
+        </p>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="home.png" alt="Preview 3">
+            </div>
+            <div class="image-item">
+                <img src="register.png" alt="Preview 3">
+            </div>
+            <div class="image-item">
+                <img src="calculator-1.png" alt="Preview 1">
+            </div>
+            <div class="image-item">
+                <img src="calculator-2.png" alt="Preview 2">
+            </div>
+            <div class="image-item">
+                <img src="calculator-3.png" alt="Preview 3">
+            </div>
+            <div class="image-item">
+                <img src="result-adjustment.png" alt="Preview 3">
+            </div>
+            <div class="image-item">
+                <img src="result-recommendation.png" alt="Preview 3">
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+</body>
+</html>
