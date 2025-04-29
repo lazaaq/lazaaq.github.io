@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>K3 Rumah Sakit</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        background: #f9f9f9;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        }
+
+        .navbar {
+        width: 100%;
+        background-color: #007bff; /* Blue color */
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        }
+
+        .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        }
+
+        .navbar-brand {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .navbar-links {
+        list-style-type: none;
+        display: flex;
+        }
+
+        .navbar-links li {
+        margin-left: 20px;
+        }
+
+        .navbar-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+        color: #f1f1f1;
+        }
+
+        .gallery {
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 80px;
+        }
+
+        .gallery h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: #333;
+        }
+
+        .menu-section {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .menu-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #333;
+        }
+
+        .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 20px;
+        }
+
+        .image-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        background: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding-bottom: 10px;
+        }
+
+        .image-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.4s ease;
+        }
+
+        .image-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .image-item:hover img {
+        transform: scale(1.05);
+        }
+
+        .image-title {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #444;
+        font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+        <a href="#" class="navbar-brand">Lana Saiful Aqil</a>
+        <ul class="navbar-links">
+            <li><a href="/projects.html">Back to Projects</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <section class="gallery">
+        <h1>Application Previews (K3 Rumah Sakit)</h1>
+        <p class="description">
+            <b>Sistem K3 Rumah Sakit (Admin)</b>
+            K3RS is a web-based application designed to assist hospitals in managing health and safety protocols. The application provides a comprehensive platform for hospitals to monitor and ensure compliance with health and safety regulations, track incidents, and implement preventive measures. With features such as incident reporting, risk assessment, and training management, K3RS empowers healthcare facilities to enhance patient safety and maintain a secure environment for both patients and staff.
+        </p>
+        <!-- Section for User Menu -->
+        <div class="menu-section">
+            <h2>Dashboard</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="login.png" alt="Login">
+                    <p class="image-title">Login</p>
+                </div>
+                <div class="image-item">
+                    <img src="dashboard.png" alt="Dashboard">
+                    <p class="image-title">Dashboard Home</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Regulasi Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="regulasi/index.png" alt="Regulasi Index">
+                <p class="image-title">Regulasi Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="regulasi/show.png" alt="Regulasi Show">
+                <p class="image-title">Regulasi Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="regulasi/edit.png" alt="Regulasi Edit">
+                <p class="image-title">Regulasi Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="regulasi/create.png" alt="Regulasi Create">
+                <p class="image-title">Regulasi Create New</p>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>APAR Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="apar/index.png" alt="APAR Index">
+                <p class="image-title">APAR Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="apar/show.png" alt="APAR Show">
+                <p class="image-title">APAR Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="apar/edit.png" alt="APAR Edit">
+                <p class="image-title">APAR Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="apar/create.png" alt="APAR Create">
+                <p class="image-title">APAR Create New</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Berita Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="news/index.png" alt="Berita Index">
+                <p class="image-title">Berita Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="news/show.png" alt="Berita Show">
+                <p class="image-title">Berita Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="news/edit.png" alt="Berita Edit">
+                <p class="image-title">Berita Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="news/create.png" alt="Berita Create">
+                <p class="image-title">Berita Create New</p>
+            </div>
+            <!-- Add more employee menu images here -->
+            </div>
+        </div>
+
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Employee Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="employee/index.png" alt="Employee Index">
+                <p class="image-title">Employee Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="employee/show.png" alt="Employee Show">
+                <p class="image-title">Employee Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="employee/edit.png" alt="Employee Edit">
+                <p class="image-title">Employee Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="employee/create.png" alt="Employee Create">
+                <p class="image-title">Employee Create New</p>
+            </div>
+            <!-- Add more employee menu images here -->
+            </div>
+        </div>
+        
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Manager Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="manager/index.png" alt="Manager Index">
+                <p class="image-title">Manager Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="manager/show.png" alt="Manager Show">
+                <p class="image-title">Manager Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="manager/edit.png" alt="Manager Edit">
+                <p class="image-title">Manager Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="manager/create.png" alt="Manager Create">
+                <p class="image-title">Manager Create New</p>
+            </div>
+            <!-- Add more employee menu images here -->
+            </div>
+        </div>
+
+
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Briefing Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="briefing/index.png" alt="Briefing Index">
+                <p class="image-title">Briefing Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="briefing/show.png" alt="Briefing Show">
+                <p class="image-title">Briefing Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="briefing/edit.png" alt="Briefing Edit">
+                <p class="image-title">Briefing Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="briefing/create.png" alt="Briefing Create">
+                <p class="image-title">Briefing Create New</p>
+            </div>
+            <!-- Add more employee menu images here -->
+            </div>
+        </div>
+
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Kecelakaan Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="accident/index.png" alt="Kecelakaan Index">
+                <p class="image-title">Kecelakaan Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="accident/show.png" alt="Kecelakaan Show">
+                <p class="image-title">Kecelakaan Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="accident/edit.png" alt="Kecelakaan Edit">
+                <p class="image-title">Kecelakaan Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="accident/create.png" alt="Kecelakaan Create">
+                <p class="image-title">Kecelakaan Create New</p>
+            </div>
+            <!-- Add more employee menu images here -->
+            </div>
+        </div>
+
+        <!-- Section for Employee Menu -->
+        <div class="menu-section">
+            <h2>Penyakit Menu</h2>
+            <div class="image-grid">
+            <div class="image-item">
+                <img src="disease/index.png" alt="Penyakit Index">
+                <p class="image-title">Penyakit Index All</p>
+            </div>
+            <div class="image-item">
+                <img src="disease/show.png" alt="Penyakit Show">
+                <p class="image-title">Penyakit Show One</p>
+            </div>
+            <div class="image-item">
+                <img src="disease/edit.png" alt="Penyakit Edit">
+                <p class="image-title">Penyakit Edit</p>
+            </div>
+            <div class="image-item">
+                <img src="disease/create.png" alt="Kecelakaan Create">
+                <p class="image-title">Penyakit Create New</p>
+            </div>
+            <!-- Add more employee menu images here -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>

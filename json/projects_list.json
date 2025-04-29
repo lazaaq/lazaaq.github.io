@@ -47,7 +47,7 @@
     "stack": ["laravel"],
     "difficulty": 8,
     "description": "K3RS is a web-based application designed to assist hospitals in managing health and safety protocols. The application provides a comprehensive platform for hospitals to monitor and ensure compliance with health and safety regulations, track incidents, and implement preventive measures. With features such as incident reporting, risk assessment, and training management, K3RS empowers healthcare facilities to enhance patient safety and maintain a secure environment for both patients and staff.",
-    "url": "#"
+    "url": "projects/k3rs/"
   },
   {
     "id": "smaitlh",

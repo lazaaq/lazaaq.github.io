@@ -6,7 +6,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>App Preview Showcase</title>
     <style>
         * {
             margin: 0;
@@ -22,9 +21,58 @@
             justify-content: center;
         }
 
+        .navbar {
+        width: 100%;
+        background-color: #007bff; /* Blue color */
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        }
+
+        .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        }
+
+        .navbar-brand {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .navbar-links {
+        list-style-type: none;
+        display: flex;
+        }
+
+        .navbar-links li {
+        margin-left: 20px;
+        }
+
+        .navbar-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+        color: #f1f1f1;
+        }
+
         .gallery {
             width: 100%;
             max-width: 1200px;
+            margin-top: 80px;
         }
 
         .gallery h1 {
@@ -78,6 +126,16 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+        <a href="#" class="navbar-brand">Lana Saiful Aqil</a>
+        <ul class="navbar-links">
+            <li><a href="/projects.html">Back to Projects</a></li>
+        </ul>
+        </div>
+    </nav>
 
     <section class="gallery">
         <h1>Application Previews (TERAMINA)</h1>
