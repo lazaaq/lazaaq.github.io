@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPKPS</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        background: #f9f9f9;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        }
+
+        .navbar {
+        width: 100%;
+        background-color: #007bff; /* Blue color */
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        }
+
+        .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        }
+
+        .navbar-brand {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .navbar-links {
+        list-style-type: none;
+        display: flex;
+        }
+
+        .navbar-links li {
+        margin-left: 20px;
+        }
+
+        .navbar-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+        color: #f1f1f1;
+        }
+
+        .gallery {
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 80px;
+        }
+
+        .gallery h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: #333;
+        }
+
+        .menu-section {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .menu-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #333;
+        }
+
+        .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+        gap: 20px;
+        }
+
+        .image-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        background: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding-bottom: 10px;
+        }
+
+        .image-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.4s ease;
+        }
+
+        .image-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .image-item:hover img {
+        transform: scale(1.05);
+        }
+
+        .image-title {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #444;
+        font-weight: bold;
+        }
+
+        .pdf-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        }
+
+        .pdf-item {
+        overflow: hidden;
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .pdf-item iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        }
+
+        .pdf-title {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #444;
+        font-weight: bold;
+        text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+        <a href="#" class="navbar-brand">Lana Saiful Aqil</a>
+        <ul class="navbar-links">
+            <li><a href="/projects.html">Back to Projects</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <section class="gallery">
+        <h1>Application Previews (RPKPS)</h1>
+        <p class="description">
+            <b>RPKPS (Semester Learning Program and Activity Plan)</b>
+            RPKPS is a web-based application designed to assist universities in managing their semester learning program and activity plans. The application provides a comprehensive platform for faculty members to create, review, and approve course syllabi and activity plans. With features such as document management, collaboration tools, and reporting capabilities, RPKPS streamlines the planning process while ensuring compliance with academic standards.
+        </p>
+        <!-- Section for User Menu -->
+        <div class="menu-section">
+            <h2>Role Kaprodi</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-kurikulum-index.png" alt="Kaprodi Kurikulum Index">
+                    <p class="image-title">Kaprodi Kurikulum Index (Get All Data)</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-kurikulum-create.png" alt="Kaprodi Kurikulum Create">
+                    <p class="image-title">Kaprodi Kurikulum Create</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/koprodi-profillulusan-index.png" alt="Kaprodi Profil Lulusan Index">
+                    <p class="image-title">Kaprodi Profil Lulusan Index (Get All)</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-cpl-index.png" alt="Kaprodi CPL Index">
+                    <p class="image-title">Kaprodi CPL Index (Get All)</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-cpl-create.png" alt="Kaprodi CPL Create">
+                    <p class="image-title">Kaprodi CPL Create</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-pemetaan-index.png" alt="Kaprodi Pemetaan Index">
+                    <p class="image-title">Kaprodi Pemetaan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-pemetaan-edit.png" alt="Kaprodi Pemetaan Edit">
+                    <p class="image-title">Kaprodi Pemetaan Edit</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-matakuliah-index.png" alt="Kaprodi Mata Kuliah Index">
+                    <p class="image-title">Kaprodi Mata Kuliah Index (Get All)</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-pemetaancpl-index.png" alt="Kaprodi Pemetaan CPL Index">
+                    <p class="image-title">Kaprodi Pemetaan Index (Get All)</p>
+                </div>
+                <div class="image-item">
+                    <img src="kaprodi/kaprodi-pemetaancpl-edit.png" alt="Kaprodi Pemetaan CPL Edit">
+                    <p class="image-title">Kaprodi Pemetaan CPL Edit</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2>Role Akademik</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="akademik/akademik-dosen-index.png" alt="Akademik Dosen Index">
+                    <p class="image-title">Akademik Dosen Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-dosen-edit.png" alt="Akademik Dosen Edit">
+                    <p class="image-title">Akademik Dosen Edit</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-kaprodi-index.png" alt="Akademik Kaprodi Index">
+                    <p class="image-title">Akademik Kaprodi Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-kaprodi-create.png" alt="Akademik Kaprodi Create">
+                    <p class="image-title">Akademik Kaprodi Create</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-semester-index.png" alt="Akademik Semester Index">
+                    <p class="image-title">Akademik Semester Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-semester-create.png" alt="Akademik Semester Create">
+                    <p class="image-title">Akademik Semester Create</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-semester-mkditawarkan.png" alt="Akademik Semester MK Ditawarkan">
+                    <p class="image-title">Akademik Semester MK Ditawarkan</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-plottingdosen-index.png" alt="Akademik Plotting Dosen Index">
+                    <p class="image-title">Akademik Plotting Dosen Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="akademik/akademik-plottingdosen-create.png" alt="Akademik Plotting Dosen Create">
+                    <p class="image-title">Akademik Plotting Dosen Create</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Role Dosen</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="dosen/dosen-rpkps-index.png" alt="Dosen RPKPS Index">
+                    <p class="image-title">Dosen RPKPS Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-rpkpm-index.png" alt="Dosen RPKPM Index">
+                    <p class="image-title">Dosen RPKPM Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-rpkpm-edit.png" alt="Dosen RPKPM Edit">
+                    <p class="image-title">Dosen RPKPM Edit</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-rpkpm-edit-2.png" alt="Dosen RPKPM Edit 2">
+                    <p class="image-title">Dosen RPKPM Edit 2</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-perkuliahan-index.png" alt="Dosen Perkuliahan Index">
+                    <p class="image-title">Dosen Perkuliahan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-perkuliahanmingguan-index.png" alt="Dosen Perkuliahan Mingguan Index">
+                    <p class="image-title">Dosen Perkuliahan Mingguan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-laporan-index.png" alt="Dosen Laporan Index">
+                    <p class="image-title">Dosen Laporan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-laporanmingguan-index.png" alt="Dosen Laporan Mingguan Index">    
+                    <p class="image-title">Dosen Laporan Mingguan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="dosen/dosen-laporanmingguan-create.png" alt="Dosen Laporan Mingguan Create">
+                    <p class="image-title">Dosen Laporan Mingguan Create</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Role Mahasiswa</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="mahasiswa/mahasiswa-perkuliahan-index.png" alt="Mahasiswa Perkuliahan Index">
+                    <p class="image-title">Mahasiswa Perkuliahan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="mahasiswa/mahasiswa-perkuliahanmingguan-index.png" alt="Mahasiswa Perkuliahan Mingguan Index">
+                    <p class="image-title">Mahasiswa Perkuliahan Mingguan Index</p>
+                </div>
+                <div class="image-item">
+                    <img src="mahasiswa/mahasiswa-perkulaiahnmingguan-details.png" alt="Mahasiswa Perkuliahan Mingguan Details">
+                    <p class="image-title">Mahasiswa Perkuliahan Mingguan Details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

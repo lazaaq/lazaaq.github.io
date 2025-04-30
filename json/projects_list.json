@@ -87,7 +87,7 @@
     "stack": ["laravel"],
     "difficulty": 7,
     "description": "RPKPS is a web-based application designed to assist universities in managing their semester learning program and activity plans. The application provides a comprehensive platform for faculty members to create, review, and approve course syllabi and activity plans. With features such as document management, collaboration tools, and reporting capabilities, RPKPS streamlines the planning process while ensuring compliance with academic standards.",
-    "url": "/projects/rpkps"
+    "url": "/projects/rpkps/"
   },
   {
     "id": "onegapos",
