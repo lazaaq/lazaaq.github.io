@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ONEGA POS CASHIER</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        background: #f9f9f9;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        }
+
+        .navbar {
+        width: 100%;
+        background-color: #007bff; /* Blue color */
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        }
+
+        .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        }
+
+        .navbar-brand {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .navbar-links {
+        list-style-type: none;
+        display: flex;
+        }
+
+        .navbar-links li {
+        margin-left: 20px;
+        }
+
+        .navbar-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+        color: #f1f1f1;
+        }
+
+        .gallery {
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 80px;
+        }
+
+        .gallery h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: #333;
+        }
+
+        .menu-section {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .menu-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #333;
+        }
+
+        .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 20px;
+        }
+
+        .image-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        background: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding-bottom: 10px;
+        }
+
+        .image-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.4s ease;
+        }
+
+        .image-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .image-item:hover img {
+        transform: scale(1.05);
+        }
+
+        .image-title {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #444;
+        font-weight: bold;
+        }
+
+        .pdf-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        }
+
+        .pdf-item {
+        overflow: hidden;
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .pdf-item iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        }
+
+        .pdf-title {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #444;
+        font-weight: bold;
+        text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+        <a href="#" class="navbar-brand">Lana Saiful Aqil</a>
+        <ul class="navbar-links">
+            <li><a href="/projects.html">Back to Projects</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <section class="gallery">
+        <h1>Application Previews (Onega POS Cashier)</h1>
+        <p class="description">
+            <b>Onega POS Cashier</b>
+            Onegapos is a web-based cashier management system designed to streamline the sales and inventory management processes for businesses. The application provides features such as point-of-sale transactions, inventory tracking, sales reporting, and customer management. With its user-friendly interface and robust functionality, Onegapos empowers businesses to enhance their operational efficiency and improve customer service.
+        </p>
+        <!-- Section for User Menu -->
+        <div class="menu-section">
+            <h2>Frontend (UI)</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="frontend/login.png" alt="Login">
+                    <p class="image-title">Login</p>
+                </div>
+                <div class="image-item">
+                    <img src="frontend/dashboard.png" alt="Dashboard">
+                    <p class="image-title">Dashboard Home</p>
+                </div>
+                <div class="image-item">
+                    <img src="frontend/checkout.png" alt="Checkout">
+                    <p class="image-title">Checkout</p>
+                </div>
+                <div class="image-item">
+                    <img src="frontend/dashboard.png" alt="Print">
+                    <p class="image-title">Print</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section for PDF Previews -->
+        <div class="menu-section">
+            <h2>Backend (Database)</h2>
+            <div class="pdf-grid">
+            <div class="pdf-item">
+                <iframe src="backend/database.pdf" frameborder="0"></iframe>
+                <p class="pdf-title">Database</p>
+            </div>
+            </div>
+        </div>
+    
+    </section>
+</body>
+</html>

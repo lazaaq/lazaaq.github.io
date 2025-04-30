@@ -87,7 +87,7 @@
     "stack": ["laravel"],
     "difficulty": 7,
     "description": "RPKPS is a web-based application designed to assist universities in managing their semester learning program and activity plans. The application provides a comprehensive platform for faculty members to create, review, and approve course syllabi and activity plans. With features such as document management, collaboration tools, and reporting capabilities, RPKPS streamlines the planning process while ensuring compliance with academic standards.",
-    "url": "#"
+    "url": "/projects/rpkps"
   },
   {
     "id": "onegapos",
@@ -97,7 +97,7 @@
     "stack": ["laravel", "vuejs"],
     "difficulty": 6,
     "description": "Onegapos is a web-based cashier management system designed to streamline the sales and inventory management processes for businesses. The application provides features such as point-of-sale transactions, inventory tracking, sales reporting, and customer management. With its user-friendly interface and robust functionality, Onegapos empowers businesses to enhance their operational efficiency and improve customer service.",
-    "url": "#"
+    "url": "projects/onegapos/"
   },
   {
     "id": "iaicp",
