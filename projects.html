@@ -127,9 +127,16 @@
                   </td>
                   <td class="text-center">
                     <div class="mt-1">
-                      <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" :href="project.url" target="_blank">
-                        <i class="bi bi-eye"></i>
-                      </a>
+                      <template x-if="project.url !== ''">
+                        <a class="badge border-0 bg-success d-block mb-0 p-1 h-100 w-100" :href="project.url" target="_blank">
+                          <i class="bi bi-eye"></i>
+                        </a>
+                      </template>
+                      <template x-if="project.url === ''">
+                        <div class="badge border-0 d-block mb-0 p-1 h-100 w-100" style="background-color: grey;" href="#" disabled>
+                          <i class="bi bi-eye"></i>
+                        </div>
+                      </template>
                     </div>
                   </td>
                 </tr>

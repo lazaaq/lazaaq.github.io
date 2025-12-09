@@ -1,0 +1,83 @@
+[
+  {
+    "id": "smaitlh",
+    "name": "SMAITLH (Company Profile - High School)",
+    "last_update": "Dec 2021",
+    "type": "Web Application",
+    "stack": ["laravel"],
+    "difficulty": 6,
+    "description": "SMAITLH is a web-based application designed to serve as a company profile for a high school. The application provides essential information about the school's history, vision, mission, and academic programs. It also includes features such as student registration, course management, and event scheduling. With its user-friendly interface and comprehensive functionality, SMAITLH aims to enhance communication between the school and its stakeholders while promoting transparency and accessibility.",
+    "url": "#"
+  },
+  {
+    "id": "ppdbsmaitlh",
+    "name": "PPDB SMAITLH (New School Student Acceptance System)",
+    "last_update": "Dec 2021",
+    "type": "Web Application",
+    "stack": ["laravel"],
+    "difficulty": 7,
+    "description": "PPDB SMAITLH is a web-based application designed to facilitate the new student acceptance process for SMAITLH. The application streamlines the entire admission process, allowing prospective students to register online, submit required documents, and track their application status. With features such as automated notifications and real-time updates, PPDB SMAITLH enhances the efficiency of the admission process while providing a user-friendly experience for both applicants and school administrators.",
+    "url": "#"
+  },
+  {
+    "id": "postify",
+    "name": "POSTIFY (Social Media Articles)",
+    "last_update": "10 Dec 2020",
+    "type": "CMS (Content Management System)",
+    "stack": ["laravel"],
+    "difficulty": 3,
+    "description": "Postify is a web-based application designed to help users manage and schedule their social media posts. The application allows users to create, edit, and publish articles across various social media platforms from a single interface. With features such as content calendar, analytics tracking, and collaboration tools, Postify empowers users to optimize their social media presence and engage with their audience effectively.",
+    "url": "#"
+  },
+  {
+    "id": "iaicp",
+    "name": "IAICP (School Alumni Database)",
+    "last_update": "Dec 2020",
+    "type": "Web Application",
+    "stack": ["php"],
+    "difficulty": 5,
+    "description": "IAICP is a web-based application designed to manage and maintain a database of school alumni. The application allows schools to track alumni information, including contact details, academic achievements, and career progress. With features such as search functionality, event management, and communication tools, IAICP fosters engagement between the school and its alumni community.",
+    "url": "#"
+  },
+  {
+    "id": "erigo",
+    "name": "ERIGO (Landing Page Online Store)",
+    "last_update": "29 Juli 2021",
+    "type": "Company Profile",
+    "stack": ["bootstrap", "javascript"],
+    "difficulty": 3,
+    "description": "",
+    "url": "projects/erigo/index.html"
+  },
+
+  {
+    "id": "worldtime",
+    "name": "WORLD TIME (Mobile Application)",
+    "last_update": "11 Jan 2022",
+    "type": "Mobile Application",
+    "stack": ["flutter"],
+    "difficulty": 5,
+    "description": "",
+    "url": "#"
+  },
+  {
+    "id": "kos",
+    "name": "KOS (Mobile Application)",
+    "last_update": "17 Jun 2022",
+    "type": "Mobile Application",
+    "stack": ["flutter"],
+    "difficulty": 4,
+    "description": "",
+    "url": "#"
+  },
+  {
+    "id": "miniproject",
+    "name": "MINI PROJECTS (CLI Application)",
+    "last_update": "31 May 2021",
+    "type": "CLI Application",
+    "stack": ["python"],
+    "difficulty": 3,
+    "description": "",
+    "url": "#"
+  }
+]
