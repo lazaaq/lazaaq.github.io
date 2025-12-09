@@ -1,15 +1,5 @@
 [
   {
-    "id": "campustoday",
-    "name": "CAMPUSTODAY (Platform E-Learning)",
-    "last_update": "Feb 2024",
-    "type": "E-Learning Platform",
-    "stack": ["laravel", "react"],
-    "difficulty": 9,
-    "description": "Campustoday is a web-based e-learning platform designed to support preparation for the CPNS and UTBK exams. The platform offers a comprehensive range of features, including practice exams (tryouts), ranking systems, and specialized study materials for both CPNS and UTBK. Users can register via email and log in to continue their learning sessions. Additionally, Campustoday provides expert consultation services for more in-depth learning support. The platform also includes a payment system to access premium services.",
-    "url": ""
-  },
-  {
     "id": "kofee",
     "name": "KOFEE (Machine Learning)",
     "last_update": "31 Oct 2024",
@@ -20,14 +10,14 @@
     "url": "projects/kofee/"
   },
   {
-    "id": "alhijaz",
-    "name": "ALHIJAZ (Platform Haji)",
-    "last_update": "10 Jan 2022",
-    "type": "CMS (Content Management System)",
-    "stack": ["laravel"],
-    "difficulty": 6,
-    "description": "Haji AlHijaz is an all-inclusive online platform that simplifies the entire Hajj journey for Muslims worldwide. It offers a user-friendly interface where pilgrims can access essential information, book travel arrangements, secure necessary permits, and receive personalized guidance from a dedicated team of experts. With innovative features like virtual reality tours and interactive maps, Haji AlHijaz enhances the spiritual experience by providing a deeper connection to the holy sites of Makkah and Madinah. This comprehensive platform seamlessly integrates technology and tradition, empowering pilgrims to embark on their Hajj pilgrimage with confidence, convenience, and a profound sense of fulfillment.",
-    "url": "projects/alhijaz/"
+    "id": "campustoday",
+    "name": "CAMPUSTODAY (Platform E-Learning)",
+    "last_update": "Feb 2024",
+    "type": "E-Learning Platform",
+    "stack": ["laravel", "react"],
+    "difficulty": 9,
+    "description": "Campustoday is a web-based e-learning platform designed to support preparation for the CPNS and UTBK exams. The platform offers a comprehensive range of features, including practice exams (tryouts), ranking systems, and specialized study materials for both CPNS and UTBK. Users can register via email and log in to continue their learning sessions. Additionally, Campustoday provides expert consultation services for more in-depth learning support. The platform also includes a payment system to access premium services.",
+    "url": ""
   },
   {
     "id": "teramina",
@@ -40,26 +30,6 @@
     "url": "projects/teramina/"
   },
   {
-    "id": "k3rs",
-    "name": "K3RS (Hospital Health and Safety System)",
-    "last_update": "04 Nov 2021",
-    "type": "Web Application",
-    "stack": ["laravel"],
-    "difficulty": 8,
-    "description": "K3RS is a web-based application designed to assist hospitals in managing health and safety protocols. The application provides a comprehensive platform for hospitals to monitor and ensure compliance with health and safety regulations, track incidents, and implement preventive measures. With features such as incident reporting, risk assessment, and training management, K3RS empowers healthcare facilities to enhance patient safety and maintain a secure environment for both patients and staff.",
-    "url": "projects/k3rs/"
-  },
-  {
-    "id": "rpkps",
-    "name": "RPKPS (Semester Learning Program and Activity Plan)",
-    "last_update": "24 June 2022",
-    "type": "Web Application",
-    "stack": ["laravel"],
-    "difficulty": 7,
-    "description": "RPKPS is a web-based application designed to assist universities in managing their semester learning program and activity plans. The application provides a comprehensive platform for faculty members to create, review, and approve course syllabi and activity plans. With features such as document management, collaboration tools, and reporting capabilities, RPKPS streamlines the planning process while ensuring compliance with academic standards.",
-    "url": "/projects/rpkps/"
-  },
-  {
     "id": "onegapos",
     "name": "ONEGAPOS (Cashier Management System)",
     "last_update": "12 Aug 2022",
@@ -68,6 +38,16 @@
     "difficulty": 6,
     "description": "Onegapos is a web-based cashier management system designed to streamline the sales and inventory management processes for businesses. The application provides features such as point-of-sale transactions, inventory tracking, sales reporting, and customer management. With its user-friendly interface and robust functionality, Onegapos empowers businesses to enhance their operational efficiency and improve customer service.",
     "url": "projects/onegapos/"
+  },
+  {
+    "id": "rpkps",
+    "name": "RPKPS (Semester Learning Program and Activity Plan)",
+    "last_update": "24 Juni 2022",
+    "type": "Web Application",
+    "stack": ["laravel"],
+    "difficulty": 7,
+    "description": "RPKPS is a web-based application designed to assist universities in managing their semester learning program and activity plans. The application provides a comprehensive platform for faculty members to create, review, and approve course syllabi and activity plans. With features such as document management, collaboration tools, and reporting capabilities, RPKPS streamlines the planning process while ensuring compliance with academic standards.",
+    "url": "/projects/rpkps/"
   },
   {
     "id": "dekornata",
@@ -80,6 +60,16 @@
     "url": "https://www.dekornata.com"
   },
   {
+    "id": "buanaliving",
+    "name": "BUANA LIVING (Landing Page Homestay)",
+    "last_update": "8 Feb 2022",
+    "type": "Company Profile",
+    "stack": ["bootstrap", "javascript"],
+    "difficulty": 4,
+    "description": "",
+    "url": "projects/buana/index.html"
+  },
+  {
     "id": "sigmahartek",
     "name": "SIGMA HARTEK (Landing Page Spare Part)",
     "last_update": "14 Jan 2022",
@@ -90,24 +80,14 @@
     "url": "projects/sigma/index.html"
   },
   {
-    "id": "karuniamas",
-    "name": "KARUNIAMAS (Landing Page Forklift)",
-    "last_update": "6 Dec 2021",
-    "type": "Company Profile",
-    "stack": ["bootstrap", "javascript"],
-    "difficulty": 4,
-    "description": "",
-    "url": "projects/forklift/index.html"
-  },
-  {
-    "id": "buanaliving",
-    "name": "BUANA LIVING (Landing Page Homestay)",
-    "last_update": "8 Feb 2022",
-    "type": "Company Profile",
-    "stack": ["bootstrap", "javascript"],
-    "difficulty": 4,
-    "description": "",
-    "url": "projects/buana/index.html"
+    "id": "alhijaz",
+    "name": "ALHIJAZ (Platform Haji)",
+    "last_update": "10 Jan 2022",
+    "type": "CMS (Content Management System)",
+    "stack": ["laravel"],
+    "difficulty": 6,
+    "description": "Haji AlHijaz is an all-inclusive online platform that simplifies the entire Hajj journey for Muslims worldwide. It offers a user-friendly interface where pilgrims can access essential information, book travel arrangements, secure necessary permits, and receive personalized guidance from a dedicated team of experts. With innovative features like virtual reality tours and interactive maps, Haji AlHijaz enhances the spiritual experience by providing a deeper connection to the holy sites of Makkah and Madinah. This comprehensive platform seamlessly integrates technology and tradition, empowering pilgrims to embark on their Hajj pilgrimage with confidence, convenience, and a profound sense of fulfillment.",
+    "url": "projects/alhijaz/"
   },
   {
     "id": "kelapaindonesia",
@@ -120,15 +100,16 @@
     "url": "projects/kelapa/index.html"
   },
   {
-    "id": "expice",
-    "name": "EXPICE (Landing Page Restaurant)",
-    "last_update": "21 Oct 2021",
+    "id": "karuniamas",
+    "name": "KARUNIAMAS (Landing Page Forklift)",
+    "last_update": "6 Dec 2021",
     "type": "Company Profile",
     "stack": ["bootstrap", "javascript"],
-    "difficulty": 3,
+    "difficulty": 4,
     "description": "",
-    "url": "projects/restaurant/index.html"
+    "url": "projects/forklift/index.html"
   },
+  
   {
     "id": "livelihood",
     "name": "LIVELIHOOD (Landing Page Online Store)",
@@ -138,5 +119,25 @@
     "difficulty": 3,
     "description": "",
     "url": "projects/livelihood/index.html"
+  },
+  {
+    "id": "k3rs",
+    "name": "K3RS (Hospital Health and Safety System)",
+    "last_update": "04 Nov 2021",
+    "type": "Web Application",
+    "stack": ["laravel"],
+    "difficulty": 8,
+    "description": "K3RS is a web-based application designed to assist hospitals in managing health and safety protocols. The application provides a comprehensive platform for hospitals to monitor and ensure compliance with health and safety regulations, track incidents, and implement preventive measures. With features such as incident reporting, risk assessment, and training management, K3RS empowers healthcare facilities to enhance patient safety and maintain a secure environment for both patients and staff.",
+    "url": "projects/k3rs/"
+  },
+  {
+    "id": "expice",
+    "name": "EXPICE (Landing Page Restaurant)",
+    "last_update": "21 Oct 2021",
+    "type": "Company Profile",
+    "stack": ["bootstrap", "javascript"],
+    "difficulty": 3,
+    "description": "",
+    "url": "projects/restaurant/index.html"
   }
 ]
