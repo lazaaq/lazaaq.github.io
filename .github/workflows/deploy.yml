@@ -1,0 +1,66 @@
+name: Deploy Astro to GitHub Pages
+
+on:
+    # Trigger setiap push ke branch main
+    push:
+        branches: [main]
+    # Boleh trigger manual dari tab Actions
+    workflow_dispatch:
+
+# Izinkan workflow untuk membaca repo dan deploy ke Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# Hanya jalankan satu deployment sekaligus
+concurrency:
+    group: pages
+    cancel-in-progress: true
+
+jobs:
+    build:
+        name: Build Astro
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: npm
+                  # Sesuaikan path jika folder astro ada di subdirektori
+                  # Jika package.json ada di root repo, hapus baris cache-dependency-path
+                  cache-dependency-path: astro/package-lock.json
+
+            - name: Install dependencies
+              # Sesuaikan working-directory dengan lokasi project Astro di repo Anda:
+              # - Jika astro ada di root repo    → working-directory: .
+              # - Jika astro ada di folder /astro → working-directory: astro
+              working-directory: astro
+              run: npm ci
+
+            - name: Build Astro site
+              working-directory: astro
+              run: npm run build
+
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  # Path ke folder dist hasil build
+                  # Sesuaikan jika working-directory berbeda
+                  path: astro/dist
+
+    deploy:
+        name: Deploy to GitHub Pages
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
