@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lana Saiful Aqil — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-layout { display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; align-items:start; margin-top:4rem; }
+
+    /* Info side */
+    .contact-info {}
+    .contact-info p { color:var(--muted-2); font-size:0.93rem; line-height:2; font-weight:300; margin-bottom:2.5rem; }
+    .info-items { display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2.5rem; }
+    .info-item {
+      display:flex; align-items:center; gap:1rem;
+      background:var(--bg-3); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem;
+      text-decoration:none; transition:border-color 0.2s, transform 0.2s;
+    }
+    .info-item:hover { border-color:var(--border-2); transform:translateX(4px); }
+    .ii-icon { width:40px; height:40px; border-radius:10px; background:rgba(56,189,248,0.1); border:1px solid var(--border-2); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .ii-label { font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.2rem; }
+    .ii-value { font-size:0.88rem; color:var(--white); font-weight:500; }
+
+    .avail-badge {
+      display:inline-flex; align-items:center; gap:0.55rem;
+      padding:0.5rem 1.1rem; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2);
+      border-radius:100px; font-size:0.78rem; font-weight:600; color:var(--green);
+    }
+    .avail-dot { width:7px; height:7px; background:var(--green); border-radius:50%; box-shadow:0 0 8px var(--green); animation:pulse 2s infinite; }
+
+    /* Form side */
+    .contact-form { background:var(--bg-3); border:1px solid var(--border); border-radius:20px; padding:2.5rem; }
+    .form-title { font-family:var(--display); font-size:1.5rem; letter-spacing:0.04em; color:var(--white); margin-bottom:2rem; }
+    .form-title span { color:var(--teal); }
+    .form-group { margin-bottom:1.5rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.5rem; }
+    label { display:block; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; }
+    input, textarea, select {
+      width:100%; padding:0.85rem 1rem; background:var(--surface); border:1px solid var(--border);
+      border-radius:10px; color:var(--white); font-family:var(--sans); font-size:0.88rem;
+      transition:border-color 0.2s, box-shadow 0.2s; outline:none; resize:vertical;
+    }
+    input::placeholder, textarea::placeholder { color:var(--muted); }
+    input:focus, textarea:focus, select:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(56,189,248,0.1); }
+    textarea { min-height:130px; }
+    select option { background:var(--surface); }
+    .form-submit {
+      width:100%; padding:1rem; background:var(--teal); color:var(--bg); border:none;
+      border-radius:10px; font-family:var(--sans); font-size:0.9rem; font-weight:700;
+      cursor:pointer; transition:background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow:0 4px 20px var(--teal-glow); display:flex; align-items:center; justify-content:center; gap:0.6rem;
+    }
+    .form-submit:hover { background:var(--teal-2); transform:translateY(-2px); box-shadow:0 8px 32px rgba(56,189,248,0.4); }
+    .form-submit:active { transform:translateY(0); }
+    .form-note { font-size:0.75rem; color:var(--muted); text-align:center; margin-top:1rem; }
+
+    /* Success message */
+    #successMsg { display:none; text-align:center; padding:2rem; }
+    #successMsg .s-icon { font-size:3rem; margin-bottom:1rem; }
+    #successMsg h3 { font-family:var(--display); font-size:1.5rem; letter-spacing:0.04em; color:var(--green); margin-bottom:0.5rem; }
+    #successMsg p { color:var(--muted); font-size:0.88rem; }
+
+    @media(max-width:900px){
+      .contact-layout { grid-template-columns:1fr; gap:3rem; }
+      .form-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="prog"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">LSA<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="nav-hire active" style="background:var(--green) !important;">Hire Me</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="container">
+      <div class="page-eyebrow">Contact</div>
+      <h1 class="page-title">LET'S <span>TALK</span></h1>
+      <p class="page-sub">Have a project in mind? I'm open to freelance, part-time, and full-time opportunities.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: Info -->
+        <div class="contact-info reveal">
+          <p>I'm currently available for new projects and opportunities. Whether it's a quick question, a collaboration idea, or a full project brief — my inbox is open.</p>
+
+          <div class="avail-badge" style="margin-bottom:2.5rem;">
+            <span class="avail-dot"></span>
+            Currently available for work
+          </div>
+
+          <div class="info-items">
+            <a href="mailto:lazaaq@example.com" class="info-item">
+              <div class="ii-icon">📧</div>
+              <div><div class="ii-label">Email</div><div class="ii-value">lazaaq@example.com</div></div>
+            </a>
+            <a href="https://linkedin.com/in/lana-saiful-aqil" target="_blank" class="info-item">
+              <div class="ii-icon">💼</div>
+              <div><div class="ii-label">LinkedIn</div><div class="ii-value">lana-saiful-aqil</div></div>
+            </a>
+            <a href="https://github.com/lazaaq" target="_blank" class="info-item">
+              <div class="ii-icon">🐙</div>
+              <div><div class="ii-label">GitHub</div><div class="ii-value">github.com/lazaaq</div></div>
+            </a>
+            <div class="info-item" style="cursor:default;">
+              <div class="ii-icon">⏱️</div>
+              <div><div class="ii-label">Response Time</div><div class="ii-value">Usually within 24 hours</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="reveal d1">
+          <div class="contact-form">
+            <div class="form-title">SEND A <span>MESSAGE</span></div>
+            <div id="formContent">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="John" id="fname"/>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Doe" id="lname"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com" id="email"/>
+              </div>
+              <div class="form-group">
+                <label>Subject</label>
+                <select id="subject">
+                  <option value="" disabled selected>Select a topic...</option>
+                  <option>Web Development Project</option>
+                  <option>Data Science Work</option>
+                  <option>API Development</option>
+                  <option>Full-time Opportunity</option>
+                  <option>Collaboration</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="Tell me about your project or idea..." id="message"></textarea>
+              </div>
+              <button class="form-submit" onclick="submitForm()">
+                Send Message <span>→</span>
+              </button>
+              <p class="form-note">No spam, ever. I'll reply as soon as possible.</p>
+            </div>
+            <div id="successMsg">
+              <div class="s-icon">✅</div>
+              <h3>MESSAGE SENT!</h3>
+              <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="f-logo">LSA<span>.</span></a>
+      <div class="f-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="f-copy">© 2025 Lana Saiful Aqil. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function submitForm() {
+      const fname = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!fname || !email || !message) {
+        alert('Please fill in your name, email, and message.');
+        return;
+      }
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

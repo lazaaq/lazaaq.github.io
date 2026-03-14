@@ -1,0 +1,176 @@
+---
+// src/pages/portfolio.astro
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import { projects, DIFFICULTY_LABEL } from '@/data/projects';
+import { SITE } from '@/data/site';
+
+const categories = [
+  { id: 'all',     label: 'Semua' },
+  { id: 'web',     label: 'Web App' },
+  { id: 'backend', label: 'Backend / API' },
+  { id: 'mobile',  label: 'Mobile' },
+  { id: 'oss',     label: 'Open Source' },
+];
+---
+
+<BaseLayout title={`Portfolio — ${SITE.name}`} activePage="portfolio">
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <div>
+      <p class="section-label">Karya Pilihan</p>
+      <h1 class="page-title">Selected<br><em>Projects</em></h1>
+    </div>
+    <p class="header-desc">
+      Kumpulan proyek yang pernah saya bangun — dari side project eksperimental hingga produk yang digunakan ribuan pengguna.
+    </p>
+  </header>
+
+  <!-- ── FILTER BAR ── -->
+  <div class="filter-bar" role="group" aria-label="Filter kategori">
+    {categories.map((cat, i) => (
+      <button
+        class:list={['filter-btn', { active: i === 0 }]}
+        data-cat={cat.id}
+      >
+        {cat.label}
+      </button>
+    ))}
+  </div>
+
+  <!-- ── DIFFICULTY LEGEND ── -->
+  <div class="legend-bar">
+    <span class="legend-title">Tingkat Kesulitan:</span>
+    {(['easy','medium','hard','expert'] as const).map(d => (
+      <div class:list={['legend-item', d]}>
+        <span class="legend-dot"></span>
+        <span>{DIFFICULTY_LABEL[d]}</span>
+      </div>
+    ))}
+  </div>
+
+  <!-- ── GRID ── -->
+  <div class="projects-wrapper">
+    <div class="projects-grid" id="projects-grid">
+      {projects.map((p, i) => (
+        <ProjectCard project={p} index={i} />
+      ))}
+    </div>
+  </div>
+
+</BaseLayout>
+
+<!-- Client-side filter script -->
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.project-card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat!;
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      cards.forEach(card => {
+        const match = cat === 'all' || card.dataset.cat === cat;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 9rem 4rem 4rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem;
+  }
+
+  .header-desc {
+    font-size: .9rem;
+    color: var(--muted);
+    max-width: 38ch;
+    line-height: 1.8;
+  }
+
+  /* ── FILTER ── */
+  .filter-bar {
+    display: flex;
+    padding: 1.25rem 4rem;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .55rem 1.4rem;
+    border: 1px solid var(--border);
+    border-right: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:last-child { border-right: 1px solid var(--border); }
+  .filter-btn:hover { color: var(--accent); border-color: var(--accent); position: relative; z-index: 1; }
+  .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  /* ── LEGEND ── */
+  .legend-bar {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1rem 4rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    flex-wrap: wrap;
+  }
+
+  .legend-title {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    color: var(--muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .legend-item {
+    display: flex; align-items: center; gap: .45rem;
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .legend-item.easy   { color: var(--diff-easy); }
+  .legend-item.medium { color: var(--diff-medium); }
+  .legend-item.hard   { color: var(--diff-hard); }
+  .legend-item.expert { color: var(--diff-expert); }
+
+  /* ── GRID ── */
+  .projects-wrapper { padding: 3rem 4rem 5rem; }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .page-header { padding: 7rem 1.5rem 3rem; flex-direction: column; align-items: flex-start; }
+    .filter-bar, .legend-bar { padding: 1rem 1.5rem; }
+    .projects-wrapper { padding: 2rem 1.5rem 4rem; }
+  }
+</style>

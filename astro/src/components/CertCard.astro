@@ -1,0 +1,170 @@
+---
+// src/components/CertCard.astro
+import type { Certification } from '@/data/skills';
+
+interface Props {
+  cert: Certification;
+  index: number;
+}
+
+const { cert: c, index } = Astro.props;
+
+const statusLabel = {
+  active:      '✓ Active',
+  expired:     '✗ Expired',
+  'in-progress': '◌ In Progress',
+} as const;
+---
+
+<article
+  class:list={['cert-card', c.status]}
+  style={`animation-delay: ${index * 0.08}s`}
+>
+  <!-- Thumbnail -->
+  <div class="cert-thumb">
+    {c.thumbnail
+      ? <>
+          <img src={c.thumbnail} alt={c.name} loading="lazy" />
+          <span class:list={['cert-badge', c.status]}>{statusLabel[c.status]}</span>
+        </>
+      : (
+        <div class="thumb-fallback">
+          <div class="thumb-bg" style={`background: ${c.bgGradient}`}></div>
+          <span class="cert-big-icon">{c.icon}</span>
+          <span class="provider-label" style={`color: ${c.providerColor}`}>{c.provider}</span>
+          <span class:list={['cert-badge', c.status]}>{statusLabel[c.status]}</span>
+        </div>
+      )
+    }
+  </div>
+
+  <!-- Info -->
+  <div class="cert-info">
+    <p class="provider-short">{c.providerShort}</p>
+    <h3 class="cert-name">{c.name}</h3>
+    <div class="cert-meta">
+      <span class="cert-date">{c.issued} → {c.expires}</span>
+      {c.verifyUrl && (
+        <a href={c.verifyUrl} target="_blank" rel="noopener" class="verify-link">
+          Verify ↗
+        </a>
+      )}
+    </div>
+  </div>
+</article>
+
+<style>
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color .25s, transform .25s;
+    animation: fadeUp .5s ease both;
+  }
+
+  .cert-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+  .cert-card.in-progress { border-style: dashed; opacity: .55; }
+
+  /* Thumbnail */
+  .cert-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cert-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(.8);
+    transition: filter .3s;
+  }
+
+  .cert-card:hover .cert-thumb img { filter: brightness(1); }
+
+  .thumb-fallback {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: .6rem;
+  }
+
+  .thumb-bg {
+    position: absolute; inset: 0;
+  }
+
+  .cert-big-icon {
+    position: relative; z-index: 1;
+    font-size: 2.5rem;
+  }
+
+  .provider-label {
+    position: relative; z-index: 1;
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  /* Status badge */
+  .cert-badge {
+    position: absolute; bottom: .75rem; right: .75rem;
+    font-family: var(--font-mono);
+    font-size: .58rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .25rem .65rem;
+    z-index: 2;
+  }
+
+  .cert-badge.active      { background: rgba(92,184,92,.15);  color: #5cb85c; border: 1px solid rgba(92,184,92,.35); }
+  .cert-badge.expired     { background: rgba(217,83,79,.12);  color: #d9534f; border: 1px solid rgba(217,83,79,.3); }
+  .cert-badge.in-progress { background: rgba(232,213,163,.08); color: var(--muted); border: 1px solid var(--border); }
+
+  /* Info */
+  .cert-info {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .provider-short {
+    font-family: var(--font-mono);
+    font-size: .62rem;
+    color: var(--accent2);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: .35rem;
+  }
+
+  .cert-name {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: .5rem;
+    line-height: 1.3;
+  }
+
+  .cert-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: .5rem;
+    padding-top: .75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .cert-date {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    color: var(--muted);
+  }
+
+  .verify-link {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: .25rem .65rem;
+    transition: border-color .2s;
+  }
+
+  .verify-link:hover { border-color: var(--accent); }
+</style>

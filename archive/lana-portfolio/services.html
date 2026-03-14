@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lana Saiful Aqil — Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:4rem; }
+    .svc-card {
+      background:var(--bg-3); border:1px solid var(--border); border-radius:16px; padding:2rem;
+      display:flex; flex-direction:column;
+      transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;
+      position:relative; overflow:hidden;
+    }
+    .svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--teal),var(--green)); transform:scaleX(0); transform-origin:left; transition:transform 0.4s; }
+    .svc-card:hover::before { transform:scaleX(1); }
+    .svc-card:hover { transform:translateY(-5px); border-color:var(--border-2); box-shadow:0 16px 40px rgba(0,0,0,0.4),0 0 24px var(--teal-glow); }
+    .svc-card.featured { grid-column:span 3; display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:start; background:linear-gradient(135deg,var(--surface),var(--bg-3)); }
+
+    .svc-icon { font-size:2.2rem; margin-bottom:1.25rem; }
+    .svc-card.featured .svc-icon { font-size:3rem; margin-bottom:0; }
+    .svc-title { font-family:var(--display); font-size:1.15rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.75rem; }
+    .svc-desc { color:var(--muted); font-size:0.83rem; line-height:1.85; flex:1; margin-bottom:1.5rem; }
+    .svc-list { list-style:none; display:flex; flex-direction:column; gap:0.45rem; margin-bottom:1.5rem; }
+    .svc-list li { font-size:0.82rem; color:var(--muted-2); padding-left:1.1rem; position:relative; line-height:1.7; }
+    .svc-list li::before { content:'→'; position:absolute; left:0; color:var(--teal); font-size:0.72rem; }
+    .svc-cta { display:inline-flex; align-items:center; gap:0.45rem; color:var(--teal); font-size:0.8rem; font-weight:600; text-decoration:none; transition:gap 0.2s,color 0.2s; margin-top:auto; }
+    .svc-cta:hover { gap:0.8rem; color:var(--green); }
+
+    /* Process */
+    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-top:4rem; }
+    .process-step { background:var(--bg-3); border:1px solid var(--border); border-radius:14px; padding:1.75rem; position:relative; }
+    .step-num { font-family:var(--display); font-size:3rem; letter-spacing:0.04em; color:rgba(56,189,248,0.12); line-height:1; margin-bottom:0.75rem; }
+    .step-title { font-family:var(--display); font-size:1rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.5rem; }
+    .step-desc { font-size:0.8rem; color:var(--muted); line-height:1.8; }
+
+    @media(max-width:900px){
+      .svc-grid { grid-template-columns:1fr; }
+      .svc-card.featured { grid-column:span 1; grid-template-columns:1fr; }
+      .process-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div id="prog"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">LSA<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-hire">Hire Me</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="container">
+      <div class="page-eyebrow">Services</div>
+      <h1 class="page-title">WHAT I <span>OFFER</span></h1>
+      <p class="page-sub">From concept to deployment — end-to-end development and data science services.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="svc-grid">
+
+        <div class="svc-card featured reveal">
+          <div class="svc-icon">🖥️</div>
+          <div>
+            <div class="svc-title">FULLSTACK WEB DEVELOPMENT</div>
+            <p class="svc-desc">I build complete web applications — from pixel-perfect frontends to robust, scalable backends. Whether it's a landing page, SaaS app, or complex platform, I deliver clean code and great UX.</p>
+            <ul class="svc-list">
+              <li>React / Next.js frontends with responsive design</li>
+              <li>Node.js / Express backend with database integration</li>
+              <li>User authentication, authorization, and security</li>
+              <li>Deployment on Vercel, Railway, or VPS</li>
+            </ul>
+            <a href="contact.html" class="svc-cta">Get a quote →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal d1">
+          <div class="svc-icon">📊</div>
+          <div class="svc-title">DATA SCIENCE & ANALYSIS</div>
+          <p class="svc-desc">Turn your raw data into actionable insights. I handle the full data pipeline — from cleaning and EDA to visualization and reporting.</p>
+          <ul class="svc-list">
+            <li>Data cleaning and preprocessing</li>
+            <li>Exploratory Data Analysis (EDA)</li>
+            <li>Interactive dashboards with Plotly / Streamlit</li>
+            <li>Statistical analysis and reporting</li>
+          </ul>
+          <a href="contact.html" class="svc-cta">Get a quote →</a>
+        </div>
+
+        <div class="svc-card reveal d2">
+          <div class="svc-icon">🤖</div>
+          <div class="svc-title">MACHINE LEARNING</div>
+          <p class="svc-desc">Build intelligent systems that learn from data. I develop, train, and evaluate ML models suited to your specific use case.</p>
+          <ul class="svc-list">
+            <li>Classification and regression models</li>
+            <li>Model selection and hyperparameter tuning</li>
+            <li>Feature engineering and selection</li>
+            <li>Model deployment as an API</li>
+          </ul>
+          <a href="contact.html" class="svc-cta">Get a quote →</a>
+        </div>
+
+        <div class="svc-card reveal d3">
+          <div class="svc-icon">🔌</div>
+          <div class="svc-title">API DEVELOPMENT</div>
+          <p class="svc-desc">Clean, documented, and production-ready REST APIs that power your frontend, mobile app, or third-party integrations.</p>
+          <ul class="svc-list">
+            <li>RESTful API design and implementation</li>
+            <li>Authentication (JWT, OAuth)</li>
+            <li>API documentation with Swagger / Postman</li>
+            <li>Rate limiting, caching, and optimization</li>
+          </ul>
+          <a href="contact.html" class="svc-cta">Get a quote →</a>
+        </div>
+
+      </div>
+
+      <!-- Process -->
+      <div class="eyebrow reveal" style="margin-top:5rem;">Process</div>
+      <h2 class="stitle reveal d1">HOW I <span>WORK</span></h2>
+      <div class="process-grid">
+        <div class="process-step reveal d1"><div class="step-num">01</div><div class="step-title">DISCOVERY</div><p class="step-desc">We talk about your goals, requirements, and timeline. I ask the right questions to understand exactly what you need.</p></div>
+        <div class="process-step reveal d2"><div class="step-num">02</div><div class="step-title">PLANNING</div><p class="step-desc">I map out the architecture, tech stack, and milestones. You get a clear roadmap before any code is written.</p></div>
+        <div class="process-step reveal d3"><div class="step-num">03</div><div class="step-title">BUILDING</div><p class="step-desc">I develop iteratively with regular updates. Clean code, tested features, and continuous communication throughout.</p></div>
+        <div class="process-step reveal d4"><div class="step-num">04</div><div class="step-title">DELIVERY</div><p class="step-desc">Deployment, documentation, and handoff. I stay available for support and iterations after launch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="f-logo">LSA<span>.</span></a>
+      <div class="f-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="f-copy">© 2025 Lana Saiful Aqil. All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

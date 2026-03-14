@@ -215,5 +215,12 @@
       "experience": ["Been using WordPress for under 1 year", "Create WordPress Website from Scratch", "WordPress Language : Theme, Plugin, Custom Post Type, Custom Taxonomy, Custom Field, ACF, Elementor"],
       "src": "assets/img/skills/wordpress.png",
       "type": ["others"]
+    },
+    "nextjs": {
+      "name": "NextJS",
+      "color": "bg-dark",
+      "experience": ["Using NextJS since 2023", "Create NextJS Application from Scratch", "Routing, API Routes, Server-side Rendering, Static Site Generation, Middleware, Authentication, Authorization", "DB : MySQL, PostgreSQL, MongoDB"],
+      "src": "assets/img/skills/nextjs.png",
+      "type": ["frontend", "backend"]
     }
 }

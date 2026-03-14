@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lana Saiful Aqil — Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .skills-layout { display:grid; grid-template-columns:1fr 1.6fr; gap:5rem; align-items:start; margin-top:4rem; }
+    .skills-sticky { position:sticky; top:88px; }
+    .skills-note { color:var(--muted); font-size:0.88rem; line-height:1.95; margin-bottom:2.5rem; }
+
+    .sg-head { font-size:0.68rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.7rem; }
+    .sg-head::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,var(--border-2),transparent); }
+    .s-list { display:flex; flex-direction:column; gap:1rem; }
+    .s-info { display:flex; justify-content:space-between; margin-bottom:0.4rem; }
+    .s-name { font-size:0.84rem; color:var(--muted-2); font-weight:400; }
+    .s-pct  { font-size:0.76rem; color:var(--teal); font-weight:600; }
+    .s-track { height:3px; background:var(--surface); border-radius:2px; overflow:hidden; }
+    .s-fill { height:100%; width:0; border-radius:2px; background:linear-gradient(90deg,var(--teal),var(--green)); box-shadow:0 0 8px rgba(56,189,248,0.4); transition:width 1.4s cubic-bezier(0.16,1,0.3,1); }
+
+    .skill-groups { display:flex; flex-direction:column; gap:3rem; }
+
+    .tech-pills { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .tech-pill { padding:0.35rem 0.85rem; background:rgba(56,189,248,0.07); border:1px solid rgba(56,189,248,0.18); border-radius:7px; font-size:0.76rem; color:var(--teal-2); font-weight:500; transition:background 0.2s,transform 0.2s,border-color 0.2s; }
+    .tech-pill:hover { background:rgba(56,189,248,0.15); border-color:var(--teal); transform:translateY(-2px); }
+
+    /* Cert cards */
+    .cert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:4rem; }
+    .cert-card { background:var(--bg-3); border:1px solid var(--border); border-radius:14px; padding:1.5rem; transition:border-color 0.25s,transform 0.25s; }
+    .cert-card:hover { border-color:var(--border-2); transform:translateY(-3px); }
+    .cert-icon { font-size:1.5rem; margin-bottom:0.75rem; }
+    .cert-name { font-family:var(--display); font-size:1rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.3rem; }
+    .cert-issuer { font-size:0.78rem; color:var(--muted); }
+
+    @media(max-width:900px){
+      .skills-layout { grid-template-columns:1fr; gap:3rem; }
+      .skills-sticky { position:static; }
+      .cert-grid { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="prog"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">LSA<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-hire">Hire Me</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="container">
+      <div class="page-eyebrow">Skills</div>
+      <h1 class="page-title">TECH <span>STACK</span></h1>
+      <p class="page-sub">A full breakdown of the tools, languages, and frameworks I work with.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="skills-layout">
+        <div class="skills-sticky reveal">
+          <p class="skills-note">Every bar reflects honest self-assessment built through real projects — not just tutorials or coursework.</p>
+          <div class="sg-head" style="margin-bottom:1rem;">Tools & Platforms</div>
+          <div class="tech-pills">
+            <span class="tech-pill">Git / GitHub</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">MongoDB</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">Jupyter</span>
+            <span class="tech-pill">Linux</span>
+            <span class="tech-pill">VS Code</span>
+            <span class="tech-pill">Figma</span>
+            <span class="tech-pill">Postman</span>
+            <span class="tech-pill">Vercel</span>
+          </div>
+        </div>
+
+        <div class="skill-groups" id="skillBox">
+          <div class="reveal d1">
+            <div class="sg-head">Frontend</div>
+            <div class="s-list">
+              <div><div class="s-info"><span class="s-name">HTML / CSS / JavaScript</span><span class="s-pct">92%</span></div><div class="s-track"><div class="s-fill" data-w="92"></div></div></div>
+              <div><div class="s-info"><span class="s-name">React.js</span><span class="s-pct">85%</span></div><div class="s-track"><div class="s-fill" data-w="85"></div></div></div>
+              <div><div class="s-info"><span class="s-name">Responsive Design / UI</span><span class="s-pct">88%</span></div><div class="s-track"><div class="s-fill" data-w="88"></div></div></div>
+              <div><div class="s-info"><span class="s-name">CSS Animations</span><span class="s-pct">80%</span></div><div class="s-track"><div class="s-fill" data-w="80"></div></div></div>
+            </div>
+          </div>
+
+          <div class="reveal d2">
+            <div class="sg-head">Backend</div>
+            <div class="s-list">
+              <div><div class="s-info"><span class="s-name">Node.js / Express</span><span class="s-pct">82%</span></div><div class="s-track"><div class="s-fill" data-w="82"></div></div></div>
+              <div><div class="s-info"><span class="s-name">Python (Flask / Django)</span><span class="s-pct">78%</span></div><div class="s-track"><div class="s-fill" data-w="78"></div></div></div>
+              <div><div class="s-info"><span class="s-name">REST API Design</span><span class="s-pct">86%</span></div><div class="s-track"><div class="s-fill" data-w="86"></div></div></div>
+              <div><div class="s-info"><span class="s-name">SQL / NoSQL Databases</span><span class="s-pct">80%</span></div><div class="s-track"><div class="s-fill" data-w="80"></div></div></div>
+            </div>
+          </div>
+
+          <div class="reveal d3">
+            <div class="sg-head">Data Science & ML</div>
+            <div class="s-list">
+              <div><div class="s-info"><span class="s-name">Python (Pandas, NumPy)</span><span class="s-pct">84%</span></div><div class="s-track"><div class="s-fill" data-w="84"></div></div></div>
+              <div><div class="s-info"><span class="s-name">Machine Learning (Sklearn)</span><span class="s-pct">75%</span></div><div class="s-track"><div class="s-fill" data-w="75"></div></div></div>
+              <div><div class="s-info"><span class="s-name">Data Visualization</span><span class="s-pct">80%</span></div><div class="s-track"><div class="s-fill" data-w="80"></div></div></div>
+              <div><div class="s-info"><span class="s-name">EDA & Feature Engineering</span><span class="s-pct">78%</span></div><div class="s-track"><div class="s-fill" data-w="78"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="eyebrow reveal" style="margin-top:5rem;">Certifications</div>
+      <h2 class="stitle reveal d1">LEARNING & <span>GROWTH</span></h2>
+      <div class="cert-grid">
+        <div class="cert-card reveal d1"><div class="cert-icon">🐍</div><div class="cert-name">PYTHON FOR DATA SCIENCE</div><div class="cert-issuer">Coursera / IBM</div></div>
+        <div class="cert-card reveal d2"><div class="cert-icon">⚛️</div><div class="cert-name">REACT — THE COMPLETE GUIDE</div><div class="cert-issuer">Udemy</div></div>
+        <div class="cert-card reveal d3"><div class="cert-icon">🧠</div><div class="cert-name">MACHINE LEARNING FOUNDATIONS</div><div class="cert-issuer">deeplearning.ai</div></div>
+        <div class="cert-card reveal d1"><div class="cert-icon">🌐</div><div class="cert-name">FULLSTACK WEB DEV</div><div class="cert-issuer">freeCodeCamp</div></div>
+        <div class="cert-card reveal d2"><div class="cert-icon">📊</div><div class="cert-name">DATA ANALYSIS WITH PYTHON</div><div class="cert-issuer">freeCodeCamp</div></div>
+        <div class="cert-card reveal d3"><div class="cert-icon">🐳</div><div class="cert-name">DOCKER ESSENTIALS</div><div class="cert-issuer">Linux Foundation</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="f-logo">LSA<span>.</span></a>
+      <div class="f-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="f-copy">© 2025 Lana Saiful Aqil. All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

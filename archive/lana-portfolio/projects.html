@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lana Saiful Aqil — Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Filter tabs */
+    .filter-bar { display:flex; gap:0.5rem; flex-wrap:wrap; margin:3rem 0 2.5rem; }
+    .filter-btn {
+      padding:0.45rem 1.1rem; border:1px solid var(--border); background:transparent;
+      color:var(--muted-2); font-family:var(--sans); font-size:0.8rem; font-weight:500;
+      border-radius:8px; cursor:pointer; transition:all 0.2s; letter-spacing:0.04em;
+    }
+    .filter-btn:hover { border-color:var(--border-2); color:var(--teal); background:rgba(56,189,248,0.05); }
+    .filter-btn.active { border-color:var(--teal); color:var(--bg); background:var(--teal); }
+
+    /* Grid */
+    .proj-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .proj-card {
+      background:var(--bg-3); border:1px solid var(--border); border-radius:16px; padding:1.75rem;
+      display:flex; flex-direction:column;
+      transition:transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position:relative; overflow:hidden;
+    }
+    .proj-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--teal),var(--green)); transform:scaleX(0); transform-origin:left; transition:transform 0.4s; }
+    .proj-card:hover::after { transform:scaleX(1); }
+    .proj-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px var(--teal-glow); border-color:var(--border-2); }
+    .proj-card.span2 { grid-column:span 2; }
+
+    .pj-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.25rem; }
+    .pj-icon { width:46px; height:46px; border-radius:12px; background:rgba(56,189,248,0.1); border:1px solid var(--border-2); display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
+    .pj-badge { font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.2); padding:0.2rem 0.6rem; border-radius:4px; }
+    .pj-num { font-size:0.68rem; color:var(--muted); letter-spacing:0.1em; margin-top:0.2rem; }
+    .pj-name { font-family:var(--display); font-size:1.25rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.65rem; }
+    .pj-desc { color:var(--muted); font-size:0.82rem; line-height:1.8; flex:1; margin-bottom:1.25rem; }
+    .pj-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem; }
+    .pj-tag { font-size:0.68rem; padding:0.2rem 0.6rem; background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.15); border-radius:5px; color:var(--teal-2); }
+    .pj-link { display:inline-flex; align-items:center; gap:0.45rem; color:var(--teal); font-size:0.8rem; font-weight:600; text-decoration:none; transition:gap 0.2s, color 0.2s; margin-top:auto; }
+    .pj-link:hover { gap:0.8rem; color:var(--green); }
+
+    @media(max-width:900px){
+      .proj-grid { grid-template-columns:1fr; }
+      .proj-card.span2 { grid-column:span 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="prog"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">LSA<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-hire">Hire Me</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="container">
+      <div class="page-eyebrow">Projects</div>
+      <h1 class="page-title">WHAT I'VE <span>BUILT</span></h1>
+      <p class="page-sub">A curated selection of projects across web development and data science.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" onclick="filterProj('all', this)">All</button>
+        <button class="filter-btn" onclick="filterProj('web', this)">Web Dev</button>
+        <button class="filter-btn" onclick="filterProj('data', this)">Data Science</button>
+        <button class="filter-btn" onclick="filterProj('api', this)">API / Backend</button>
+      </div>
+
+      <div class="proj-grid" id="projGrid">
+        <div class="proj-card span2 reveal d1" data-cat="web">
+          <div class="pj-top"><div class="pj-icon">🌐</div><span class="pj-badge">Featured</span></div>
+          <div class="pj-name">PERSONAL PORTFOLIO</div>
+          <p class="pj-desc">A fully custom multi-page portfolio website built from scratch to showcase skills, projects, and services. Responsive, animated, and designed with care — deployed on GitHub Pages.</p>
+          <div class="pj-tags"><span class="pj-tag">HTML</span><span class="pj-tag">CSS</span><span class="pj-tag">JavaScript</span><span class="pj-tag">GitHub Pages</span></div>
+          <a href="https://lazaaq.github.io" target="_blank" class="pj-link">View Live →</a>
+        </div>
+
+        <div class="proj-card reveal d2" data-cat="data">
+          <div class="pj-top"><div class="pj-icon">📊</div><span class="pj-num">002</span></div>
+          <div class="pj-name">DATA DASHBOARD</div>
+          <p class="pj-desc">Interactive data visualization dashboard built with Python and Plotly. Presents key metrics and insights with clean, filterable charts.</p>
+          <div class="pj-tags"><span class="pj-tag">Python</span><span class="pj-tag">Pandas</span><span class="pj-tag">Plotly</span></div>
+          <a href="https://github.com/lazaaq" target="_blank" class="pj-link">View on GitHub →</a>
+        </div>
+
+        <div class="proj-card reveal" data-cat="web">
+          <div class="pj-top"><div class="pj-icon">⚙️</div><span class="pj-num">003</span></div>
+          <div class="pj-name">FULLSTACK WEB APP</div>
+          <p class="pj-desc">End-to-end web application with JWT auth, REST API backend, and a dynamic React frontend with state management.</p>
+          <div class="pj-tags"><span class="pj-tag">React</span><span class="pj-tag">Node.js</span><span class="pj-tag">MongoDB</span></div>
+          <a href="https://github.com/lazaaq" target="_blank" class="pj-link">View on GitHub →</a>
+        </div>
+
+        <div class="proj-card reveal d1" data-cat="data">
+          <div class="pj-top"><div class="pj-icon">🤖</div><span class="pj-num">004</span></div>
+          <div class="pj-name">ML CLASSIFIER</div>
+          <p class="pj-desc">Machine learning classification model trained on real-world datasets. Includes EDA, feature engineering, model selection, and evaluation.</p>
+          <div class="pj-tags"><span class="pj-tag">Python</span><span class="pj-tag">Sklearn</span><span class="pj-tag">Jupyter</span></div>
+          <a href="https://github.com/lazaaq" target="_blank" class="pj-link">View on GitHub →</a>
+        </div>
+
+        <div class="proj-card reveal d2" data-cat="api">
+          <div class="pj-top"><div class="pj-icon">🛒</div><span class="pj-num">005</span></div>
+          <div class="pj-name">E-COMMERCE API</div>
+          <p class="pj-desc">RESTful API for an e-commerce platform — products, carts, orders, and user auth. Fully documented with Postman.</p>
+          <div class="pj-tags"><span class="pj-tag">Node.js</span><span class="pj-tag">Express</span><span class="pj-tag">MySQL</span></div>
+          <a href="https://github.com/lazaaq" target="_blank" class="pj-link">View on GitHub →</a>
+        </div>
+
+        <div class="proj-card reveal d3" data-cat="data">
+          <div class="pj-top"><div class="pj-icon">📈</div><span class="pj-num">006</span></div>
+          <div class="pj-name">EDA NOTEBOOK</div>
+          <p class="pj-desc">Exploratory data analysis on a public dataset — cleaning, correlation analysis, visualizations, and a written summary of findings.</p>
+          <div class="pj-tags"><span class="pj-tag">Python</span><span class="pj-tag">Seaborn</span><span class="pj-tag">Matplotlib</span></div>
+          <a href="https://github.com/lazaaq" target="_blank" class="pj-link">View on GitHub →</a>
+        </div>
+
+        <div class="proj-card reveal d1" data-cat="api">
+          <div class="pj-top"><div class="pj-icon">🔐</div><span class="pj-num">007</span></div>
+          <div class="pj-name">AUTH MICROSERVICE</div>
+          <p class="pj-desc">Standalone authentication microservice with JWT, refresh tokens, and role-based access control. Production-ready and tested.</p>
+          <div class="pj-tags"><span class="pj-tag">Node.js</span><span class="pj-tag">JWT</span><span class="pj-tag">Redis</span></div>
+          <a href="https://github.com/lazaaq" target="_blank" class="pj-link">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="f-logo">LSA<span>.</span></a>
+      <div class="f-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="f-copy">© 2025 Lana Saiful Aqil. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function filterProj(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.proj-card').forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        card.style.display = show ? 'flex' : 'none';
+        if (show) card.classList.add('in');
+      });
+    }
+  </script>
+</body>
+</html>

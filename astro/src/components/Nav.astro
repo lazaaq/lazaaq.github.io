@@ -1,0 +1,146 @@
+---
+// src/components/Nav.astro
+import { SITE } from '@/data/site';
+
+interface Props {
+  activePage: 'home' | 'portfolio' | 'skills';
+}
+
+const { activePage } = Astro.props;
+
+const links = [
+  { href: '/',          label: 'Home',      id: 'home' },
+  { href: '/portfolio', label: 'Portfolio', id: 'portfolio' },
+  { href: '/skills',    label: 'Skills',    id: 'skills' },
+];
+---
+
+<nav>
+  <a href="/" class="logo">
+    {SITE.initials}.<span class="muted">dev</span>
+  </a>
+  <ul class="nav-links">
+    {links.map(link => (
+      <li>
+        <a
+          href={link.href}
+          class:list={[{ active: activePage === link.id }]}
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="drawer">
+  {links.map(link => (
+    <a
+      href={link.href}
+      class:list={[{ active: activePage === link.id }]}
+    >
+      {link.label}
+    </a>
+  ))}
+</div>
+
+<style>
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(12,12,12,.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: var(--font-mono);
+    font-size: .8rem;
+    color: var(--accent);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .muted { color: var(--muted); }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--accent); }
+
+  /* hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: .25rem;
+  }
+
+  .hamburger span {
+    display: block; width: 22px; height: 1px;
+    background: var(--muted);
+    transition: all .2s;
+  }
+
+  /* mobile drawer */
+  .mobile-drawer {
+    position: fixed; top: 57px; left: 0; right: 0; z-index: 199;
+    background: rgba(12,12,12,.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    padding: 1rem 1.5rem;
+    gap: .75rem;
+    transform: translateY(-110%);
+    transition: transform .3s ease;
+  }
+
+  .mobile-drawer.open { transform: translateY(0); }
+
+  .mobile-drawer a {
+    font-family: var(--font-mono);
+    font-size: .8rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color .2s;
+  }
+
+  .mobile-drawer a:last-child { border-bottom: none; }
+  .mobile-drawer a.active,
+  .mobile-drawer a:hover { color: var(--accent); }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('hamburger')!;
+  const drawer = document.getElementById('drawer')!;
+  btn.addEventListener('click', () => drawer.classList.toggle('open'));
+</script>

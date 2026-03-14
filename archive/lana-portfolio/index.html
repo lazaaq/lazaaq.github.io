@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lana Saiful Aqil — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 100px 4rem 4rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .grid-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridPan 20s linear infinite;
+    }
+    .orb { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(100px); animation: orbPulse 8s ease-in-out infinite alternate; }
+    .orb-1 { width:600px; height:600px; background:rgba(56,189,248,0.10); top:-150px; right:-100px; animation-delay:0s; }
+    .orb-2 { width:400px; height:400px; background:rgba(74,222,128,0.07); bottom:-100px; left:20%; animation-delay:3s; }
+
+    .code-float { position:absolute; font-family:monospace; font-size:0.72rem; color:rgba(56,189,248,0.15); pointer-events:none; animation:codeDrift linear infinite; white-space:nowrap; }
+    @keyframes codeDrift { 0%{transform:translateY(0);opacity:0;} 10%{opacity:1;} 90%{opacity:0.2;} 100%{transform:translateY(-80vh);opacity:0;} }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.35rem 1rem; background: rgba(56,189,248,0.08); border: 1px solid var(--border-2);
+      border-radius: 100px; font-size: 0.72rem; font-weight: 700;
+      color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 2.5rem; width: fit-content;
+      opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+    .tag-dot { width:7px; height:7px; background:var(--green); border-radius:50%; box-shadow:0 0 8px var(--green); animation:pulse 2s infinite; }
+
+    .hero-name {
+      font-family: var(--display);
+      font-size: clamp(4rem, 11vw, 10rem);
+      line-height: 0.9; letter-spacing: 0.03em;
+      color: var(--white); margin-bottom: 0.75rem;
+      opacity: 0; animation: fadeUp 0.9s ease 0.35s forwards;
+    }
+    .hero-name .teal { color: var(--teal); }
+
+    .hero-role {
+      font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 300;
+      color: var(--muted-2); margin-bottom: 2rem; letter-spacing: 0.03em;
+      opacity: 0; animation: fadeUp 0.9s ease 0.55s forwards;
+    }
+    .hero-role strong { color: var(--teal-2); font-weight: 600; }
+
+    .hero-desc {
+      max-width: 520px; color: var(--muted); font-size: 0.95rem;
+      font-weight: 400; line-height: 1.9; margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.9s ease 0.7s forwards;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.9s ease 0.85s forwards; }
+
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: var(--muted); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+      opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
+    }
+    .scroll-bar { width:1px; height:40px; background:linear-gradient(to bottom, var(--teal), transparent); animation:scrollAnim 2s ease infinite; }
+    @keyframes scrollAnim { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+
+    /* ── STATS ── */
+    .stats-strip {
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border);
+    }
+    .stat-cell { background: var(--bg-2); padding: 2rem 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; transition: background 0.2s; }
+    .stat-cell:hover { background: var(--bg-3); }
+    .stat-n { font-family: var(--display); font-size: 2.8rem; letter-spacing: 0.04em; background: linear-gradient(135deg, var(--white) 0%, var(--teal) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; }
+    .stat-l { font-size:0.75rem; color:var(--muted); font-weight:500; letter-spacing:0.05em; }
+
+    /* ── FEATURED ── */
+    #featured { background: var(--bg-2); }
+    .featured-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 4rem; }
+    .feat-card {
+      background: var(--bg-3); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      text-decoration: none; color: inherit;
+    }
+    .feat-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px var(--teal-glow); border-color: var(--border-2); }
+    .fc-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .fc-title { font-family: var(--display); font-size: 1.2rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.6rem; }
+    .fc-desc { color: var(--muted); font-size: 0.83rem; line-height: 1.8; flex: 1; margin-bottom: 1.25rem; }
+    .fc-link { font-size: 0.8rem; font-weight: 600; color: var(--teal); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
+    .feat-card:hover .fc-link { gap: 0.75rem; }
+
+    @media(max-width:900px){
+      #hero { padding: 100px 1.5rem 4rem; }
+      .stats-strip { grid-template-columns: repeat(2,1fr); }
+      .featured-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="prog"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">LSA<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-hire">Hire Me</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="hero-tag"><span class="tag-dot"></span>Available for Work</div>
+    <h1 class="hero-name">LANA<br/><span class="teal">SAIFUL</span><br/>AQIL</h1>
+    <p class="hero-role"><strong>Fullstack Web Developer</strong> &amp; <strong>Junior Data Scientist</strong></p>
+    <p class="hero-desc">Building robust web applications end-to-end and extracting meaningful insights from data. Passionate about clean code, elegant interfaces, and data-driven decisions.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-primary">Hire Me →</a>
+      <a href="projects.html" class="btn-outline">View Projects</a>
+      <a href="about.html" class="btn-outline">About Me</a>
+    </div>
+    <div class="hero-scroll"><div class="scroll-bar"></div>scroll</div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip" data-counters>
+    <div class="stat-cell reveal"><div class="stat-n" data-target="2" data-suffix="+">0+</div><div class="stat-l">Years Experience</div></div>
+    <div class="stat-cell reveal d1"><div class="stat-n" data-target="10" data-suffix="+">0+</div><div class="stat-l">Projects Built</div></div>
+    <div class="stat-cell reveal d2"><div class="stat-n" data-target="5" data-suffix="+">0+</div><div class="stat-l">Tech Stacks</div></div>
+    <div class="stat-cell reveal d3"><div class="stat-n">∞</div><div class="stat-l">Lines of Code</div></div>
+  </div>
+
+  <!-- FEATURED -->
+  <section id="featured" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">Highlights</div>
+      <h2 class="stitle reveal d1">QUICK <span>LOOK</span></h2>
+      <p class="ssub reveal d2">Everything I bring to the table.</p>
+      <div class="featured-grid">
+        <a href="about.html" class="feat-card reveal d1">
+          <div class="fc-icon">👤</div>
+          <div class="fc-title">ABOUT ME</div>
+          <p class="fc-desc">Who I am, where I come from, and what drives me to build things that matter.</p>
+          <span class="fc-link">Read more →</span>
+        </a>
+        <a href="projects.html" class="feat-card reveal d2">
+          <div class="fc-icon">🚀</div>
+          <div class="fc-title">PROJECTS</div>
+          <p class="fc-desc">A curated look at fullstack apps, data science work, and everything in between.</p>
+          <span class="fc-link">See projects →</span>
+        </a>
+        <a href="skills.html" class="feat-card reveal d3">
+          <div class="fc-icon">⚡</div>
+          <div class="fc-title">SKILLS</div>
+          <p class="fc-desc">From React to Python to ML — a full breakdown of my technical expertise.</p>
+          <span class="fc-link">View skills →</span>
+        </a>
+        <a href="services.html" class="feat-card reveal d1">
+          <div class="fc-icon">🛠️</div>
+          <div class="fc-title">SERVICES</div>
+          <p class="fc-desc">Web development, data science, and API design — available for hire.</p>
+          <span class="fc-link">View services →</span>
+        </a>
+        <a href="contact.html" class="feat-card reveal d2" style="grid-column: span 2;">
+          <div class="fc-icon">💬</div>
+          <div class="fc-title">LET'S WORK TOGETHER</div>
+          <p class="fc-desc">Have a project in mind? I'm open to freelance, part-time, or full-time roles. Let's build something great together.</p>
+          <span class="fc-link">Get in touch →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="f-logo">LSA<span>.</span></a>
+      <div class="f-links">
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="f-copy">© 2025 Lana Saiful Aqil. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Floating code snippets
+    const snippets = ['const app = express();','import pandas as pd','SELECT * FROM users;','npm run build','git push origin main','df.groupby("col")','<App />','model.fit(X_train)','async/await'];
+    snippets.forEach(s => {
+      const el = document.createElement('div');
+      el.className = 'code-float';
+      el.textContent = s;
+      el.style.cssText = `left:${5+Math.random()*90}%;bottom:-2rem;animation-duration:${10+Math.random()*12}s;animation-delay:${Math.random()*10}s;`;
+      document.getElementById('hero').appendChild(el);
+    });
+  </script>
+</body>
+</html>

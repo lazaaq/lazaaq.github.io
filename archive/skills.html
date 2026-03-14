@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Lana Saiful Aqil</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Simple line icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top" style="background-color: #fff;">
+    <!-- Navigation-->
+    <a class="menu-toggle rounded" href="#"><i class="bi bi-list"></i></a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand"><a href="#">Menu</a></li>
+        <li class="sidebar-nav-item"><a href="index.html#">Home</a></li>
+        <li class="sidebar-nav-item"><a href="profile.html#">Profile</a></li>
+        <li class="sidebar-nav-item"><a href="skills.html#">Skills</a></li>
+        <li class="sidebar-nav-item"><a href="projects.html#">Projects</a></li>
+        <li class="sidebar-nav-item"><a href="services.html#">Services</a></li>
+      </ul>
+    </nav>
+
+    <header class="d-flex align-items-center h-100">
+      <div class="container px-4 px-lg-5 text-center">
+        <div class="mb-1 judul-hero">SKILLS</div>
+        <div class="nama">~ Lana Saiful Aqil ~</div>
+      </div>
+    </header>
+    <style>
+      header {
+        background-image: url('assets/img/bg/2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      header .judul-hero {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      header .nama {
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        section.body {
+          padding-left: 0!important;
+          padding-right: 0!important;
+        }
+      }
+      @media only screen and (max-width: 576px) {
+        section.body .card {
+          width: 100%!important;
+        }
+        section.body .container {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+        section.body .deskripsi .text-center {
+          font-size: 1.5rem!important;
+        }
+      }
+    </style>
+
+    <section class="body" style="height: fit-content; padding: 5rem 10rem;">
+      <div class="container" x-data="loadProjects()" x-init="fetchProjects()">
+        <template x-for="(skills, i) in Object.values(skills_filter)" :key="i">
+          <div class="mb-5">
+            <h2 class="text-center mb-4" :id="skills.type" x-text="skills.title"></h2>
+            <div class="row justify-content-sm-center justify-content-evenly">
+              <template x-for="(skill, j) in skills.projects" :key="j">
+                <div class="col col-6 col-sm-4 col-lg-3 col-xxl-2 mb-3">
+                  <div class="card w-100 h-100">
+                    <div class="card-body d-flex">
+                      <div class="image text-center d-none d-sm-flex justify-content-center align-items-center">
+                        <img class="rounded w-100" :src="skill.src" alt="">
+                      </div>
+                      <div class="deskripsi ms-2 w-100 d-flex align-items-center">
+                        <div>
+                          <div class="deskripsi-text text-center text-sm-start">
+                            <span x-text="skill.name"></span>
+                          </div>
+                          <div class="mt-1 text-center text-sm-start">
+                            <button type="button" class="btn btn-outline-info btn-sm"
+                              data-bs-toggle="modal"
+                              :data-bs-target="'#' + skill.name.toLowerCase().replace(/\s+/g, '')">
+                              Experience
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+    <style>
+      .card-body .image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .card-body img {
+        width: auto;
+        height: auto;
+      }
+      .card-body .deskripsi .deskripsi-text {
+        font-weight: 700;
+      }
+    </style>
+    <!-- Modal -->
+    <div class="modal fade" id="bootstrap" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Bootstrap Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Layout : Breakpoints, Containers, Grid, Columns, Display, Alignment</li>
+              <li>Content : Heading, Paragraph, List, Table, Image, Card</li>
+              <li>Forms : Input Field, Button, Date, Time, Datetime, Radio, Checkbox, Select, File Input</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="vuejs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Vue JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using VueJS for 1 year</li>
+              <li>Create Application from Scratch Vue 3 CLI</li>
+              <li>Components : Templating, Importing Module, Importing Component, Methods, Mounted Function, Created Function, Computed Variable, Data, Emit Function, Props</li>
+              <li>Forms: Input Bindings, Search Item using Computed Variable</li>
+              <li>Plugins : Working with JQuery, Working With API (Axios), Vuex (State, Mutations, Actions, Getters), Router</li>
+              <li>Latest Project : <a href="https://www.github.com/lazaaq/Onega-Cashier" target="_blank">https://www.github.com/lazaaq/Onega-Cashier</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="tailwindcss" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Tailwind CSS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Tailwind for 1 Year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="alpinejs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Alpine JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using AlpineJS for 1 year</li>
+              <li>Create Application from Scratch Vue 3 CLI</li>
+              <li>Data Binding</li>
+              <li>Handle Forms</li>
+              <li>Plugins : Working with JQuery, Working With API (Axios), Alpine Store, Alpine Data</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="php" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My PHP Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using PHP since 2020</li>
+              <li>Create PHP project from scratch</li>
+              <li>PHP Language : Variables, Conditions, Loops, Functions, Classes and Objects, Exceptions</li>
+              <li>Web Develop : Working with MySQL, Authentication, Authorization, HTTP Request</li>
+              <li>Projects : 
+                <ul>
+                  <li><a href="https://github.com/lazaaq/IAICP" target="_blank">https://github.com/lazaaq/IAICP</a></li>
+                  <li><a href="https://github.com/lazaaq/Simple-Online-Store" target="_blank">https://github.com/lazaaq/Simple-Online-Store</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="laravel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Laravel Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Laravel since 2021</li>
+              <li>Create Laravel Fullstack Application from Scratch</li>
+              <li>Create Laravel Backend API from Scratch</li>
+              <li>Routing, Controller, Model, Migration, Seeder, Factory, Middleware, Blade Templating Engine, Localization, Mail, Task Scheduling, Authentication, Authorization</li>
+              <li>Best Practice : DB Transaction, Eloquent ORM, File Storage, Helpers, Encryption, Mutators, Unit Testing</li>
+              <li>DB : MySQL, PostgreSQL</li>
+              <li>Project : 
+                <ul>
+                  <li><a href="https://github.com/lazaaq/rpkps">https://github.com/lazaaq/rpkps</a></li>
+                  <li><a href="https://github.com/lazaaq/Laravel-SAIT">https://github.com/lazaaq/Laravel-SAIT</a></li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="nodejs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Node JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Node JS for 1 year</li>
+              <li>Create Node JS Application from Scratch</li>
+              <li>HTTP Request, Routing, Middleware, Controller, View Templating Engine, Model, API</li>
+              <li>DB : MongoDB, MySQL</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="adonisjs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Adonis JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Adonis JS for 1 year</li>
+              <li>Create Node JS Application from Scratch</li>
+              <li>HTTP Request, Routing, Controller, Model, Migration, Seeder, Factory, Middleware, Authentication, Authorization</li>
+              <li>DB : MongoDB, MySQL, PostgreSQL</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="fastifyjs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Fastify JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Fastify JS since 2022</li>
+              <li>Create Fastify JS Application from Scratch</li>
+              <li>HTTP Request, Websocket, Controller, Service, Model, Middleware, Authentication, Authorization</li>
+              <li>DB : MySQL, PostgreSQL, Redis, InfluxDB, MongoDB</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="expressjs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Express JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Express JS for 1 Year</li>
+              <li>Create Express JS Application from Scratch</li>
+              <li>HTTP Request, Routing, Controller, Service, Model, Middleware, Authentication, Authorization</li>
+              <li>DB : MongoDB, MySQL, PostgreSQL</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="mysql" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My MySQL Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using MySQL for 2 year</li>
+              <li>Command : Create new record, Read record, Update record, Delete Record, Join Table, Search record, Order record, Count record, Grouping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="postgresql" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My PostgreSQL Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using PostgreSQL for 1 year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="redis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Redis Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Redis for 1 year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="influxdb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My InfluxDB Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using InfluxDB for 1 year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="mongodb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My MongoDB Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using MongoDB for 1 year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="flutter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Flutter Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Junior Mobile Programmer using Flutter</li>
+              <li>Create Flutter Application from Scratch</li>
+              <li>HTTP Request, Routing, Call API, Model, Widget, Localization, Notification, Splash Screen</li>
+              <li>Latest Project :
+                <ul>
+                  <li><a href="https://github.com/lazaaq/Android-Tugas-Akhir">https://github.com/lazaaq/Android-Tugas-Akhir</a></li>
+                  <li><a href="https://github.com/lazaaq/flutter-world-time">https://github.com/lazaaq/flutter-world-time</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="nativejava" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Native Java Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Native Java for 1 year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="figma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Adonis JS Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Figma for 1 year</li>
+              <li>Create Landing Page, Instagram Post, Twitter Post, Web Application Design from Scratch</li>
+              <li>Latest Design : 
+                <ul>
+                  <li><a href="#">Not yet added</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="tensorflow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Tensorflow Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Tensorflow for 1 year</li>
+              <li>Create Simple Model for Image Processing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="python" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Python Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Python for 3 year</li>
+              <li>Create Mini Project for Desktop <a href="https://github.com/lazaaq/Mini-Project" class="badge bg-primary" target="_blank">Check here</a></li>
+              <li>Create model Tensorflow</li>
+              <li>Create scraping application</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="colab" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Google Colab Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Google Colab for 1 year</li>
+              <li>Running machine learning program in google colab</li>
+              <li>Setting up my google colab application from scratch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="jupyter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Jupyter Notebook Experience</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Been using Jupyter Notebook for 1 year</li>
+              <li>Running machine learning program in jupyter notebook</li>
+              <li>Setting up my jupyter notebook application from scratch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <section class="py-5 bg-primary text-white" id="contact">
+      <div class="container px-4 px-lg-5 text-center">
+        <h4 class="mb-4">Check my Social Media!</h4>
+        <a target="_blank" class="btn px-5 btn-info me-4 text-light mb-3" href="https://www.linkedin.com/in/lana-saiful-aqil">
+          Linkedin <i class="bi bi-linkedin"></i>
+        </a>
+        <a target="_blank" class="btn px-5 btn-dark me-4 mb-3" href="https://www.github.com/lazaaq">
+          Github <i class="bi bi-github"></i>
+        </a>
+        <a target="_blank" class="btn px-5 btn-danger me-4 mb-3" href="https://www.instagram.com/lazaaq">
+          Instagram <i class="bi bi-instagram"></i>
+        </a>
+        <!-- <a class="btn btn-xl btn-light" href="#!">Dribbble</a> -->
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <div class="container px-4 px-lg-5">
+        <p class="text-muted small mb-0">Copyright &copy; Lana Saiful Aqil 2022</p>
+      </div>
+    </footer>
+
+    <a class="scroll-to-top rounded" href="#page-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- ALPINE JS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      function loadProjects() {
+        return {
+          projects: [],
+          skills: {},
+          skills_filter: {
+            "language": {
+              title: "LANGUAGE PROGRAMMING SKILLS",
+              type: "language",
+              projects: [],
+            },
+            "backend": {
+              title: "BACKEND WEB DEVELOPER SKILLS",
+              type: "backend",
+              projects: [],
+            },
+            "frontend": {
+              title: "FRONTEND WEB DEVELOPER SKILLS",
+              type: "frontend",
+              projects: [],
+            },
+            "database": {
+              title: "DATABASE SKILLS",
+              type: "database",
+              projects: [],
+            },
+            "devops": {
+              title: "DEVOPS SKILLS",
+              type: "devops",
+              projects: [],
+            },
+            "mobile": {
+              title: "MOBILE DEVELOPER SKILLS",
+              type: "mobile",
+              projects: [],
+            },
+            "others": {
+              title: "OTHER SKILLS",
+              type: "others",
+              projects: [],
+            },
+          },
+           
+
+          async filterSkills() {
+            try {
+              const allSkills = Object.values(this.skills);
+              console.log(allSkills)
+              allSkills.forEach((skill) => {
+                const types = skill.type;
+                types.forEach((type) => {
+                  if (this.skills_filter[type]) {
+                    this.skills_filter[type].projects.push(skill);
+                  }
+                });
+              });
+              console.log(this.skills_filter);
+            } catch (e) {
+              console.error("Failed to load skills:", e);
+            }
+          },
+
+          async fetchProjects() {
+            try {
+              const projects_list = await fetch('./json/projects_list.json');
+              const skills_list = await fetch('./json/skills_list.json');
+              this.projects = await projects_list.json();
+              this.skills = json = await skills_list.json();
+              this.filterSkills();
+            } catch (e) {
+              console.error('Failed to load JSON:', e);
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

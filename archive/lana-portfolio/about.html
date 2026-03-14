@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lana Saiful Aqil — About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .about-layout { display:grid; grid-template-columns:1.2fr 0.8fr; gap:5rem; align-items:start; margin-top:4rem; }
+    .about-text p { color:var(--muted-2); font-size:0.93rem; line-height:2; margin-bottom:1.25rem; font-weight:300; }
+    .about-text p strong { color:var(--white); font-weight:600; }
+    .about-text p .hl { color:var(--teal); }
+
+    .profile-card { background:var(--bg-3); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.4); }
+    .pc-top { padding:1.1rem 1.5rem; border-bottom:1px solid var(--border); background:var(--surface); display:flex; align-items:center; gap:0.45rem; }
+    .pc-dot { width:10px; height:10px; border-radius:50%; }
+    .pc-dot.r{background:#ff5f57;} .pc-dot.y{background:#ffbd2e;} .pc-dot.g{background:#28c840;}
+    .pc-file { margin-left:0.5rem; font-size:0.72rem; color:var(--muted); font-family:monospace; }
+    .pc-row { display:flex; justify-content:space-between; align-items:center; padding:0.85rem 1.5rem; border-bottom:1px solid var(--border); transition:background 0.15s; }
+    .pc-row:last-child { border-bottom:none; }
+    .pc-row:hover { background:rgba(56,189,248,0.04); }
+    .pk { font-size:0.72rem; color:var(--muted); font-family:monospace; }
+    .pv { font-size:0.82rem; color:var(--white); font-weight:500; }
+    .pv.open { color:var(--green); display:flex; align-items:center; gap:0.4rem; }
+    .pv.open::before { content:''; width:6px; height:6px; background:var(--green); border-radius:50%; box-shadow:0 0 6px var(--green); animation:pulse 2s infinite; }
+
+    /* Timeline */
+    .timeline { margin-top: 5rem; }
+    .tl-head { font-family:var(--display); font-size:1.8rem; letter-spacing:0.04em; color:var(--white); margin-bottom:2.5rem; }
+    .tl-head span { color:var(--teal); }
+    .tl-list { display:flex; flex-direction:column; gap:0; position:relative; }
+    .tl-list::before { content:''; position:absolute; left:10px; top:8px; bottom:8px; width:1px; background:linear-gradient(to bottom, var(--teal), transparent); }
+    .tl-item { display:grid; grid-template-columns:2rem 1fr; gap:1.5rem; padding-bottom:2.5rem; }
+    .tl-item:last-child { padding-bottom:0; }
+    .tl-dot { width:20px; height:20px; border-radius:50%; background:var(--bg); border:2px solid var(--teal); box-shadow:0 0 0 4px rgba(56,189,248,0.12); margin-top:0.2rem; z-index:1; transition:background 0.2s; }
+    .tl-item:hover .tl-dot { background:var(--teal); }
+    .tl-body { background:var(--bg-3); border:1px solid var(--border); border-radius:14px; padding:1.5rem 1.75rem; transition:border-color 0.25s, transform 0.25s; }
+    .tl-item:hover .tl-body { border-color:var(--border-2); transform:translateX(4px); }
+    .tl-meta { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem; flex-wrap:wrap; gap:0.5rem; }
+    .tl-role { font-family:var(--display); font-size:1.05rem; letter-spacing:0.04em; color:var(--white); }
+    .tl-date { font-size:0.7rem; font-weight:700; color:var(--teal); background:rgba(56,189,248,0.08); border:1px solid var(--border-2); padding:0.18rem 0.65rem; border-radius:100px; }
+    .tl-org { font-size:0.8rem; color:var(--muted); margin-bottom:0.75rem; }
+    .tl-pts { list-style:none; display:flex; flex-direction:column; gap:0.4rem; }
+    .tl-pts li { font-size:0.83rem; color:var(--muted-2); font-weight:300; padding-left:1.1rem; position:relative; line-height:1.75; }
+    .tl-pts li::before { content:'→'; position:absolute; left:0; color:var(--teal); font-size:0.75rem; }
+
+    @media(max-width:900px){
+      .about-layout { grid-template-columns:1fr; gap:3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="prog"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">LSA<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-hire">Hire Me</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-header">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="container">
+      <div class="page-eyebrow">About</div>
+      <h1 class="page-title">WHO I <span>AM</span></h1>
+      <p class="page-sub">Developer by day, data explorer by night. Here's the full story.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text reveal">
+          <p>I'm <strong>Lana Saiful Aqil</strong>, a <span class="hl">Fullstack Web Developer</span> and <span class="hl">Junior Data Scientist</span> who loves building things that live on the web — from polished frontends to solid backends and everything in between.</p>
+          <p>My work sits at the intersection of <strong>software engineering</strong> and <strong>data science</strong>. I enjoy crafting intuitive user experiences as much as I enjoy diving into datasets to find patterns that drive better decisions.</p>
+          <p>I started my journey with web development, learning HTML, CSS, and JavaScript from scratch. Over time, I expanded into <strong>React, Node.js, and Python</strong>, eventually discovering a passion for data — preprocessing, analysis, visualization, and machine learning.</p>
+          <p>I'm always learning, always building, and always looking for the next challenge that pushes me to grow as a developer and data practitioner. If you have a project that needs both engineering and data expertise, I'd love to hear about it.</p>
+        </div>
+        <div class="reveal d1">
+          <div class="profile-card">
+            <div class="pc-top">
+              <div class="pc-dot r"></div><div class="pc-dot y"></div><div class="pc-dot g"></div>
+              <span class="pc-file">lana.config.js</span>
+            </div>
+            <div class="pc-row"><span class="pk">name</span><span class="pv">Lana Saiful Aqil</span></div>
+            <div class="pc-row"><span class="pk">role</span><span class="pv">Fullstack Dev + Data Sci</span></div>
+            <div class="pc-row"><span class="pk">focus</span><span class="pv">Web · Data · AI</span></div>
+            <div class="pc-row"><span class="pk">github</span><span class="pv">lazaaq</span></div>
+            <div class="pc-row"><span class="pk">linkedin</span><span class="pv">lana-saiful-aqil</span></div>
+            <div class="pc-row"><span class="pk">languages</span><span class="pv">JS · Python · SQL</span></div>
+            <div class="pc-row"><span class="pk">status</span><span class="pv open">Open to opportunities</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline reveal">
+        <div class="tl-head">MY <span>JOURNEY</span></div>
+        <div class="tl-list">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <div class="tl-meta"><span class="tl-role">FULLSTACK WEB DEVELOPER</span><span class="tl-date">2022 — Present</span></div>
+              <div class="tl-org">Freelance & Personal Projects</div>
+              <ul class="tl-pts">
+                <li>Built end-to-end web applications using React, Node.js, and MongoDB.</li>
+                <li>Designed and developed REST APIs for various client and personal projects.</li>
+                <li>Delivered responsive, accessible, and performant web experiences.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <div class="tl-meta"><span class="tl-role">JUNIOR DATA SCIENTIST</span><span class="tl-date">2023 — Present</span></div>
+              <div class="tl-org">Academic & Independent Research</div>
+              <ul class="tl-pts">
+                <li>Developed ML models for classification and prediction tasks using Python and Scikit-learn.</li>
+                <li>Created data visualizations and dashboards to communicate insights clearly.</li>
+                <li>Explored NLP and computer vision projects for learning and portfolio building.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <div class="tl-meta"><span class="tl-role">OPEN SOURCE CONTRIBUTOR</span><span class="tl-date">2022 — Present</span></div>
+              <div class="tl-org">GitHub — lazaaq</div>
+              <ul class="tl-pts">
+                <li>Maintained public repositories covering web and data science projects.</li>
+                <li>Contributed to community discussions and code reviews on GitHub.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="f-logo">LSA<span>.</span></a>
+      <div class="f-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="f-copy">© 2025 Lana Saiful Aqil. All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

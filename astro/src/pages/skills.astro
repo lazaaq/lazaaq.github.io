@@ -1,0 +1,291 @@
+---
+// src/pages/skills.astro
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CertCard from '@/components/CertCard.astro';
+import { skillGroups, certifications, methodologies } from '@/data/skills';
+import { SITE } from '@/data/site';
+---
+
+<BaseLayout title={`Skills — ${SITE.name}`} activePage="skills">
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <div>
+      <p class="section-label">Kemampuan & Keahlian</p>
+      <h1 class="page-title">Skills &<br><em>Certifications</em></h1>
+    </div>
+    <p class="header-desc">
+      Teknologi yang saya kuasai, tools yang saya gunakan setiap hari, dan sertifikasi yang memvalidasi kompetensi saya.
+    </p>
+  </header>
+
+  <!-- ── SKILL GROUPS ── -->
+  <section class="skills-section">
+    <p class="section-label">Technical Skills</p>
+    <h2 class="sk-title">Stack yang Saya <em>Kuasai</em></h2>
+
+    <div class="skills-grid">
+      {skillGroups.map(group => (
+        <div class="skill-group">
+          <div class="group-header">
+            <span class="group-icon">{group.icon}</span>
+            <span class="group-name">{group.name}</span>
+          </div>
+          <div class="skill-tags">
+            {group.primary.map(s => (
+              <span class="tag tag-primary">{s}</span>
+            ))}
+            {group.secondary.map(s => (
+              <span class="tag">{s}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── TOOLS ── -->
+  <section class="tools-section">
+    <p class="section-label">Everyday Tools</p>
+    <h2 class="sk-title">Tools yang Saya <em>Gunakan</em></h2>
+    <div class="tools-wrap">
+      {SITE.tools.map(t => (
+        <div class="tool-chip">
+          <span class="tool-icon">{t.icon}</span>
+          {t.name}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section class="certs-section">
+    <p class="section-label">Sertifikasi Resmi</p>
+    <h2 class="sk-title">Certifications &<br><em>Credentials</em></h2>
+
+    <div class="certs-grid">
+      {certifications.map((cert, i) => (
+        <CertCard cert={cert} index={i} />
+      ))}
+    </div>
+  </section>
+
+  <!-- ── METHODOLOGY + LANGUAGE ── -->
+  <section class="bottom-grid">
+
+    <div class="method-col">
+      <p class="section-label">Metodologi</p>
+      <h2 class="sk-title">Cara Saya <em>Bekerja</em></h2>
+      <ul class="method-list">
+        {methodologies.map(m => (
+          <li class="method-item">
+            <span class="method-icon">{m.icon}</span>
+            <div>
+              <p class="method-name">{m.name}</p>
+              <p class="method-sub">{m.sub}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="lang-col">
+      <p class="section-label">Bahasa</p>
+      <h2 class="sk-title">Komunikasi & <em>Bahasa</em></h2>
+      <ul class="lang-list">
+        {SITE.languages.map(l => (
+          <li class="lang-item">
+            <span class="lang-name">{l.name}</span>
+            <span class="lang-level">{l.level}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="interests">
+        <p class="section-label" style="margin-top:3rem; margin-bottom:1rem;">Topik yang Saya Ikuti</p>
+        <div class="interest-tags">
+          {SITE.interests.map(t => (
+            <span class="tag">{t}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 9rem 4rem 4rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem;
+  }
+
+  .header-desc {
+    font-size: .9rem; color: var(--muted);
+    max-width: 38ch; line-height: 1.8;
+  }
+
+  /* ── SK TITLE ── */
+  .sk-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2rem;
+    line-height: 1.15;
+  }
+
+  .sk-title em { color: var(--accent); font-style: italic; }
+
+  /* ── SKILLS ── */
+  .skills-section {
+    padding: 5rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-group {
+    background: var(--bg);
+    padding: 2rem;
+    transition: background .2s;
+  }
+
+  .skill-group:hover { background: var(--surface); }
+
+  .group-header {
+    display: flex; align-items: center; gap: .75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .group-icon { font-size: 1.2rem; }
+
+  .group-name {
+    font-family: var(--font-mono);
+    font-size: .7rem;
+    color: var(--accent2);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+
+  /* hover effect on individual tags */
+  :global(.skill-tags .tag:hover) {
+    border-color: var(--accent2);
+    color: var(--accent);
+  }
+
+  /* ── TOOLS ── */
+  .tools-section {
+    padding: 4rem 4rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .tools-wrap {
+    display: flex; flex-wrap: wrap; gap: .6rem;
+    margin-top: .5rem;
+  }
+
+  .tool-chip {
+    display: flex; align-items: center; gap: .5rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--border);
+    font-size: .85rem;
+    color: var(--muted);
+    background: var(--bg);
+    transition: all .2s;
+    cursor: default;
+  }
+
+  .tool-chip:hover { border-color: var(--accent2); color: var(--text); }
+  .tool-icon { font-size: 1rem; }
+
+  /* ── CERTS ── */
+  .certs-section {
+    padding: 5rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── BOTTOM GRID ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .method-col {
+    padding: 4rem 4rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .lang-col { padding: 4rem 4rem; }
+
+  .method-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+
+  .method-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: .85rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color .2s;
+  }
+
+  .method-item:hover { border-color: var(--accent2); }
+
+  .method-icon { font-size: 1.1rem; }
+
+  .method-name { font-size: .9rem; font-weight: 400; color: var(--text); margin-bottom: .2rem; }
+  .method-sub  { font-family: var(--font-mono); font-size: .65rem; color: var(--muted); }
+
+  /* Languages */
+  .lang-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-top: .5rem; }
+
+  .lang-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .75rem 1rem;
+    border: 1px solid var(--border);
+  }
+
+  .lang-name { font-size: .9rem; color: var(--text); }
+
+  .lang-level {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(232,213,163,.25);
+    padding: .2rem .65rem;
+  }
+
+  .interest-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .page-header  { padding: 7rem 1.5rem 3rem; flex-direction: column; align-items: flex-start; }
+    .skills-section, .certs-section { padding: 3rem 1.5rem; }
+    .tools-section { padding: 3rem 1.5rem; }
+    .bottom-grid { grid-template-columns: 1fr; }
+    .method-col { border-right: none; border-bottom: 1px solid var(--border); padding: 3rem 1.5rem; }
+    .lang-col { padding: 3rem 1.5rem; }
+  }
+</style>

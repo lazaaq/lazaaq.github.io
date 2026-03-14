@@ -1,5 +1,15 @@
 [
   {
+    "id": "oneshot",
+    "name": "ONESHOT (Photobooth System)",
+    "last_update": "July 2025",
+    "type": "Web Application",
+    "stack": ["nextjs", "mysql"],
+    "difficulty": 7,
+    "description": "The OneShot project is a photobooth system designed to provide an interactive and user-friendly experience for capturing and sharing photos. This web application features a seamless interface for users to take photos, apply filters, and share their images on social media platforms. Built with Next.js and MySQL, OneShot ensures efficient performance and reliable data management.",
+    "url": "projects/oneshot/"
+  },
+  {
     "id": "kofee",
     "name": "KOFEE (Machine Learning)",
     "last_update": "31 Oct 2024",

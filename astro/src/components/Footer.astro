@@ -1,0 +1,16 @@
+---
+// src/components/Footer.astro
+import { SITE } from '@/data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <span>© {year} {SITE.name} · Built with Astro.</span>
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/skills">Skills</a>
+    <a href={`mailto:${SITE.email}`}>Email</a>
+  </nav>
+</footer>
