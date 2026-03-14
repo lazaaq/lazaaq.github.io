@@ -6,164 +6,154 @@ import { SITE } from '@/data/site';
 
 <BaseLayout title={`${SITE.name} — ${SITE.role}`} activePage="home">
 
-  <!-- ── HERO ── -->
-  <section class="hero">
+<!-- ── HERO ── -->
+<section class="hero">
     <div class="hero-left">
-      {SITE.availableForWork && (
+    {SITE.availableForWork && (
         <div class="avail-badge fade-in">
-          <span class="dot"></span> Open to work
+        <span class="dot"></span> Open to work
         </div>
-      )}
-      <p class="section-label fade-in">{SITE.role}</p>
-      <h1 class="hero-title fade-in" set:html={SITE.tagline.replace('clean', '<em>clean</em>')} />
-      <p class="hero-desc fade-in">{SITE.description}</p>
-      <div class="hero-cta fade-in">
+    )}
+    <p class="section-label fade-in">{SITE.role}</p>
+    <h1 class="hero-title fade-in" set:html={SITE.tagline.replace('clean', '<em>clean</em>')} />
+    <p class="hero-desc fade-in">{SITE.description}</p>
+    <div class="hero-cta fade-in">
         <a href="/portfolio" class="btn btn-primary">Lihat Karya →</a>
         <a href="#cv" class="btn btn-ghost">Download CV</a>
-      </div>
+    </div>
     </div>
 
     <div class="hero-right">
-      <div class="photo-area">
+    <div class="photo-area">
         <div class="photo-bg"></div>
         <div class="photo-inner">
-          <div class="avatar">
-            <!--
-              Ganti dengan foto Anda:
-              <img src="/foto.jpg" alt="Alex Kurniawan" />
-            -->
-            <span class="avatar-icon">👤</span>
-          </div>
-          <p class="photo-name">{SITE.name}</p>
-          <p class="photo-hint">[ ganti dengan foto Anda ]</p>
+        <div class="avatar">
+            <img src="/foto.jpg" alt="Lana Saiful Aqil" />
         </div>
-      </div>
-      <div class="hero-badge-strip">
+        <p class="photo-name">{SITE.name}</p>
+        <p class="photo-hint">{SITE.role}</p>
+        </div>
+    </div>
+    <div class="hero-badge-strip">
         <span class="role-tag">{SITE.role} · 3+ Years</span>
         <span class="location">📍 {SITE.location}</span>
-      </div>
     </div>
-  </section>
+    </div>
+</section>
 
-  <!-- ── STATS ── -->
-  <div class="stats-row">
+<!-- ── STATS ── -->
+<div class="stats-row">
     {SITE.stats.map(s => (
-      <div class="stat-cell">
+    <div class="stat-cell">
         <div class="stat-num">{s.num}</div>
         <div class="stat-label">{s.label}</div>
-      </div>
+    </div>
     ))}
-  </div>
+</div>
 
-  <!-- ── ABOUT ── -->
-  <div class="about-grid">
+<!-- ── ABOUT ── -->
+<div class="about-grid">
     <div class="about-left">
-      <p class="section-label">Tentang Saya</p>
-      <h2 class="about-title">Developer yang<br>peduli <em>detail.</em></h2>
-      <p class="about-text">
-        Saya adalah seorang full-stack developer berbasis di Yogyakarta yang memiliki ketertarikan mendalam pada rekayasa perangkat lunak yang bersih, skalabel, dan berdampak nyata.
-      </p>
-      <p class="about-text">
+    <p class="section-label">Tentang Saya</p>
+    <h2 class="about-title">Developer yang<br>peduli <em>detail.</em></h2>
+    <p class="about-text">
+        Saya adalah seorang full-stack developer yang memiliki ketertarikan mendalam pada rekayasa perangkat lunak yang bersih, skalabel, dan berdampak nyata.
+    </p>
+    <p class="about-text">
         Dengan pengalaman lebih dari 3 tahun di industri, saya telah berkontribusi pada berbagai proyek mulai dari startup fintech, platform e-commerce, hingga sistem manajemen internal.
-      </p>
-      <p class="about-text">
-        Di luar coding, saya aktif berkontribusi ke open source dan gemar menulis artikel teknikal.
-      </p>
+    </p>
     </div>
 
     <div class="about-right">
-      <p class="section-label">Perjalanan Karir</p>
-      <ul class="timeline">
+    <p class="section-label">Perjalanan Karir</p>
+    <ul class="timeline">
         {SITE.timeline.map((item, i) => (
-          <li class="tl-item">
+        <li class="tl-item">
             <span class="tl-year">{item.year}</span>
             <span class="tl-dot"></span>
             <div class="tl-body">
-              <h4 class="tl-title">{item.title}</h4>
-              <p class="tl-desc">{item.desc}</p>
+            <h4 class="tl-title">{item.title}</h4>
+            <p class="tl-desc">{item.desc}</p>
             </div>
-          </li>
+        </li>
         ))}
-      </ul>
+    </ul>
     </div>
-  </div>
+</div>
 
-  <!-- ── ACTIVITY ── -->
-  <div class="activity-section">
+<!-- ── ACTIVITY ── -->
+<div class="activity-section">
     <p class="section-label">Aktivitas Terkini</p>
     <ul class="activity-list">
-      {SITE.recentActivity.map(a => (
+    {SITE.recentActivity.map(a => (
         <li class="activity-item">
-          <span class="act-date">{a.date}</span>
-          <span class="act-text">{a.text}</span>
+        <span class="act-date">{a.date}</span>
+        <span class="act-text">{a.text}</span>
         </li>
-      ))}
+    ))}
     </ul>
-  </div>
+</div>
 
-  <!-- ── SOCIAL ── -->
-  <div class="social-section">
+<!-- ── SOCIAL ── -->
+<div class="social-section">
     <p class="section-label">Temukan Saya Di</p>
     <h2 class="social-title">Social <em>Media</em></h2>
     <div class="social-grid">
-      {SITE.social.map(s => (
+    {SITE.social.map(s => (
         <a href={s.url} target="_blank" rel="noopener" class="social-card">
-          <span class="social-icon">{s.icon}</span>
-          <span class="social-platform">{s.platform}</span>
-          <span class="social-handle">{s.handle}</span>
-          <span class="social-desc">{s.desc}</span>
+        <span class="social-icon">{s.icon}</span>
+        <span class="social-platform">{s.platform}</span>
+        <span class="social-handle">{s.handle}</span>
+        <span class="social-desc">{s.desc}</span>
         </a>
-      ))}
+    ))}
     </div>
-  </div>
+</div>
 
-  <!-- ── CV ── -->
-  <div id="cv" class="cv-section">
+<!-- ── CV ── -->
+<div id="cv" class="cv-section">
     <div class="cv-left">
-      <p class="section-label">Curriculum Vitae</p>
-      <h2 class="cv-title">Download<br><em>CV Saya</em></h2>
-      <p class="cv-desc">
-        CV saya tersedia dalam format PDF, mencakup pengalaman kerja, pendidikan, skills teknikal, dan portofolio proyek pilihan. Diperbarui per Januari 2025.
-      </p>
-      <div class="cv-cta">
+    <p class="section-label">Curriculum Vitae</p>
+    <h2 class="cv-title">Download<br><em>CV Saya</em></h2>
+    <p class="cv-desc">
+        CV saya tersedia dalam format PDF, mencakup pengalaman kerja, pendidikan, skills teknikal, dan portofolio proyek pilihan. Diperbarui per Maret 2026.
+    </p>
+    <div class="cv-cta">
         <a href={SITE.cvFile} download class="btn btn-primary">⬇ Download PDF</a>
-        <a href={`mailto:${SITE.email}`} class="btn btn-ghost">Minta Versi Lain</a>
-      </div>
-      <div class="cv-meta">
+    </div>
+    <div class="cv-meta">
         <div class="cv-meta-item">Format<span>PDF</span></div>
-        <div class="cv-meta-item">Ukuran<span>~180 KB</span></div>
-        <div class="cv-meta-item">Update<span>Jan 2025</span></div>
-      </div>
+        <div class="cv-meta-item">Ukuran<span>~102 KB</span></div>
+        <div class="cv-meta-item">Update<span>Mar 2026</span></div>
+    </div>
     </div>
     <div class="cv-right">
-      <div class="cv-preview">
-        <div class="cv-preview-inner">
-          <div class="cv-icon">📄</div>
-          <p>{SITE.name} — CV.pdf</p>
+        <div class="">
+            <p class="cv-desc" style="margin-bottom: 0;">Preview</p>
+            <img src="/cv-preview.png" alt="CV" style="border-radius: 1rem;">
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 </BaseLayout>
 
 <style>
-  /* ── HERO ── */
-  .hero {
+/* ── HERO ── */
+.hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 420px;
     padding-top: 5rem;
     border-bottom: 1px solid var(--border);
-  }
+}
 
-  .hero-left {
+.hero-left {
     padding: 6rem 4rem 5rem;
     display: flex; flex-direction: column; justify-content: center;
     border-right: 1px solid var(--border);
-  }
+}
 
-  .avail-badge {
+.avail-badge {
     display: inline-flex; align-items: center; gap: .6rem;
     font-family: var(--font-mono);
     font-size: .65rem;
@@ -174,381 +164,381 @@ import { SITE } from '@/data/site';
     padding: .4rem .9rem;
     border: 1px solid var(--border);
     width: fit-content;
-  }
+}
 
-  .dot {
+.dot {
     width: 6px; height: 6px;
     border-radius: 50%;
     background: #5cb85c;
     animation: blink 2s ease-in-out infinite;
-  }
+}
 
-  .hero-title {
+.hero-title {
     font-family: var(--font-serif);
     font-size: clamp(3rem, 5.5vw, 5.5rem);
     font-weight: 400;
     line-height: 1.05;
     color: var(--text);
     margin-bottom: 1.5rem;
-  }
+}
 
-  .hero-title :global(em) { color: var(--accent); font-style: italic; }
+.hero-title :global(em) { color: var(--accent); font-style: italic; }
 
-  .hero-desc {
+.hero-desc {
     font-size: 1rem;
     color: var(--muted);
     max-width: 46ch;
     line-height: 1.8;
     margin-bottom: 3rem;
-  }
+}
 
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-  /* photo panel */
-  .hero-right {
+/* photo panel */
+.hero-right {
     display: flex; flex-direction: column;
     background: var(--surface);
-  }
+}
 
-  .photo-area {
+.photo-area {
     flex: 1; position: relative; overflow: hidden; background: #111;
     display: flex; align-items: center; justify-content: center;
-  }
+}
 
-  .photo-bg {
+.photo-bg {
     position: absolute; inset: 0;
     background: radial-gradient(ellipse at 40% 35%, rgba(196,127,78,.18) 0%, transparent 65%),
                 radial-gradient(ellipse at 70% 70%, rgba(232,213,163,.07) 0%, transparent 55%);
-  }
+}
 
-  .photo-inner {
+.photo-inner {
     position: relative; z-index: 1;
     display: flex; flex-direction: column; align-items: center; gap: .75rem;
-  }
+}
 
-  .avatar {
+.avatar {
     width: 220px; height: 220px;
     border-radius: 50%;
     border: 2px solid var(--accent2);
     background: var(--border);
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
-  }
+}
 
-  .avatar :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .avatar-icon { font-size: 5rem; }
+.avatar :global(img) { width: 100%; height: 100%; object-fit: cover; }
+.avatar-icon { font-size: 5rem; }
 
-  .photo-name {
+.photo-name {
     font-family: var(--font-mono);
     font-size: .65rem;
     color: var(--muted);
     letter-spacing: .12em;
     text-transform: uppercase;
-  }
+}
 
-  .photo-hint {
+.photo-hint {
     font-family: var(--font-mono);
     font-size: .6rem;
     color: rgba(107,101,96,.4);
-  }
+}
 
-  .hero-badge-strip {
+.hero-badge-strip {
     padding: 1.5rem 2rem;
     border-top: 1px solid var(--border);
-  }
+}
 
-  .role-tag {
+.role-tag {
     display: block;
     font-family: var(--font-mono);
     font-size: .68rem;
     color: var(--accent);
     letter-spacing: .1em;
-  }
+}
 
-  .location {
+.location {
     font-family: var(--font-mono);
     font-size: .65rem;
     color: var(--muted);
     margin-top: .2rem;
-  }
+}
 
-  /* ── STATS ── */
-  .stats-row {
+/* ── STATS ── */
+.stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-bottom: 1px solid var(--border);
-  }
+}
 
-  .stat-cell {
+.stat-cell {
     padding: 2.5rem 4rem;
     border-right: 1px solid var(--border);
-  }
-  .stat-cell:last-child { border-right: none; }
+}
+.stat-cell:last-child { border-right: none; }
 
-  .stat-num {
+.stat-num {
     font-family: var(--font-serif);
     font-size: 3rem;
     color: var(--accent);
     line-height: 1;
-  }
+}
 
-  .stat-label {
+.stat-label {
     font-family: var(--font-mono);
     font-size: .65rem;
     color: var(--muted);
     letter-spacing: .1em;
     text-transform: uppercase;
     margin-top: .4rem;
-  }
+}
 
-  /* ── ABOUT ── */
-  .about-grid {
+/* ── ABOUT ── */
+.about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-bottom: 1px solid var(--border);
-  }
+}
 
-  .about-left {
+.about-left {
     padding: 5rem 4rem;
     border-right: 1px solid var(--border);
-  }
+}
 
-  .about-title {
+.about-title {
     font-family: var(--font-serif);
     font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 400;
     color: var(--text);
     margin-bottom: 1.5rem;
     line-height: 1.15;
-  }
+}
 
-  .about-title em { color: var(--accent); font-style: italic; }
+.about-title em { color: var(--accent); font-style: italic; }
 
-  .about-text {
+.about-text {
     color: var(--muted);
     font-size: .95rem;
     line-height: 1.9;
     margin-bottom: 1.25rem;
     max-width: 52ch;
-  }
+}
 
-  .about-right { padding: 5rem 4rem; }
+.about-right { padding: 5rem 4rem; }
 
-  /* timeline */
-  .timeline { list-style: none; }
+/* timeline */
+.timeline { list-style: none; }
 
-  .tl-item {
+.tl-item {
     display: flex; gap: 1.25rem;
     padding-bottom: 2rem;
     position: relative;
-  }
+}
 
-  .tl-item::before {
+.tl-item::before {
     content: '';
     position: absolute;
-    left: 3.75rem; top: 1.8rem; bottom: 0;
+    left: 6.5rem; top: 1.1rem; bottom: 0;
     width: 1px;
     background: var(--border);
-  }
+}
 
-  .tl-item:last-child::before { display: none; }
+.tl-item:last-child::before { display: none; }
 
-  .tl-year {
+.tl-year {
     font-family: var(--font-mono);
     font-size: .65rem;
     color: var(--accent2);
-    width: 2.75rem;
+    width: 5rem;
     flex-shrink: 0;
     padding-top: .15rem;
-  }
+}
 
-  .tl-dot {
+.tl-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
     border: 1px solid var(--accent2);
     background: var(--bg);
     flex-shrink: 0;
     margin-top: .3rem;
-  }
+}
 
-  .tl-title {
+.tl-title {
     font-size: .9rem;
     font-weight: 500;
     color: var(--text);
     margin-bottom: .2rem;
-  }
+}
 
-  .tl-desc { font-size: .8rem; color: var(--muted); }
+.tl-desc { font-size: .8rem; color: var(--muted); }
 
-  /* ── ACTIVITY ── */
-  .activity-section {
+/* ── ACTIVITY ── */
+.activity-section {
     padding: 3rem 4rem;
     border-bottom: 1px solid var(--border);
     max-width: 620px;
-  }
+}
 
-  .activity-list { list-style: none; margin-top: 1rem; }
+.activity-list { list-style: none; margin-top: 1rem; }
 
-  .activity-item {
+.activity-item {
     display: flex; gap: 2rem; align-items: center;
     padding: .75rem 0;
     border-bottom: 1px solid var(--border);
-  }
+}
 
-  .activity-item:last-child { border-bottom: none; }
+.activity-item:last-child { border-bottom: none; }
 
-  .act-date {
+.act-date {
     font-family: var(--font-mono);
     font-size: .65rem;
     color: var(--accent2);
     min-width: 4.5rem;
-  }
+}
 
-  .act-text { font-size: .85rem; color: var(--text); }
+.act-text { font-size: .85rem; color: var(--text); }
 
-  /* ── SOCIAL ── */
-  .social-section {
+/* ── SOCIAL ── */
+.social-section {
     padding: 5rem 4rem;
     border-bottom: 1px solid var(--border);
-  }
+}
 
-  .social-title {
+.social-title {
     font-family: var(--font-serif);
     font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 400;
     color: var(--text);
     margin-bottom: 2.5rem;
-  }
+}
 
-  .social-title em { color: var(--accent); font-style: italic; }
+.social-title em { color: var(--accent); font-style: italic; }
 
-  .social-grid {
+.social-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
-  }
+}
 
-  .social-card {
+.social-card {
     background: var(--surface);
     padding: 2rem;
     display: flex; flex-direction: column; gap: .6rem;
     text-decoration: none;
     transition: background .2s;
     position: relative; overflow: hidden;
-  }
+}
 
-  .social-card:hover { background: #1a1a1a; }
+.social-card:hover { background: #1a1a1a; }
 
-  .social-card::after {
+.social-card::after {
     content: '↗';
     position: absolute; top: 1.25rem; right: 1.5rem;
     font-size: 1rem; color: var(--muted);
     transition: color .2s, transform .2s;
-  }
+}
 
-  .social-card:hover::after { color: var(--accent); transform: translate(2px,-2px); }
+.social-card:hover::after { color: var(--accent); transform: translate(2px,-2px); }
 
-  .social-icon { font-size: 1.5rem; }
+.social-icon { font-size: 1.5rem; }
 
-  .social-platform {
+.social-platform {
     font-family: var(--font-mono);
     font-size: .65rem;
     color: var(--accent2);
     letter-spacing: .12em;
     text-transform: uppercase;
-  }
+}
 
-  .social-handle { font-size: .95rem; font-weight: 500; color: var(--text); }
-  .social-desc   { font-size: .8rem; color: var(--muted); }
+.social-handle { font-size: .95rem; font-weight: 500; color: var(--text); }
+.social-desc   { font-size: .8rem; color: var(--muted); }
 
-  /* ── CV ── */
-  .cv-section {
+/* ── CV ── */
+.cv-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-bottom: 1px solid var(--border);
-  }
+}
 
-  .cv-left {
+.cv-left {
     padding: 5rem 4rem;
     border-right: 1px solid var(--border);
     display: flex; flex-direction: column; justify-content: center;
-  }
+}
 
-  .cv-title {
+.cv-title {
     font-family: var(--font-serif);
     font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 400;
     color: var(--text);
     margin-bottom: 1.5rem;
     line-height: 1.15;
-  }
+}
 
-  .cv-title em { color: var(--accent); font-style: italic; }
+.cv-title em { color: var(--accent); font-style: italic; }
 
-  .cv-desc {
+.cv-desc {
     color: var(--muted);
     font-size: .95rem;
     line-height: 1.8;
     max-width: 44ch;
     margin-bottom: 2rem;
-  }
+}
 
-  .cv-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.cv-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-  .cv-meta {
+.cv-meta {
     display: flex; gap: 2rem;
     margin-top: 2rem;
-  }
+}
 
-  .cv-meta-item {
+.cv-meta-item {
     font-family: var(--font-mono);
     font-size: .68rem;
     color: var(--muted);
-  }
+}
 
-  .cv-meta-item span {
+.cv-meta-item span {
     color: var(--accent);
     display: block;
     font-size: .8rem;
-  }
+}
 
-  .cv-right { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+.cv-right { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
 
-  .cv-preview {
+.cv-preview {
     background: var(--surface);
     border: 1px solid var(--border);
     height: 260px;
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
-  }
+}
 
-  .cv-preview::before {
+.cv-preview::before {
     content: '';
     position: absolute; inset: 0;
     background: repeating-linear-gradient(
-      0deg, transparent, transparent 22px,
-      rgba(34,34,34,.4) 22px, rgba(34,34,34,.4) 23px
+    0deg, transparent, transparent 22px,
+    rgba(34,34,34,.4) 22px, rgba(34,34,34,.4) 23px
     );
-  }
+}
 
-  .cv-preview-inner {
+.cv-preview-inner {
     position: relative; z-index: 1; text-align: center;
-  }
+}
 
-  .cv-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+.cv-icon { font-size: 2.5rem; margin-bottom: .75rem; }
 
-  .cv-preview-inner p {
+.cv-preview-inner p {
     font-family: var(--font-mono);
     font-size: .68rem;
     color: var(--muted);
     letter-spacing: .1em;
     text-transform: uppercase;
-  }
+}
 
-  /* ── Responsive ── */
-  @media (max-width: 900px) {
+/* ── Responsive ── */
+@media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 5rem 1.5rem 3rem; }
     .hero-right { min-height: 320px; }
@@ -559,5 +549,5 @@ import { SITE } from '@/data/site';
     .about-right, .cv-right { padding: 3rem 1.5rem; }
     .social-section { padding: 3rem 1.5rem; }
     .activity-section { padding: 2.5rem 1.5rem; }
-  }
+}
 </style>

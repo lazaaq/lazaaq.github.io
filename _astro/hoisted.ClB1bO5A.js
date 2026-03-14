@@ -1,0 +1,1 @@
+import"./hoisted.CUUjQ2jI.js";const a=document.querySelectorAll(".filter-btn"),o=document.querySelectorAll(".project-card");a.forEach(c=>{c.addEventListener("click",()=>{const e=c.dataset.cat;a.forEach(t=>t.classList.remove("active")),c.classList.add("active"),o.forEach(t=>{const s=e==="all"||t.dataset.cat===e;t.style.display=s?"":"none"})})});

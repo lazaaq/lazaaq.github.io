@@ -5,13 +5,13 @@ import ProjectCard from '@/components/ProjectCard.astro';
 import { projects, DIFFICULTY_LABEL } from '@/data/projects';
 import { SITE } from '@/data/site';
 
-const categories = [
-  { id: 'all',     label: 'Semua' },
-  { id: 'web',     label: 'Web App' },
-  { id: 'backend', label: 'Backend / API' },
-  { id: 'mobile',  label: 'Mobile' },
-  { id: 'oss',     label: 'Open Source' },
-];
+// const categories = [
+//   { id: 'all',     label: 'Semua' },
+//   { id: 'web',     label: 'Web App' },
+//   { id: 'backend', label: 'Backend / API' },
+//   { id: 'mobile',  label: 'Mobile' },
+//   { id: 'oss',     label: 'Open Source' },
+// ];
 ---
 
 <BaseLayout title={`Portfolio — ${SITE.name}`} activePage="portfolio">
@@ -23,12 +23,12 @@ const categories = [
       <h1 class="page-title">Selected<br><em>Projects</em></h1>
     </div>
     <p class="header-desc">
-      Kumpulan proyek yang pernah saya bangun — dari side project eksperimental hingga produk yang digunakan ribuan pengguna.
+      Kumpulan proyek yang pernah saya bangun, dari side project eksperimental hingga produk yang digunakan ribuan pengguna.
     </p>
   </header>
 
   <!-- ── FILTER BAR ── -->
-  <div class="filter-bar" role="group" aria-label="Filter kategori">
+  <!-- <div class="filter-bar" role="group" aria-label="Filter kategori">
     {categories.map((cat, i) => (
       <button
         class:list={['filter-btn', { active: i === 0 }]}
@@ -37,7 +37,7 @@ const categories = [
         {cat.label}
       </button>
     ))}
-  </div>
+  </div> -->
 
   <!-- ── DIFFICULTY LEGEND ── -->
   <div class="legend-bar">
