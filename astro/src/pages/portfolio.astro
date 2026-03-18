@@ -48,12 +48,13 @@ const allTags = [...tagCount.entries()]
       </div>
     </div>
 
-    <!-- Difficulty sort -->
+    <!-- Sort -->
     <div class="sort-wrapper">
-      <label class="sort-label" for="sort-difficulty">Sort</label>
-      <select id="sort-difficulty" class="sort-select">
-        <option value="desc" selected>Expert → Easy</option>
-        <option value="asc">Easy → Expert</option>
+      <label class="sort-label" for="sort-select">Sort</label>
+      <select id="sort-select" class="sort-select">
+        <option value="year-desc" selected>Terbaru → Terlama</option>
+        <option value="diff-desc">Expert → Easy</option>
+        <option value="diff-asc">Easy → Expert</option>
       </select>
     </div>
 
@@ -81,40 +82,41 @@ const allTags = [...tagCount.entries()]
 
 </BaseLayout>
 
-<!-- Client-side filter script -->
+<!-- Client-side filter + sort script -->
 <script>
   const DIFFICULTY_ORDER: Record<string, number> = {
     easy: 1, medium: 2, hard: 3, expert: 4,
   };
 
-  const grid       = document.getElementById('projects-grid')!;
-  const chips      = document.querySelectorAll<HTMLButtonElement>('.tag-chip');
-  const sortSelect = document.getElementById('sort-difficulty') as HTMLSelectElement;
+  const grid      = document.getElementById('projects-grid')!;
+  const chips     = document.querySelectorAll<HTMLButtonElement>('.tag-chip');
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
 
-  // Simpan urutan DOM asli agar sort bisa di-reset
+  // Simpan urutan DOM asli
   const originalCards = [...grid.querySelectorAll<HTMLElement>('.project-card')];
 
   function applyFilterAndSort() {
-    const activeChip = document.querySelector<HTMLButtonElement>('.tag-chip.active');
-    const activeTag  = activeChip?.dataset.tag ?? 'all';
-    const sortMode   = sortSelect.value; // 'none' | 'asc' | 'desc'
+    const activeTag = document.querySelector<HTMLButtonElement>('.tag-chip.active')?.dataset.tag ?? 'all';
+    const sortMode  = sortSelect.value;
 
     // 1. Filter
     let visibleCards = originalCards.filter(card => {
       if (activeTag === 'all') return true;
-      // data-tags="React,Node.js,..." — lihat catatan di ProjectCard
       const cardTags = (card.dataset.tags ?? '').split(',').map(s => s.trim());
       return cardTags.includes(activeTag);
     });
 
-    // 2. Sort difficulty
-    if (sortMode !== 'none') {
-      visibleCards = [...visibleCards].sort((a, b) => {
-        const da = DIFFICULTY_ORDER[a.dataset.difficulty ?? 'easy'] ?? 0;
-        const db = DIFFICULTY_ORDER[b.dataset.difficulty ?? 'easy'] ?? 0;
-        return sortMode === 'desc' ? db - da : da - db;
-      });
-    }
+    // 2. Sort
+    visibleCards = [...visibleCards].sort((a, b) => {
+      if (sortMode === 'year-desc') {
+        return Number(b.dataset.year ?? 0) - Number(a.dataset.year ?? 0);
+      }
+      const da = DIFFICULTY_ORDER[a.dataset.difficulty ?? 'easy'] ?? 0;
+      const db = DIFFICULTY_ORDER[b.dataset.difficulty ?? 'easy'] ?? 0;
+      if (sortMode === 'diff-desc') return db - da;
+      if (sortMode === 'diff-asc')  return da - db;
+      return 0;
+    });
 
     // 3. Reset semua card
     originalCards.forEach(c => { c.style.display = 'none'; c.style.order = ''; });
@@ -136,7 +138,7 @@ const allTags = [...tagCount.entries()]
 
   sortSelect.addEventListener('change', applyFilterAndSort);
 
-  // Jalankan saat pertama load agar sort default (Expert → Easy) langsung aktif
+  // Jalankan saat pertama load — default: year-desc
   applyFilterAndSort();
 </script>
 
@@ -170,7 +172,7 @@ const allTags = [...tagCount.entries()]
     flex-direction: column;
     gap: .75rem;
     padding: 1.25rem 4rem;
-    overflow: hidden;           /* tag-list akan scroll sendiri */
+    overflow: hidden;
   }
 
   .filter-heading {
@@ -183,18 +185,17 @@ const allTags = [...tagCount.entries()]
 
   .tag-list {
     display: flex;
-    flex-wrap: wrap;            /* bungkus ke baris baru jika banyak tag */
+    flex-wrap: wrap;
     gap: .5rem;
   }
 
-  /* Tag chip */
   .tag-chip {
     font-family: var(--font-mono);
     font-size: .65rem;
     letter-spacing: .08em;
     text-transform: uppercase;
     padding: .35rem .9rem;
-    border-radius: 999px;       /* pill shape */
+    border-radius: 999px;
     border: 1px solid var(--border);
     background: transparent;
     color: var(--muted);
@@ -301,7 +302,6 @@ const allTags = [...tagCount.entries()]
     .sort-wrapper     { padding: 1.25rem 1.5rem; border-left: none; border-top: 1px solid var(--border); }
     .legend-bar       { padding: 1rem 1.5rem; }
     .projects-wrapper { padding: 2rem 1.5rem 4rem; }
-
-    .toolbar { flex-direction: column; }
+    .toolbar          { flex-direction: column; }
   }
 </style>

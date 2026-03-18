@@ -18,7 +18,6 @@ export type Category =
 export interface Project {
     id: string;
     num: string;
-    featured?: boolean;
     title: string;
     desc: string;
     thumbnail?: string; // path relatif dari /public, e.g. '/thumbs/novapos.png'
@@ -48,10 +47,11 @@ export const DIFFICULTY_DOTS: Record<Difficulty, number> = {
 export const projects: Project[] = [
     // ── difficulty mapping dari skala 1–10:
     //    1–3 → easy | 4–6 → medium | 7–8 → hard | 9–10 → expert
+
+    // ── 2026 ──────────────────────────────
     {
         id: "POCI",
         num: "01",
-        featured: true,
         title: "POCI BPS — Perlengkapan Operasional Catatan Inventaris Badan Pusat Statistik",
         desc: "Aplikasi web internal BPS Kab. Tegal untuk mengelola inventaris barang operasional kantor. Mencakup manajemen perlengkapan dan aset BMN, sistem peminjaman & pengembalian barang, serta dashboard riwayat transaksi lengkap dengan filter dan export data.",
         thumbnail: undefined,
@@ -66,7 +66,6 @@ export const projects: Project[] = [
     {
         id: "SEPAT",
         num: "02",
-        featured: true,
         title: "SEPAT BPS - Sistem Pelayanan Tamu Badan Pusat Statistik",
         desc: "Sistem pelayanan tamu digital BPS Kab. Tegal yang menggantikan buku tamu manual. Tamu dapat melakukan check-in mandiri, memilih keperluan kunjungan, dan menerima notifikasi. Admin dapat memantau kunjungan secara real-time melalui dashboard.",
         thumbnail: undefined,
@@ -81,7 +80,6 @@ export const projects: Project[] = [
     {
         id: "KCA",
         num: "03",
-        featured: true,
         title: "KCA BPS — Kecamatan Dalam Angka Badan Pusat Statistik",
         desc: "Platform input data statistik per kecamatan di Kab. Tegal berbasis data resmi untuk internal BPS. Membantu dalam pembuatan Publikasi rutinan setiap tahun di Badan Pusat Statistik. Terdapat fitur tes anomali data dimana dapat mengecek apakah data bersifat wajar atau tidak berdasarkan pola data di masa lalu.",
         thumbnail: undefined,
@@ -93,49 +91,54 @@ export const projects: Project[] = [
         links: [{ label: "↗ Live", url: "/portfolio-guci/" }],
         year: 2026,
     },
+
+    // ── 2025 ──────────────────────────────
+    {
+        id: "oneshot",
+        num: "04",
+        title: "ONESHOT — Photobooth System",
+        desc: "Sistem photobooth interaktif berbasis web yang memungkinkan pengguna mengambil foto, mengaplikasikan filter, dan berbagi langsung ke media sosial. Dibangun dengan Next.js dan MySQL untuk performa optimal dan manajemen data yang andal.",
+        thumbnail: undefined,
+        thumbIcon: "📸",
+        primaryTags: ["Next.js", "MySQL"],
+        tags: ["React.js", "Node.js", "Javascript"],
+        difficulty: "hard",
+        category: "web",
+        links: [{ label: "↗ Live", url: "/portfolio-oneshot/" }],
+        year: 2025,
+    },
+
+    // ── 2024 ──────────────────────────────
     {
         id: "campustoday",
-        num: "04",
+        num: "05",
         title: "CAMPUSTODAY — E-Learning Platform",
         desc: "Platform e-learning berbasis web untuk persiapan ujian CPNS dan UTBK. Fitur meliputi tryout, sistem ranking, materi belajar, konsultasi pakar, dan payment gateway untuk akses layanan premium.",
         thumbnail: undefined,
         thumbIcon: "🎓",
         primaryTags: ["Laravel", "React.js"],
         tags: ["Payment Gateway", "Tryout System", "E-Learning", "Auth"],
-        difficulty: "expert", // difficulty: 9
+        difficulty: "expert",
         category: "web",
-        links: [{ label: "↗ Live", url: "/portfolio-campustoday/" }], // no public URL
+        links: [{ label: "↗ Live", url: "/portfolio-campustoday/" }],
         year: 2024,
     },
     {
         id: "kofee",
-        num: "05",
+        num: "06",
         title: "KOFEE — Coffee Leaf Disease Detection",
         desc: "Proyek tugas akhir D3 di UGM: sistem deteksi penyakit daun kopi menggunakan CNN ResNet50V2 & InceptionV3. Akurasi training 92.73%, validasi 84.72%, testing 86.96%. Dilengkapi dashboard diagnosis, riwayat, dan rekomendasi penanganan.",
         thumbnail: undefined,
         thumbIcon: "☕",
         primaryTags: ["Django", "Machine Learning", "Python"],
         tags: ["TensorFlow", "ResNet50V2", "InceptionV3", "CNN", "Research"],
-        difficulty: "hard", // difficulty: 8
+        difficulty: "hard",
         category: "ml",
         links: [{ label: "↗ Live", url: "/portfolio-kofee/" }],
         year: 2024,
     },
-    {
-        id: "oneshot",
-        num: "06",
-        featured: true,
-        title: "ONESHOT — Photobooth System",
-        desc: "Sistem photobooth interaktif berbasis web yang memungkinkan pengguna mengambil foto, mengaplikasikan filter, dan berbagi langsung ke media sosial. Dibangun dengan Next.js dan MySQL untuk performa optimal dan manajemen data yang andal.",
-        thumbnail: undefined, // ganti: '/thumbs/oneshot.png'
-        thumbIcon: "📸",
-        primaryTags: ["Next.js", "MySQL"],
-        tags: ["React.js", "Node.js", "Javascript"],
-        difficulty: "hard", // difficulty: 7
-        category: "web",
-        links: [{ label: "↗ Live", url: "/portfolio-oneshot/" }],
-        year: 2025,
-    },
+
+    // ── 2023 ──────────────────────────────
     {
         id: "teramina",
         num: "07",
@@ -145,25 +148,13 @@ export const projects: Project[] = [
         thumbIcon: "🦐",
         primaryTags: ["Vue.js"],
         tags: ["Calculator", "Agritech", "Responsive"],
-        difficulty: "hard", // difficulty: 7
+        difficulty: "hard",
         category: "web",
         links: [{ label: "↗ Live", url: "/portfolio-teramina/" }],
         year: 2023,
     },
-    // {
-    //     id: "dekornata",
-    //     num: "08",
-    //     title: "DEKORNATA — Web E-Commerce",
-    //     desc: "Platform e-commerce lengkap dengan katalog produk, keranjang belanja, manajemen order, dan sistem pembayaran terintegrasi. Desain responsif yang meningkatkan pengalaman belanja online dan memperluas jangkauan bisnis.",
-    //     thumbnail: undefined,
-    //     thumbIcon: "🛍️",
-    //     primaryTags: ["Nuxt.js", "Vue.js"],
-    //     tags: ["Node.js", "E-Commerce", "Payment", "Coupon Management"],
-    //     difficulty: "expert", // difficulty: 9
-    //     category: "ecommerce",
-    //     links: [],
-    //     year: 2022,
-    // },
+
+    // ── 2022 ──────────────────────────────
     {
         id: "onegapos",
         num: "08",
@@ -179,80 +170,82 @@ export const projects: Project[] = [
             "Sales Report",
             "Customer Management",
         ],
-        difficulty: "medium", // difficulty: 6
+        difficulty: "medium",
         category: "web",
         links: [{ label: "↗ Live", url: "/portfolio-onegapos/" }],
         year: 2022,
     },
     {
-        id: "k3rs",
-        num: "09",
-        title: "K3RS — Hospital Health & Safety System",
-        desc: "Aplikasi web manajemen keselamatan dan kesehatan kerja rumah sakit. Fitur mencakup pelaporan insiden, penilaian risiko, manajemen pelatihan, dan pemantauan kepatuhan regulasi K3 untuk menjamin keselamatan pasien dan staf.",
-        thumbnail: undefined,
-        thumbIcon: "🏥",
-        primaryTags: ["Laravel", "MySQL"],
-        tags: ["Healthcare", "Report", "Dashboard"],
-        difficulty: "hard", // difficulty: 8
-        category: "web",
-        links: [{ label: "↗ Live", url: "/portfolio-k3rs/" }],
-        year: 2021,
-    },
-    {
         id: "rpkps",
-        num: "10",
+        num: "09",
         title: "RPKPS — Semester Learning Program Plan",
         desc: "Aplikasi web untuk membantu perguruan tinggi mengelola Rencana Program dan Kegiatan Pembelajaran Semester. Fitur manajemen dokumen, kolaborasi antar dosen, dan approval workflow untuk memastikan kepatuhan terhadap standar akademik.",
         thumbnail: undefined,
         thumbIcon: "📋",
         primaryTags: ["Laravel", "MySQL"],
         tags: ["Dashboard", "Academic", "Auth", "REST API"],
-        difficulty: "hard", // difficulty: 7
+        difficulty: "hard",
         category: "cms",
         links: [{ label: "↗ Live", url: "/portfolio-rpkps/" }],
         year: 2022,
     },
     {
         id: "alhijaz",
-        num: "11",
+        num: "10",
         title: "ALHIJAZ — Platform Haji",
         desc: "Platform online all-inclusive untuk menyederhanakan perjalanan ibadah haji. Fitur meliputi informasi perjalanan, pemesanan, perizinan, panduan personal, tur virtual reality, dan peta interaktif kawasan Makkah & Madinah.",
         thumbnail: undefined,
         thumbIcon: "🕌",
         primaryTags: ["Laravel", "MySQL"],
         tags: ["CMS", "Dashboard", "Booking", "Bootstrap"],
-        difficulty: "medium", // difficulty: 6
+        difficulty: "medium",
         category: "cms",
         links: [{ label: "↗ Live", url: "/portfolio-alhijaz/" }],
         year: 2022,
     },
     {
         id: "sigmahartek",
-        num: "12",
+        num: "11",
         title: "SIGMA HARTEK — Landing Page Spare Part",
         desc: "Company profile website untuk PT Sigma Hartek, spesialis jasa spare part industri farmasi, kosmetik, dan F&B. Menampilkan layanan Preproduction, Production, Improvement, dan Training secara informatif dan profesional.",
         thumbnail: undefined,
         thumbIcon: "⚙️",
-        primaryTags: ["Bootstrap", "JavaScript"],
+        primaryTags: ["Bootstrap", "Javascript"],
         tags: ["Company Profile", "Responsive"],
-        difficulty: "easy", // difficulty: 4
+        difficulty: "easy",
         category: "landing",
         links: [{ label: "↗ Live", url: "/portfolio-sigma-hartek/" }],
         year: 2022,
     },
     {
         id: "buanaliving",
-        num: "13",
+        num: "12",
         title: "BUANA LIVING — Landing Page Homestay",
         desc: "Landing page company profile untuk bisnis homestay Buana Living. Menampilkan fasilitas, galeri, dan informasi pemesanan dengan tampilan yang menarik dan responsif.",
         thumbnail: undefined,
         thumbIcon: "🏡",
-        primaryTags: ["Bootstrap", "JavaScript"],
+        primaryTags: ["Bootstrap", "Javascript"],
         tags: ["Company Profile", "Responsive"],
-        difficulty: "easy", // difficulty: 4
+        difficulty: "easy",
         category: "landing",
         links: [{ label: "↗ Live", url: "/portfolio-buana-living/" }],
         year: 2022,
+    },
+
+    // ── 2021 ──────────────────────────────
+    {
+        id: "k3rs",
+        num: "13",
+        title: "K3RS — Hospital Health & Safety System",
+        desc: "Aplikasi web manajemen keselamatan dan kesehatan kerja rumah sakit. Fitur mencakup pelaporan insiden, penilaian risiko, manajemen pelatihan, dan pemantauan kepatuhan regulasi K3 untuk menjamin keselamatan pasien dan staf.",
+        thumbnail: undefined,
+        thumbIcon: "🏥",
+        primaryTags: ["Laravel", "MySQL"],
+        tags: ["Healthcare", "Report", "Dashboard"],
+        difficulty: "hard",
+        category: "web",
+        links: [{ label: "↗ Live", url: "/portfolio-k3rs/" }],
+        year: 2021,
     },
     {
         id: "kelapaindonesia",
@@ -261,9 +254,9 @@ export const projects: Project[] = [
         desc: "Landing page company profile untuk Kelapa Indonesia. Desain responsif yang menampilkan produk dan informasi perusahaan secara bersih dan profesional.",
         thumbnail: undefined,
         thumbIcon: "🌴",
-        primaryTags: ["Bootstrap", "JavaScript"],
+        primaryTags: ["Bootstrap", "Javascript"],
         tags: ["Company Profile", "Responsive"],
-        difficulty: "easy", // difficulty: 4
+        difficulty: "easy",
         category: "landing",
         links: [{ label: "↗ Live", url: "/portfolio-kelapa-indonesia/" }],
         year: 2021,
@@ -275,9 +268,9 @@ export const projects: Project[] = [
         desc: "Landing page company profile untuk bisnis jual beli dan sewa forklift Karunia Mas. Menampilkan katalog produk, spesifikasi, dan informasi kontak dengan layout yang rapi.",
         thumbnail: undefined,
         thumbIcon: "🚛",
-        primaryTags: ["Bootstrap", "JavaScript"],
+        primaryTags: ["Bootstrap", "Javascript"],
         tags: ["Company Profile", "Responsive"],
-        difficulty: "easy", // difficulty: 4
+        difficulty: "easy",
         category: "landing",
         links: [{ label: "↗ Live", url: "/portfolio-forklift/" }],
         year: 2021,
@@ -289,9 +282,9 @@ export const projects: Project[] = [
         desc: "Landing page untuk toko online Livelihood. Menampilkan produk unggulan dan informasi brand dengan desain yang bersih dan mobile-friendly.",
         thumbnail: undefined,
         thumbIcon: "🛒",
-        primaryTags: ["Bootstrap", "JavaScript"],
+        primaryTags: ["Bootstrap", "Javascript"],
         tags: ["Company Profile", "ECommerce", "Responsive"],
-        difficulty: "easy", // difficulty: 3
+        difficulty: "easy",
         category: "landing",
         links: [{ label: "↗ Live", url: "/portfolio-online-store/" }],
         year: 2021,
@@ -303,9 +296,9 @@ export const projects: Project[] = [
         desc: "Landing page restaurant Expice dengan desain yang menggugah selera. Menampilkan menu, galeri, jam operasional, dan informasi reservasi secara elegan.",
         thumbnail: undefined,
         thumbIcon: "🍽️",
-        primaryTags: ["Bootstrap", "JavaScript"],
+        primaryTags: ["Bootstrap", "Javascript"],
         tags: ["Company Profile", "Responsive"],
-        difficulty: "easy", // difficulty: 3
+        difficulty: "easy",
         category: "landing",
         links: [{ label: "↗ Live", url: "/portfolio-expice/" }],
         year: 2021,

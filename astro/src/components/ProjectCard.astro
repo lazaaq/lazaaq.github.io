@@ -14,10 +14,11 @@ const label = DIFFICULTY_LABEL[p.difficulty];
 ---
 
 <article
-  class:list={['project-card', { featured: p.featured }]}
+  class="project-card"
   data-cat={p.category}
   data-tags={[...p.primaryTags, ...p.tags].join(',')}
   data-difficulty={p.difficulty}
+  data-year={p.year}
   style={`animation-delay: ${index * 0.06}s`}
 >
   <!-- Thumbnail -->
@@ -30,11 +31,6 @@ const label = DIFFICULTY_LABEL[p.difficulty];
         </div>
       )
     }
-
-    <!-- Featured ribbon -->
-    {p.featured && (
-      <div class="featured-ribbon">&#9733; Featured</div>
-    )}
 
     <div class:list={['diff-badge', p.difficulty]}>
       <span class="diff-dots">
@@ -76,7 +72,7 @@ const label = DIFFICULTY_LABEL[p.difficulty];
 </article>
 
 <style>
-  /* ── Base card — semua card identik widthnya ── */
+  /* ── Base card ── */
   .project-card {
     background: var(--bg);
     display: flex;
@@ -86,11 +82,6 @@ const label = DIFFICULTY_LABEL[p.difficulty];
   }
 
   .project-card:hover { background: var(--surface); }
-
-  /* Featured: hanya dibedakan lewat border-top + ribbon, bukan layout */
-  .project-card.featured {
-    border-top: 2px solid var(--accent2);
-  }
 
   /* ── Thumbnail ── */
   .thumb {
@@ -122,21 +113,6 @@ const label = DIFFICULTY_LABEL[p.difficulty];
   }
 
   .thumb-icon { font-size: 3rem; opacity: .5; }
-
-  /* ── Featured ribbon ── */
-  .featured-ribbon {
-    position: absolute;
-    top: .75rem; left: .75rem;
-    font-family: var(--font-mono);
-    font-size: .58rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    padding: .25rem .65rem;
-    background: rgba(232,213,163,.12);
-    color: var(--accent);
-    border: 1px solid rgba(232,213,163,.3);
-    z-index: 2;
-  }
 
   /* ── Difficulty badge ── */
   .diff-badge {
