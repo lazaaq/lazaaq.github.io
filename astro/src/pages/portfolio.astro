@@ -5,13 +5,20 @@ import ProjectCard from '@/components/ProjectCard.astro';
 import { projects, DIFFICULTY_LABEL } from '@/data/projects';
 import { SITE } from '@/data/site';
 
-// const categories = [
-//   { id: 'all',     label: 'Semua' },
-//   { id: 'web',     label: 'Web App' },
-//   { id: 'backend', label: 'Backend / API' },
-//   { id: 'mobile',  label: 'Mobile' },
-//   { id: 'oss',     label: 'Open Source' },
-// ];
+// Hitung frekuensi setiap tag
+const tagCount = new Map<string, number>();
+projects.forEach(p => {
+  [...(p.primaryTags ?? []), ...(p.tags ?? [])].forEach(tag => {
+    tagCount.set(tag, (tagCount.get(tag) ?? 0) + 1);
+  });
+});
+
+// Hanya tampilkan tag yang muncul di ≥ 2 project
+const allTags = [...tagCount.entries()]
+  .filter(([_, count]) => count >= 2)
+  .map(([tag]) => tag)
+  .sort();
+
 ---
 
 <BaseLayout title={`Portfolio — ${SITE.name}`} activePage="portfolio">
@@ -27,17 +34,30 @@ import { SITE } from '@/data/site';
     </p>
   </header>
 
-  <!-- ── FILTER BAR ── -->
-  <!-- <div class="filter-bar" role="group" aria-label="Filter kategori">
-    {categories.map((cat, i) => (
-      <button
-        class:list={['filter-btn', { active: i === 0 }]}
-        data-cat={cat.id}
-      >
-        {cat.label}
-      </button>
-    ))}
-  </div> -->
+  <!-- ── TOOLBAR: TAG FILTER + SORT ── -->
+  <div class="toolbar">
+
+    <!-- Tag filter -->
+    <div class="tag-filter-area" role="group" aria-label="Filter stack teknologi">
+      <span class="filter-heading">Stack</span>
+      <div class="tag-list">
+        <button class="tag-chip active" data-tag="all">Semua</button>
+        {allTags.map(tag => (
+          <button class="tag-chip" data-tag={tag}>{tag}</button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Difficulty sort -->
+    <div class="sort-wrapper">
+      <label class="sort-label" for="sort-difficulty">Sort</label>
+      <select id="sort-difficulty" class="sort-select">
+        <option value="desc" selected>Expert → Easy</option>
+        <option value="asc">Easy → Expert</option>
+      </select>
+    </div>
+
+  </div>
 
   <!-- ── DIFFICULTY LEGEND ── -->
   <div class="legend-bar">
@@ -63,20 +83,61 @@ import { SITE } from '@/data/site';
 
 <!-- Client-side filter script -->
 <script>
-  const btns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const cards = document.querySelectorAll<HTMLElement>('.project-card');
+  const DIFFICULTY_ORDER: Record<string, number> = {
+    easy: 1, medium: 2, hard: 3, expert: 4,
+  };
 
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.cat!;
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      cards.forEach(card => {
-        const match = cat === 'all' || card.dataset.cat === cat;
-        card.style.display = match ? '' : 'none';
+  const grid       = document.getElementById('projects-grid')!;
+  const chips      = document.querySelectorAll<HTMLButtonElement>('.tag-chip');
+  const sortSelect = document.getElementById('sort-difficulty') as HTMLSelectElement;
+
+  // Simpan urutan DOM asli agar sort bisa di-reset
+  const originalCards = [...grid.querySelectorAll<HTMLElement>('.project-card')];
+
+  function applyFilterAndSort() {
+    const activeChip = document.querySelector<HTMLButtonElement>('.tag-chip.active');
+    const activeTag  = activeChip?.dataset.tag ?? 'all';
+    const sortMode   = sortSelect.value; // 'none' | 'asc' | 'desc'
+
+    // 1. Filter
+    let visibleCards = originalCards.filter(card => {
+      if (activeTag === 'all') return true;
+      // data-tags="React,Node.js,..." — lihat catatan di ProjectCard
+      const cardTags = (card.dataset.tags ?? '').split(',').map(s => s.trim());
+      return cardTags.includes(activeTag);
+    });
+
+    // 2. Sort difficulty
+    if (sortMode !== 'none') {
+      visibleCards = [...visibleCards].sort((a, b) => {
+        const da = DIFFICULTY_ORDER[a.dataset.difficulty ?? 'easy'] ?? 0;
+        const db = DIFFICULTY_ORDER[b.dataset.difficulty ?? 'easy'] ?? 0;
+        return sortMode === 'desc' ? db - da : da - db;
       });
+    }
+
+    // 3. Reset semua card
+    originalCards.forEach(c => { c.style.display = 'none'; c.style.order = ''; });
+
+    // 4. Tampilkan card yang lolos, atur urutan CSS grid
+    visibleCards.forEach((card, i) => {
+      card.style.display = '';
+      card.style.order   = String(i);
+    });
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      applyFilterAndSort();
     });
   });
+
+  sortSelect.addEventListener('change', applyFilterAndSort);
+
+  // Jalankan saat pertama load agar sort default (Expert → Easy) langsung aktif
+  applyFilterAndSort();
 </script>
 
 <style>
@@ -94,32 +155,98 @@ import { SITE } from '@/data/site';
     line-height: 1.8;
   }
 
-  /* ── FILTER ── */
-  .filter-bar {
+  /* ── TOOLBAR ── */
+  .toolbar {
     display: flex;
-    padding: 1.25rem 4rem;
+    align-items: flex-start;
+    gap: 0;
     border-bottom: 1px solid var(--border);
-    overflow-x: auto;
   }
 
-  .filter-btn {
+  /* ── TAG FILTER AREA ── */
+  .tag-filter-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 1.25rem 4rem;
+    overflow: hidden;           /* tag-list akan scroll sendiri */
+  }
+
+  .filter-heading {
     font-family: var(--font-mono);
-    font-size: .68rem;
-    letter-spacing: .1em;
+    font-size: .62rem;
+    letter-spacing: .12em;
     text-transform: uppercase;
-    padding: .55rem 1.4rem;
+    color: var(--muted);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;            /* bungkus ke baris baru jika banyak tag */
+    gap: .5rem;
+  }
+
+  /* Tag chip */
+  .tag-chip {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .35rem .9rem;
+    border-radius: 999px;       /* pill shape */
     border: 1px solid var(--border);
-    border-right: none;
     background: transparent;
     color: var(--muted);
     cursor: pointer;
-    transition: all .2s;
+    transition: color .15s, background .15s, border-color .15s;
     white-space: nowrap;
   }
 
-  .filter-btn:last-child { border-right: 1px solid var(--border); }
-  .filter-btn:hover { color: var(--accent); border-color: var(--accent); position: relative; z-index: 1; }
-  .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .tag-chip:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .tag-chip.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+
+  /* ── SORT DROPDOWN ── */
+  .sort-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 1.25rem 4rem 1.25rem 1.5rem;
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .sort-label {
+    font-family: var(--font-mono);
+    font-size: .62rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .sort-select {
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .06em;
+    padding: .4rem .8rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--fg);
+    cursor: pointer;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .sort-select:hover,
+  .sort-select:focus { border-color: var(--accent); }
 
   /* ── LEGEND ── */
   .legend-bar {
@@ -169,8 +296,12 @@ import { SITE } from '@/data/site';
 
   /* ── Responsive ── */
   @media (max-width: 900px) {
-    .page-header { padding: 7rem 1.5rem 3rem; flex-direction: column; align-items: flex-start; }
-    .filter-bar, .legend-bar { padding: 1rem 1.5rem; }
+    .page-header      { padding: 7rem 1.5rem 3rem; flex-direction: column; align-items: flex-start; }
+    .tag-filter-area  { padding: 1.25rem 1.5rem; }
+    .sort-wrapper     { padding: 1.25rem 1.5rem; border-left: none; border-top: 1px solid var(--border); }
+    .legend-bar       { padding: 1rem 1.5rem; }
     .projects-wrapper { padding: 2rem 1.5rem 4rem; }
+
+    .toolbar { flex-direction: column; }
   }
 </style>

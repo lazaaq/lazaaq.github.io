@@ -16,6 +16,8 @@ const label = DIFFICULTY_LABEL[p.difficulty];
 <article
   class:list={['project-card', { featured: p.featured }]}
   data-cat={p.category}
+  data-tags={[...p.primaryTags, ...p.tags].join(',')}
+  data-difficulty={p.difficulty}
   style={`animation-delay: ${index * 0.06}s`}
 >
   <!-- Thumbnail -->
