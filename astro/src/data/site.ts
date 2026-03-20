@@ -108,18 +108,71 @@ export const SITE = {
     ],
 
     tools: [
-        { icon: "🖥️", name: "VS Code" },
-        { icon: "🐙", name: "Git / GitHub" },
-        { icon: "🐳", name: "Docker Desktop" },
-        { icon: "📮", name: "Postman" },
-        { icon: "🎨", name: "Figma" },
-        { icon: "📝", name: "Notion" },
-        { icon: "🗂️", name: "Jira" },
-        { icon: "💬", name: "Trello" },
-        { icon: "📦", name: "npm / pnpm" },
-        { icon: "🌐", name: "Composer" },
-        { icon: "🔐", name: "Brew Mac OS" },
-        { icon: "🤖", name: "Claude / ChatGPT" },
+        {
+            icon: "🖥️",
+            name: "VS Code",
+            image: "/images/tools/vscode.png",
+        },
+        {
+            icon: "🐙",
+            name: "Git",
+            image: "/images/tools/git.png",
+        },
+        {
+            icon: "🐙",
+            name: "GitHub",
+            image: "/images/tools/github.png",
+        },
+        {
+            icon: "🐳",
+            name: "Docker Desktop",
+            image: "/images/tools/docker.png",
+        },
+        {
+            icon: "📮",
+            name: "Postman",
+            image: "/images/tools/postman.webp",
+        },
+        {
+            icon: "🎨",
+            name: "Figma",
+            image: "/images/tools/figma.png",
+        },
+        {
+            icon: "📝",
+            name: "Notion",
+            image: "/images/tools/notion.png",
+        },
+        {
+            icon: "🗂️",
+            name: "Jira",
+            image: "/images/tools/jira.png",
+        },
+        {
+            icon: "💬",
+            name: "Trello",
+            image: "/images/tools/trello.png",
+        },
+        {
+            icon: "📦",
+            name: "npm",
+            image: "/images/tools/npm.webp",
+        },
+        {
+            icon: "🌐",
+            name: "Composer",
+            image: "/images/tools/composer.png",
+        },
+        {
+            icon: "🔐",
+            name: "Brew Mac OS",
+            image: "/images/tools/brew.svg",
+        },
+        {
+            icon: "🤖",
+            name: "Claude",
+            image: "/images/tools/claude.png",
+        },
     ],
 
     languages: [

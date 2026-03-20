@@ -51,7 +51,10 @@ import { SITE } from '@/data/site';
     <div class="tools-wrap">
       {SITE.tools.map(t => (
         <div class="tool-chip">
-          <span class="tool-icon">{t.icon}</span>
+          {t.image
+            ? <img src={t.image} alt={t.name} class="h-8 w-8" />
+            : <span class="tool-icon">{t.icon}</span>
+          }
           {t.name}
         </div>
       ))}
@@ -201,7 +204,7 @@ import { SITE } from '@/data/site';
 
   .tool-chip {
     display: flex; align-items: center; gap: .5rem;
-    padding: .5rem 1rem;
+    padding: .7rem 1rem;
     border: 1px solid var(--border);
     font-size: .85rem;
     color: var(--muted);
