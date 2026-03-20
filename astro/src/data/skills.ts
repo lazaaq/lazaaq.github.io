@@ -614,27 +614,81 @@ export const certifications: Certification[] = [
 
 export const methodologies: Methodology[] = [
     {
-        icon: "🔄",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+            </svg>`,
         name: "Agile / Scrum",
         sub: "Sprint planning, daily standup, retrospective",
     },
     {
-        icon: "🧪",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+</svg>
+`,
         name: "Test-Driven Development",
         sub: "Write test first, red-green-refactor cycle",
     },
     {
-        icon: "🌿",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96" width="32" height="32">
+        <path fill="#ffffff" fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+        </svg>`,
         name: "Git Flow",
         sub: "Feature branches, pull request, code review",
     },
     {
-        icon: "🏗️",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32">
+                <!-- Handle (rotated rectangle) -->
+                <g transform="rotate(-45, 256, 256)">
+                    <!-- Brush handle -->
+                    <rect x="220" y="80" width="72" height="180" rx="16" fill="#ffffff"/>
+                    <!-- Ferrule (metal band) -->
+                    <rect x="215" y="245" width="82" height="30" rx="6" fill="#ffffff" opacity="0.7"/>
+                    <!-- Brush head -->
+                    <rect x="200" y="270" width="112" height="110" rx="18" fill="#ffffff"/>
+                    <!-- Bristle tip shape -->
+                    <ellipse cx="256" cy="390" rx="56" ry="22" fill="#ffffff" opacity="0.85"/>
+                    <!-- Bristle notch (left) -->
+                    <ellipse cx="210" cy="375" rx="18" ry="24" fill="#ffffff" opacity="0.5"/>
+                </g>
+
+                <!-- Decorative dots -->
+                <circle cx="110" cy="130" r="22" fill="#ffffff"/>
+                <circle cx="390" cy="320" r="18" fill="#ffffff"/>
+
+                <!-- Plus / sparkle -->
+                <rect x="380" y="355" width="14" height="50" rx="7" fill="#ffffff"/>
+                <rect x="358" y="377" width="58" height="14" rx="7" fill="#ffffff"/>
+                </svg>`,
         name: "Clean Architecture",
         sub: "Separation of concerns, SOLID principles",
     },
     {
-        icon: "🚀",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32">
+            <g fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- Left loop (rounded diamond shape) -->
+                <path d="M256 256 L178 172 Q128 128 96 172 Q64 216 64 256 Q64 296 96 340 Q128 384 178 340 L256 256"/>
+                <path d="M256 256 L178 340 Q128 384 96 340 Q64 296 64 256"/>
+
+                <!-- Right loop (rounded diamond shape) -->
+                <path d="M256 256 L334 172 Q384 128 416 172 Q448 216 448 256 Q448 296 416 340 Q384 384 334 340 L256 256"/>
+                <path d="M256 256 L334 340 Q384 384 416 340 Q448 296 448 256"/>
+
+                <!-- Node circles - Left loop -->
+                <circle cx="178" cy="172" r="14" fill="#ffffff" stroke="#ffffff"/>
+                <circle cx="96"  cy="256" r="14" fill="#ffffff" stroke="#ffffff"/>
+                <circle cx="178" cy="340" r="14" fill="#ffffff" stroke="#ffffff"/>
+
+                <!-- Node circle - Center -->
+                <circle cx="256" cy="256" r="14" fill="#ffffff" stroke="#ffffff"/>
+
+                <!-- Node circles - Right loop -->
+                <circle cx="334" cy="172" r="14" fill="#ffffff" stroke="#ffffff"/>
+                <circle cx="416" cy="256" r="14" fill="#ffffff" stroke="#ffffff"/>
+                <circle cx="334" cy="340" r="14" fill="#ffffff" stroke="#ffffff"/>
+
+            </g>
+            </svg>`,
         name: "CI/CD Pipeline",
         sub: "Automated testing, deployment, rollback",
     },

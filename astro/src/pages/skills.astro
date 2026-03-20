@@ -82,7 +82,7 @@ import { SITE } from '@/data/site';
       <ul class="method-list">
         {methodologies.map(m => (
           <li class="method-item">
-            <span class="method-icon">{m.icon}</span>
+            <span class="method-icon" set:html={m.icon}></span>
             <div>
               <p class="method-name">{m.name}</p>
               <p class="method-sub">{m.sub}</p>
