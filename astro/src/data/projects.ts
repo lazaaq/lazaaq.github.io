@@ -60,7 +60,7 @@ export const projects: Project[] = [
         tags: ["Dashboard", "Blade Engine", "Javascript", "Responsive"],
         difficulty: "hard",
         category: "web",
-        links: [{ label: "↗ Live", url: "/portfolio-poci/" }],
+        links: [{ label: "↗ Live", url: "/portfolio-sepat/" }],
         year: 2026,
     },
     {
@@ -88,7 +88,7 @@ export const projects: Project[] = [
         tags: ["Dashboard", "Blade Engine", "Javascript", "Responsive"],
         difficulty: "expert",
         category: "web",
-        links: [{ label: "↗ Live", url: "/portfolio-guci/" }],
+        links: [{ label: "↗ Live", url: "/portfolio-guci/dashboard.html" }],
         year: 2026,
     },
 

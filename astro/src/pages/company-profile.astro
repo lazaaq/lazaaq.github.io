@@ -1,17 +1,24 @@
 ---
 import "@/styles/global.css";
 import { COMPANY } from "@/data/company-profile";
-import { DIFFICULTY_LABEL, projects } from "@/data/projects";
+import { projects } from "@/data/projects";
 
 const categoryLabels = {
-    web: "Web App",
+    web: "Aplikasi Web",
     backend: "Backend",
-    mobile: "Mobile App",
+    mobile: "Aplikasi Mobile",
     oss: "Open Source",
     ml: "Machine Learning",
     cms: "CMS",
     ecommerce: "E-Commerce",
     landing: "Landing Page",
+};
+
+const difficultyLabels = {
+    easy: "Mudah",
+    medium: "Menengah",
+    hard: "Sulit",
+    expert: "Expert",
 };
 
 const excludedProjectIds = new Set(["kofee", "rpkps", "livelihood", "expice"]);
@@ -30,18 +37,19 @@ const yearRange = `${sortedProjects[sortedProjects.length - 1]?.year} - ${sorted
 const projectCategories = [...new Set(sortedProjects.map((project) => categoryLabels[project.category]))];
 const whatsappNumber = COMPANY.phone.replaceAll(/\D/g, "");
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
+const mapLinkLabel = (label) => (label === "↗ Live" ? "↗ Lihat" : label);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content={`${COMPANY.name} helps companies launch clean, credible company profile websites and dependable digital experiences.`}
+            content={`${COMPANY.name} membantu perusahaan membangun website company profile yang rapi, terpercaya, dan siap berkembang.`}
         />
-        <title>{COMPANY.name} — Company Profile</title>
+        <title>{COMPANY.name} — Profil Perusahaan</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
     <body>
@@ -60,16 +68,16 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                         </span>
                     </a>
 
-                    <nav class="hero-nav" aria-label="Company page navigation">
-                        <a href="#expertise">Expertise</a>
-                        <a href="#projects">Work</a>
-                        <a href="#contact">Contact</a>
+                    <nav class="hero-nav" aria-label="Navigasi profil perusahaan">
+                        <a href="#expertise">Keahlian</a>
+                        <a href="#projects">Proyek</a>
+                        <a href="#contact">Kontak</a>
                     </nav>
                 </header>
 
                 <div class="hero-grid">
                     <div class="hero-copy">
-                        <p class="section-label">Company Profile</p>
+                        <p class="section-label">Profil Perusahaan</p>
                         <h1>{COMPANY.tagline}</h1>
                         <p class="hero-desc">{COMPANY.description}</p>
 
@@ -97,18 +105,18 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                         </div>
 
                         <div class="signal-card">
-                            <span class="signal-label">Positioning</span>
-                            <h2>Built for companies that want a simpler, cleaner, and more trusted online presence.</h2>
+                            <span class="signal-label">Posisi</span>
+                            <h2>Dibangun untuk perusahaan yang menginginkan kehadiran digital yang lebih sederhana, bersih, dan terpercaya.</h2>
                             <p>
-                                The visual direction now follows the Webister identity: bright blue,
-                                soft white surfaces, and a calmer interface that feels accessible and
-                                confident.
+                                Arah visual halaman ini mengikuti identitas Webister: biru terang,
+                                permukaan putih yang lembut, dan antarmuka yang terasa tenang,
+                                mudah diakses, dan meyakinkan.
                             </p>
                         </div>
 
                         <div class="contact-card">
                             <div>
-                                <span class="signal-label">Base</span>
+                                <span class="signal-label">Lokasi</span>
                                 <p>{COMPANY.location}</p>
                             </div>
                             <div>
@@ -128,7 +136,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                 {COMPANY.stats.map((stat) => (
                     <article class="stat-card">
                         <strong>
-                            {stat.label === "Projects Delivered" ? totalProjects : stat.value}
+                            {stat.label === "Proyek Selesai" ? totalProjects : stat.value}
                         </strong>
                         <span>{stat.label}</span>
                     </article>
@@ -137,13 +145,13 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
             <section id="expertise" class="content-section">
                 <div class="section-head">
-                    <p class="section-label">What We Do</p>
-                    <h2>A concise overview of what Webister builds, who it serves, and how the work gets delivered.</h2>
+                    <p class="section-label">Apa yang Kami Kerjakan</p>
+                    <h2>Ringkasan singkat tentang apa yang dibangun Webister, siapa yang kami layani, dan bagaimana proses pengerjaannya berjalan.</h2>
                 </div>
 
                 <div class="expertise-grid">
                     <article class="summary-card">
-                        <span class="signal-label">Core Services</span>
+                        <span class="signal-label">Layanan Utama</span>
                         <div class="summary-list">
                             {COMPANY.services.map((service) => (
                                 <div class="summary-item">
@@ -155,12 +163,12 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                     </article>
 
                     <article class="summary-card">
-                        <span class="signal-label">Best Fit</span>
-                        <h3>Best for businesses that need a clearer online presence and a more professional company website.</h3>
+                        <span class="signal-label">Cocok Untuk</span>
+                        <h3>Paling relevan untuk bisnis yang membutuhkan kehadiran online yang lebih jelas dan website perusahaan yang lebih profesional.</h3>
                         <p class="summary-copy">
-                            Webister is especially relevant for teams that want a simple delivery flow,
-                            better structure, and a website that is easier to trust and easier to
-                            contact.
+                            Webister sangat cocok untuk tim yang menginginkan alur kerja yang
+                            sederhana, struktur yang lebih baik, dan website yang lebih mudah
+                            dipercaya serta lebih mudah dihubungi.
                         </p>
                         <div class="compact-chip-list">
                             {COMPANY.sectors.map((sector) => <span>{sector}</span>)}
@@ -168,7 +176,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                     </article>
 
                     <article class="summary-card">
-                        <span class="signal-label">How We Deliver</span>
+                        <span class="signal-label">Cara Kami Bekerja</span>
                         <div class="compact-flow">
                             {COMPANY.process.map((item) => (
                                 <div class="flow-item">
@@ -189,26 +197,26 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
             <section id="projects" class="content-section project-section">
                 <div class="section-head">
-                    <p class="section-label">Project Showcase</p>
-                    <h2>All portfolio projects are now showcased here as proof of execution across industries and formats.</h2>
+                    <p class="section-label">Showcase Proyek</p>
+                    <h2>Semua proyek portfolio kini ditampilkan di sini sebagai bukti eksekusi lintas industri dan berbagai format pekerjaan.</h2>
                 </div>
 
                 <div class="project-overview">
                     <article class="project-overview-card">
-                        <span class="signal-label">Portfolio Coverage</span>
-                        <strong>{totalProjects} Projects</strong>
-                        <p>Displayed directly from the existing portfolio data source, so titles, descriptions, stacks, and links stay consistent.</p>
+                        <span class="signal-label">Cakupan Portfolio</span>
+                        <strong>{totalProjects} Proyek</strong>
+                        <p>Ditampilkan langsung dari sumber data portfolio yang sama, sehingga judul, deskripsi, stack, dan link tetap konsisten.</p>
                     </article>
 
                     <article class="project-overview-card">
-                        <span class="signal-label">Timeline</span>
+                        <span class="signal-label">Rentang Waktu</span>
                         <strong>{yearRange}</strong>
-                        <p>From early landing pages and company profiles to internal systems, machine learning, and data-driven platforms.</p>
+                        <p>Dari landing page dan company profile awal hingga sistem internal, machine learning, dan platform berbasis data.</p>
                     </article>
 
                     <article class="project-overview-card">
-                        <span class="signal-label">Categories</span>
-                        <strong>{projectCategories.length} Types</strong>
+                        <span class="signal-label">Kategori</span>
+                        <strong>{projectCategories.length} Jenis</strong>
                         <p>{projectCategories.join(" • ")}</p>
                     </article>
                 </div>
@@ -227,7 +235,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
                                 <div class="project-head-copy">
                                     <div class="project-topline">
-                                        <span class="project-num">Project {project.num}</span>
+                                        <span class="project-num">Proyek {project.num}</span>
                                         <span class="project-year">{project.year}</span>
                                     </div>
                                     <h3>{project.title}</h3>
@@ -239,7 +247,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                                     {categoryLabels[project.category]}
                                 </span>
                                 <span class="meta-pill">
-                                    {DIFFICULTY_LABEL[project.difficulty]}
+                                    {difficultyLabels[project.difficulty]}
                                 </span>
                             </div>
 
@@ -258,7 +266,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                                 <div class="project-link-row">
                                     {project.links.map((link) => (
                                         <a href={link.url} class="project-link" target="_blank" rel="noopener">
-                                            {link.label}
+                                            {mapLinkLabel(link.label)}
                                         </a>
                                     ))}
                                 </div>
@@ -278,7 +286,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
             <section class="content-section faq-section">
                 <div class="section-head">
                     <p class="section-label">FAQ</p>
-                    <h2>Short answers for teams evaluating the right digital partner.</h2>
+                    <h2>Jawaban singkat untuk tim yang sedang mencari partner digital yang tepat.</h2>
                 </div>
 
                 <div class="faq-list">
@@ -293,17 +301,17 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
             <section id="contact" class="cta-section">
                 <div class="cta-copy">
-                    <p class="section-label">Start a Project</p>
-                    <h2>Need a company website that looks credible and feels easier to trust?</h2>
+                    <p class="section-label">Mulai Proyek</p>
+                    <h2>Butuh website perusahaan yang terlihat kredibel dan lebih mudah dipercaya?</h2>
                     <p class="cta-body">
-                        Let Webister shape the structure, visual clarity, and contact flow first,
-                        then turn it into a polished website that is ready to represent your
-                        business properly.
+                        Biarkan Webister merancang struktur, kejelasan visual, dan alur kontaknya
+                        lebih dulu, lalu mengubahnya menjadi website yang rapi dan siap mewakili
+                        bisnis Anda dengan baik.
                     </p>
                 </div>
 
                 <div class="cta-panel">
-                    <p class="cta-panel-kicker">Talk to Webister</p>
+                    <p class="cta-panel-kicker">Hubungi Webister</p>
                     <div class="cta-actions">
                         <a class="btn btn-primary" href={`mailto:${COMPANY.email}`}>
                             {COMPANY.email}
@@ -313,8 +321,8 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                         </a>
                     </div>
                     <p class="cta-note">
-                        Best for company profile websites, landing pages, and digital presentation
-                        upgrades for growing businesses.
+                        Cocok untuk website company profile, landing page, dan peningkatan
+                        presentasi digital bagi bisnis yang sedang berkembang.
                     </p>
                 </div>
             </section>
@@ -324,7 +332,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}`;
                 class="whatsapp-float"
                 target="_blank"
                 rel="noopener"
-                aria-label="Chat Webister on WhatsApp"
+                aria-label="Chat dengan Webister di WhatsApp"
             >
                 <span class="whatsapp-icon">W</span>
                 <span class="whatsapp-text">WhatsApp</span>
